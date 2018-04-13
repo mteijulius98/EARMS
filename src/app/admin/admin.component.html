@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <div class="row">
+      <!--START LEFT COLUMN-->
+      <div class="col-sm-2 d-none d-md-block bg-light leftcolumn">
+          <div class="leftcolumn-sticky">
+              <nav class="nav flex-column">
+                  <a class="nav-item nav-link active" routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</a>
+                  <a class="nav-item nav-link" href="#">Register School</a>
+                  <a class="nav-item nav-link" href="#">Register WEO</a>
+                  <a class="nav-item nav-link" href="#">Register SLO</a>
+                  <a class="nav-item nav-link disabled" href="#">Register DEO</a>
+              </nav>
+          </div>
+
+
+      </div>
+      <!--END LEFT COLUMN-->
+
+      <!--START PAGE CONTENT-->
+      <div class="col-sm-10">
+       <router-outlet></router-outlet>
+      </div>
+      <!--END PAGE CONTENT-->
+  </div>
+</div>
