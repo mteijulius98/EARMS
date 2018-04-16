@@ -2,25 +2,23 @@
 <div class="container-fluid">
     <div class="row">
         <!--START LEFT COLUMN-->
-        <div class="col-sm-2 d-none d-md-block bg-light leftcolumn">
+        <nav class="col-sm-2 d-none d-md-block bg-light leftcolumn">
             <div class="leftcolumn-sticky">
                 <nav class="nav flex-column">
                     <a class="nav-item nav-link active" href="#">Dashboard</a>
-                    <a class="nav-item nav-link" href="#">Register School</a>
-                    <a class="nav-item nav-link" href="#">Register WEO</a>
-                    <a class="nav-item nav-link" href="#">Register SLO</a>
-                    <a class="nav-item nav-link disabled" href="#">Register DEO</a>
+                    <a class="nav-item nav-link" [routerLink]="[{ outlets: { admin: ['registerschool'] } }]">Register School</a>
+                    <a class="nav-item nav-link" href="#">Register Ward</a>
+                    <a class="nav-item nav-link" href="#">Register District</a>
                 </nav>
             </div>
 
-
-        </div>
+        </nav>
         <!--END LEFT COLUMN-->
 
         <!--START PAGE CONTENT-->
-        <div class="col-sm-10">
-        
-        </div>
+        <main role="main" class="col-sm-10 ml-sm-auto pt-3 px-4">
+           <router-outlet name="admin" ></router-outlet>
+        </main>
         <!--END PAGE CONTENT-->
     </div>
 </div>
