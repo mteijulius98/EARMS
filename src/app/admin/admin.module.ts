@@ -4,6 +4,10 @@ import { SharedModule } from '../shared.module';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
+import { RegisterschoolComponent } from './registerschool/registerschool.component';
+import { RegisterwardComponent } from './registerward/registerward.component';
+import { RegisterdistrictComponent } from './registerdistrict/registerdistrict.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -12,6 +16,12 @@ import { AdminComponent } from './admin.component';
     AdminRoutingModule,
     SharedModule
   ],
-  declarations: [AdminComponent]
+  declarations: [
+    AdminComponent,
+    RegisterschoolComponent,
+    RegisterwardComponent,
+    RegisterdistrictComponent,
+    DashboardComponent
+  ]
 })
 export class AdminModule { }
