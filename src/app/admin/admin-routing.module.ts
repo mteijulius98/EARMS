@@ -5,34 +5,25 @@ import { RegisterschoolComponent } from './registerschool/registerschool.compone
 import { RegisterwardComponent } from './registerward/registerward.component';
 import { RegisterdistrictComponent } from './registerdistrict/registerdistrict.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AuthguardService } from '../shared/authguard.service';
 
 const routes: Routes = [
   {
-    path: 'admin', 
+    path: 'admin',
     component: AdminComponent,
+    canActivate: [AuthguardService],
     children: [
       {
-        path:'registerschool',
-        component:RegisterschoolComponent,
-        outlet: 'admin'
-      },
-      {
-        path:'registerward',
-        component:RegisterwardComponent,
-        outlet:'admin'
-      },
-      {
-        path:'registerdistrict',
-        component:RegisterdistrictComponent,
-        outlet:'admin'
-      },
-      {
-        path:'',
-        component:DashboardComponent,
-        outlet:'admin'
+        path: '',
+        canActivateChild: [AuthguardService],
+        children: [
+          { path: 'registerschool', component: RegisterschoolComponent },
+          { path: 'registerward', component: RegisterwardComponent},
+          { path: 'registerdistrict', component: RegisterdistrictComponent },
+          { path: '', component: DashboardComponent}
+        ]
       }
     ]
-    
   }
 ];
 
