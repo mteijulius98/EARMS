@@ -5,11 +5,11 @@
         <nav class="col-sm-2 d-none d-md-block bg-light leftcolumn">
             <div class="leftcolumn-sticky">
                 <nav class="nav flex-column">
-                    <a class="nav-item nav-link active" routerLink="./" routerLinkActive="active"
+                    <a class="nav-item nav-link" routerLink="./" routerLinkActive="active"
                     [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
-                    <a class="nav-item nav-link" [routerLink]="[{ outlets: { admin: ['registerschool'] } }]">Register School</a>
-                    <a class="nav-item nav-link" [routerLink]="[{outlets: { admin:['registerward'] } }]">Register Ward</a>
-                    <a class="nav-item nav-link" [routerLink]="[{outlets: { admin:['registerdistrict'] } }]">Register District</a>
+                    <a class="nav-item nav-link" routerLink="./registerschool" routerLinkActive="active">Register School</a>
+                    <a class="nav-item nav-link" routerLink="./registerward" routerLinkActive="active">Register Ward</a>
+                    <a class="nav-item nav-link" routerLink="./registerdistrict" routerLinkActive="active">Register District</a>
                 </nav>
             </div>
 
@@ -18,7 +18,7 @@
 
         <!--START PAGE CONTENT-->
         <main role="main" class="col-sm-10 ml-sm-auto pt-3 px-4">
-            <router-outlet name="admin"></router-outlet>
+            <router-outlet ></router-outlet>
         </main>
         <!--END PAGE CONTENT-->
     </div>
