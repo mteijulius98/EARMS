@@ -6,6 +6,8 @@ import { RegisterwardComponent } from './registerward/registerward.component';
 import { RegisterdistrictComponent } from './registerdistrict/registerdistrict.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthguardService } from '../shared/authguard.service';
+import { UsersComponent } from './users/users.component';
+import { AddusersComponent } from './addusers/addusers.component';
 
 const routes: Routes = [
   {
@@ -17,6 +19,8 @@ const routes: Routes = [
         path: '',
         canActivateChild: [AuthguardService],
         children: [
+          { path: 'users', component: UsersComponent },
+          { path: 'addusers', component: AddusersComponent },
           { path: 'registerschool', component: RegisterschoolComponent },
           { path: 'registerward', component: RegisterwardComponent},
           { path: 'registerdistrict', component: RegisterdistrictComponent },
