@@ -8,6 +8,8 @@ import { RegisterschoolComponent } from './registerschool/registerschool.compone
 import { RegisterwardComponent } from './registerward/registerward.component';
 import { RegisterdistrictComponent } from './registerdistrict/registerdistrict.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { UsersComponent } from './users/users.component';
+import { AddusersComponent } from './addusers/addusers.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     RegisterschoolComponent,
     RegisterwardComponent,
     RegisterdistrictComponent,
-    DashboardComponent
+    DashboardComponent,
+    UsersComponent,
+    AddusersComponent
   ]
 })
 export class AdminModule { }
