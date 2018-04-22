@@ -9,6 +9,10 @@ import { AuthService } from '../shared/auth.service';
 })
 export class LoginComponent implements OnInit {
   message: string;
+  public loginForm: {
+    email:null,
+    password:null
+  };
 
   constructor(public authService: AuthService, public router: Router) {
     this.setMessage();
@@ -35,7 +39,9 @@ export class LoginComponent implements OnInit {
         // Redirect the user
         this.router.navigate([redirect]);
       }
-    });
+     }
+  );
+  console.log(this.loginForm);
   }
 
   logout() {
