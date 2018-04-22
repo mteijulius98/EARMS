@@ -25,3 +25,6 @@
 .leftcolumn .nav-link.active {
     color: #007bff;
 }
+.pt-50 {
+    padding-top: 50px;
+}
