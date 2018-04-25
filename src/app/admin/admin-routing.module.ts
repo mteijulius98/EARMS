@@ -5,15 +5,10 @@ import { RegisterschoolComponent } from './registerschool/registerschool.compone
 import { RegisterwardComponent } from './registerward/registerward.component';
 import { RegisterdistrictComponent } from './registerdistrict/registerdistrict.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-<<<<<<< HEAD
+
 import { UsersComponent } from './users/users.component';
 import { AddusersComponent } from './addusers/addusers.component';
 import { AuthguardService } from '../shared/authguard.service';
-=======
-import { AuthguardService } from '../shared/authguard.service';
-import { UsersComponent } from './users/users.component';
-import { AddusersComponent } from './addusers/addusers.component';
->>>>>>> a97aaca81ca810afd754c912e936a879f4e795e0
 
 const routes: Routes = [
   {
