@@ -13,18 +13,17 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
-    canActivate: [AuthguardService],
-    children: [
+        children: [
       {
         path: '',
-        canActivateChild: [AuthguardService],
+        
         children: [
           { path: 'users', component: UsersComponent },
           { path: 'addusers', component: AddusersComponent },
           { path: 'registerschool', component: RegisterschoolComponent },
           { path: 'registerward', component: RegisterwardComponent},
           { path: 'registerdistrict', component: RegisterdistrictComponent },
-          { path: 'admin', component: DashboardComponent}
+          { path: '', component: DashboardComponent}
         ]
       }
     ]
