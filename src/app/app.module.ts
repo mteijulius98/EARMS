@@ -2,6 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdminModule } from './admin/admin.module';
+import { HosModule } from './hos/hos.module';
+import { WeoModule } from './weo/weo.module';
+import { SloModule } from './slo/slo.module';
+import { DeoModule } from './deo/deo.module';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 
@@ -19,9 +23,13 @@ import { HttpModule } from '@angular/http';
     BrowserModule,
     NgbModule.forRoot(),
     FormsModule,
+    HttpModule,
+    DeoModule,
+    SloModule,
+    WeoModule,
+    HosModule,
     AdminModule,
-    AppRoutingModule,
-    HttpModule
+    AppRoutingModule
   ],
   providers: [
     LoginServiceService
