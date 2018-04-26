@@ -8,11 +8,11 @@ const routes: Routes = [
   {
     path:'slo',
     component:SloComponent,
-    canActivate:[AuthguardService],
+    // canActivate:[AuthguardService],
     children:[
       {
         path: '',
-        canActivateChild: [AuthguardService],
+        // canActivateChild: [AuthguardService],
         children: [
           {path:'',component:ReportsComponent}
         ]

@@ -11,11 +11,11 @@ const routes: Routes = [
   {
     path: 'hos',
     component: HosComponent,
-    canActivate: [AuthguardService],
+    // canActivate: [AuthguardService],
     children: [
       {
         path: '',
-        canActivateChild: [AuthguardService],
+        // canActivateChild: [AuthguardService],
         children: [
           { path: 'updaterecords', component: UpdaterecordsComponent },
           { path: 'documents', component: DocumentsComponent },

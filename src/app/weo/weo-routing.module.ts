@@ -8,11 +8,11 @@ const routes: Routes = [
   {
     path:'weo',
     component:WeoComponent,
-    canActivate:[AuthguardService],
+    // canActivate:[AuthguardService],
     children:[
       {
         path: '',
-        canActivateChild: [AuthguardService],
+        // canActivateChild: [AuthguardService],
         children: [
           {path:'',component:ReportsComponent}
         ]
