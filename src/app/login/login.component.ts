@@ -1,52 +1,44 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }      from '@angular/router';
-import { AuthService } from '../shared/auth.service';
-
+//import { AuthService } from '../shared/auth.service';
+import { LoginServiceService } from './login-service.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  message: string;
-  public loginForm: {
-    email:null,
-    password:null
-  };
 
-  constructor(public authService: AuthService, public router: Router) {
-    this.setMessage();
-   }
+  constructor(private loginService:LoginServiceService,private router:Router,
+     ) { }
+  user={
+	email:'',
+	password:'',
+}
+
+private loginStatus:any;
 
   ngOnInit() {
-
+    this.loginService.logout();
+    //http call starts
+   
   }
-
-  setMessage() {
-    this.message = 'Logged ' + (this.authService.isLoggedIn ? 'in' : 'out');
+  onSignin(){
+      
+    this.loginService.signin(this.user.email, this.user.password)
+    .subscribe(
+        response => {
+            this.router.navigate([response.role]);
+            
+        },
+        error=>{
+            alert("sorry u failed to login")
+            
+    
+          }
+       
+     
+    );
+   
   }
-
-  login() {
-    this.message = 'Trying to log in ...';
- 
-    this.authService.login().subscribe(() => {
-      this.setMessage();
-      if (this.authService.isLoggedIn) {
-        // Get the redirect URL from our auth service
-        // If no redirect has been set, use the default
-        let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/admin';
- 
-        // Redirect the user
-        this.router.navigate([redirect]);
-      }
-     }
-  );
-  console.log(this.loginForm);
-  }
-
-  logout() {
-    this.authService.logout();
-    this.setMessage();
-  }
-
 }
