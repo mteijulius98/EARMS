@@ -1,5 +1,27 @@
-<section id="rs">
-  <form>
-      Register School
-  </form>
-</section>
+<form class="form-group w-75 m-auto px-4 py-2" #registerSchoolForm="ngForm">
+
+  <div class="form-group">
+    <label for="schoolRegNo">School RegNo</label>
+    <input type="text" class="form-control" id="schoolRegNo" name="schoolregno" placeholder="School RegNo" required autofocus>
+  </div>
+
+  <div class="form-group">
+    <label for="schoolName">School Name</label>
+    <input type="text" class="form-control" id="schoolName" name="schoolname" placeholder="School Name" required>
+  </div>
+
+  <div class="form-group">
+    <label for="schoolP.O.Box">School P.O.Box</label>
+    <input type="text" class="form-control" id="schoolP.O.Box" name="schoolp.o.box" placeholder="P.O.Box" required>
+  </div>
+
+  <div class="form-group">
+    <label for="ownership">Ownership</label>
+    <input type="text" class="form-control" id="ownership" name="ownership" placeholder="Ownership" required>
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-lg btn-custom-primary btn-block" type="submit">Register School</button>
+  </div>
+
+</form>

@@ -1,19 +1,43 @@
-<form class="form-group w-50 m-auto">
+<form class="form-group w-75 m-auto px-4 py-2" #addUsersForm="ngForm">
 
-  <label for="firstName">First Name</label>
-  <input type="text" class="form-control" id="firstName" name="firstname" placeholder="firstname" required autofocus>
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input type="text" class="form-control" id="firstName" name="firstname" placeholder="firstname" required autofocus>
+  </div>
 
-  <label for="lastName">Last Name</label>
-  <input type="text" class="form-control" id="lastName" name="lastname" placeholder="lastname" required>
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input type="text" class="form-control" id="lastName" name="lastname" placeholder="lastname" required>
+  </div>
 
-  <label for="userPassword">User Password</label>
-  <input type="password" class="form-control" id="userPassword" name="userpassword" placeholder="Password" required>
+  <div class="form-group">
+    <label for="userEmail">Email address</label>
+    <input type="email" id="userEmail" name="useremail" class="form-control" placeholder="Email address" required="" autofocus="">
+  </div>
 
-  <label for="role">Role</label>
-  <select class="form-control" id="role" name="role" required>
-    <option>HOS</option>
-    <option>WEO</option>
-    <option>DEO</option>
-  </select>
+  <div class="form-group">
+    <label for="userPassword">User Password</label>
+    <input type="password" class="form-control" id="userPassword" name="userpassword" placeholder="Password" required>
+  </div>
+
+  <div class="form-group">
+    <label for="stationName">Station Name</label>
+    <input type="text" class="form-control" id="stationName" name="stationname" placeholder="stationname" required>
+  </div>
+
+  <div class="form-group">
+    <label for="role">Role</label>
+    <select class="form-control" id="role" name="role" required>
+      <option>HOS</option>
+      <option>WEO</option>
+      <option>DEO</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <!-- Role should be fetched from database and hard coded on the template -->
+    <button class="btn btn-lg btn-custom-primary btn-block" type="submit">Add User</button>
+  </div>
+
 
 </form>
