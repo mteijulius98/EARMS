@@ -1,42 +1,42 @@
-<form class="form-group w-75 m-auto px-4 py-2" #addUsersForm="ngForm">
+<form class="form-group w-75 m-auto px-4 py-2" #f="ngForm"  (ngSubmit)="ond(f)">
 
   <div class="form-group">
     <label for="firstName">First Name</label>
-    <input type="text" class="form-control" id="firstName" name="firstname" placeholder="firstname" required autofocus>
+    <input type="text" class="form-control" id="firstName" ngModel name="firstname" placeholder="firstname" required autofocus>
   </div>
 
   <div class="form-group">
     <label for="lastName">Last Name</label>
-    <input type="text" class="form-control" id="lastName" name="lastname" placeholder="lastname" required>
+    <input type="text" class="form-control" id="lastName"  ngModel name="lastname" placeholder="lastname" required>
   </div>
 
   <div class="form-group">
     <label for="userEmail">Email address</label>
-    <input type="email" id="userEmail" name="useremail" class="form-control" placeholder="Email address" required="" autofocus="">
+    <input type="email" id="email" name="email" class="form-control" ngModel placeholder="Email address" required autofocus="">
   </div>
 
   <div class="form-group">
     <label for="userPassword">User Password</label>
-    <input type="password" class="form-control" id="userPassword" name="userpassword" placeholder="Password" required>
+    <input type="password" class="form-control" id="password" ngModel name="password" placeholder="Password" required>
   </div>
 
   <div class="form-group">
     <label for="stationName">Station Name</label>
-    <input type="text" class="form-control" id="stationName" name="stationname" placeholder="stationname" required>
+    <input type="text" class="form-control" id="station_name" ngModel name="station_name" placeholder="stationname" required>
   </div>
 
   <div class="form-group">
     <label for="role">Role</label>
-    <select class="form-control" id="role" name="role" required>
-      <option>HOS</option>
-      <option>WEO</option>
-      <option>DEO</option>
+    <select class="form-control" id="role" name="role" ngModel required>
+      <option>hos</option>
+      <option>weo</option>
+      <option>deo</option>
     </select>
   </div>
 
   <div class="form-group">
     <!-- Role should be fetched from database and hard coded on the template -->
-    <button class="btn btn-lg btn-custom-primary btn-block" type="submit">Add User</button>
+    <button class="btn btn-lg btn-custom-primary btn-block" type="submit" [disabled]="!f.valid">Add User</button>
   </div>
 
 
