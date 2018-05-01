@@ -12,38 +12,22 @@ fill make container span all body
     position: fixed;
     top: 0;
     bottom: 0;
-    left: 0;
-    z-index: 100;
     background-color: #f5f5f5;
-}
-/* 
-top leave the space under the navbar
-*/
-.top {
-    top: 50px;
-    height: calc(100vh - 50px);
-    padding-top: .5rem;
-    overflow-x: hidden;
-    overflow-y: auto;
 }
  /* 
   left column
   */
   .leftcolumn {
-    position: fixed;
+    position: relative;
     top: 0;
     bottom: 0;
-    left: 0;
-    z-index: 100;
     padding: 0;
     background-color: #e6f2ff;
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
 }
 .leftcolumn-sticky {
     position: sticky;
-    top: 50px;
     height: calc(100vh - 50px);
-    padding-top: .5rem;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -68,7 +52,6 @@ forms
 /* button */
 .btn-custom-primary {
     background-color: #cccccc;
-    
     font-weight: 50;
     
 }
