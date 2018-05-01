@@ -12,6 +12,7 @@ import { RegisterdistrictComponent } from './registerdistrict/registerdistrict.c
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './users/users.component';
 import { AddusersComponent } from './addusers/addusers.component';
+import { AdminService } from './admin.service';
 
 
 @NgModule({
@@ -31,6 +32,9 @@ import { AddusersComponent } from './addusers/addusers.component';
         DashboardComponent,
         UsersComponent,
         AddusersComponent
-    ]
+    ],
+    providers: [
+        AdminService
+      ]
 })
 export class AdminModule { }
