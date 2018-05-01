@@ -5,14 +5,10 @@ navbar
   background-color: #66b3ff;
 } 
 /* 
-navbar-brand
+nav-bar custom button
 */
-.navbar-brand {
-    padding-top: .75rem;
-    padding-bottom: .75rem;
-    padding-left: .75rem;
-    padding-right: .75rem;
-    font-size: 1rem;
-    background-color: rgba(0, 0, 0, .25);
-    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
-  }
+.navbar-btn-c-p{
+    background-color: #66b3ff;
+    font-weight: 50;
+    font-size: .95rem;
+}
