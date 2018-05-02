@@ -11,16 +11,6 @@ export class UsersComponent implements OnInit {
   users: IUsers[];
   errorMessage:string;
  public constructor(private adminService:AdminService) { }
-//  users: any [] =[
-//    {
-//      "firstName":"Charles",
-//      "lastName":"Temba",
-//      "email":"latemba@gmail.com",
-//      "stationName":"UDSM",
-//      "role":"admin"
-//    }
-//   ];
-
 
 ngOnInit():void {
   this.adminService.viewUsers().subscribe(
