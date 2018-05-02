@@ -41,4 +41,14 @@ let body = JSON.stringify({reg_no:schoolRegNo,s_name:schoolname,ward_name:wardna
 return this.http.post("http://localhost/fypyear/public/api/school", body, options).map( (response:Response) => response.json());
   
 }
+public viewUsers(){ 
+  let headers=new Headers()
+   headers.append('Authorization','jwt '+ this.token);
+   headers.append('Content-Type', 'application/json');
+  return this.http.get('http://localhost/fypyear/public/api/ausers',{headers:headers}).map(
+(res:Response)=>res.json(),
+
+
+    );
+}
 }
