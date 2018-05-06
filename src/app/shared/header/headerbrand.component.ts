@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToggleService } from '../toggle.service';
 
 @Component({
   selector: 'app-headerbrand',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./headerbrand.component.css']
 })
 export class HeaderbrandComponent implements OnInit {
-
-  constructor() { }
-
+  
+  constructor(private toggleService: ToggleService) { }
+    
   ngOnInit() {
   }
 
+  id = this.toggleService.showId();
+  
+  isCollapsed = this.toggleService.toggle();
 }

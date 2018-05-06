@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToggleService } from '../shared/toggle.service';
 
 @Component({
   selector: 'app-admin',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  constructor(private toggleService: ToggleService) { }
+  
 
   ngOnInit() {
   }
+
+  id = this.toggleService.showId();
+  
+  isCollapsed = this.toggleService.toggle();
 
 }
