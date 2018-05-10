@@ -2,65 +2,89 @@
   <ngb-panel id="static-1">
     <ng-template ngbPanelTitle>
       <span>
-        <b>Register Classes</b>
+        <b>School Details</b>
       </span>
     </ng-template>
     <ng-template ngbPanelContent>
-      <form class="form-group w-75 mx-auto my-3 px-4 py-2" #classForm="ngForm">
+      <form class="form-group w-75 mx-auto my-3 px-4 py-2" #sdForm="ngForm">
 
         <div class="form-group">
-          <label for="Year">Year</label>
-          <input type="text" class="form-control" id="firstName" ngModel name="firstname" placeholder="firstname" required autofocus>
+          <label for="year">Year</label>
+          <input type="text" class="form-control" id="year" ngModel name="year" required autofocus>
         </div>
 
         <div class="form-group">
           <label for="schoolName">School</label>
-          <input type="text" class="form-control" id="schoolName" ngModel name="schoolname" placeholder="School" required>
+          <input type="text" class="form-control" id="schoolName" ngModel name="schoolname" required>
         </div>
 
         <div class="form-group">
-          <label for="class">Class</label>
-          <input type="text" id="class" name="class" class="form-control" ngModel placeholder="Class" required autofocus="">
+          <label for="schoolType">School Type</label>
+         <select class="form-control" id="schoolType" name="schooltype" ngModel required>
+            <option>Secondary school</option>
+            <option>High school</option>
+            <option>Both</option>
+          </select>
         </div>
 
         <div class="form-group">
-          <label for="ageRange">Age Range</label>
-          <input type="text" class="form-control" id="ageRange" ngModel name="agerange" placeholder="Age Range" required>
+          <label for="ageRange">Students age range</label>
+          <input type="text" class="form-control" id="ageRange" ngModel name="agerange" required>
         </div>
 
         <div class="form-group">
-          <label for="n_o_m">Number Of Male Students</label>
-          <input type="text" class="form-control" id="n_o_m" ngModel name="no_of_males" placeholder="No of Males" required>
+          <label for="n_o_m">Number of male students</label>
+          <input type="text" class="form-control" id="n_o_m" ngModel name="no_of_males" required>
         </div>
 
         <div class="form-group">
-          <label for="n_o_f">Number Of Female Students</label>
-          <input type="text" class="form-control" id="n_o_f" ngModel name="no_of_females" placeholder="No of Females" required>
+          <label for="n_o_f">Number of female students</label>
+          <input type="text" class="form-control" id="n_o_f" ngModel name="no_of_females" required>
         </div>
 
         <div class="form-group">
-          <label for="n_o_m_hl">Number Of Male Students Living in Difficult Conditions</label>
-          <input type="text" class="form-control" id="n_o_m_hl" ngModel name="no_of_males_hl" placeholder="" required>
+          <label for="n_o_o_m">Number of orphan male students</label>
+          <input type="text" class="form-control" id="n_o_o_m" ngModel name="no_of_males_o" required>
         </div>
 
         <div class="form-group">
-          <label for="n_o_f_hl">Number Of Female Students Living in Difficult Conditions</label>
-          <input type="text" class="form-control" id="n_o_f_hl" ngModel name="no_of_females_hl" placeholder="" required>
+          <label for="n_o_o_f">Number of orphan female students</label>
+          <input type="text" class="form-control" id="n_o_o_f" ngModel name="no_of_females_o" required>
         </div>
 
         <div class="form-group">
-          <label for="n_o_m_nt">Number Of Non Tanzanian Male Students</label>
-          <input type="text" class="form-control" id="n_o_m_nt" ngModel name="no_of_males_nt" placeholder="" required>
+          <label for="n_o_d_m">Number of disabled male students</label>
+          <input type="text" class="form-control" id="n_o_d_m" ngModel name="no_of_males_d" required>
         </div>
 
         <div class="form-group">
-          <label for="n_o_f_nt">Number Of Non Tanzanian Female Students</label>
-          <input type="text" class="form-control" id="n_o_f_nt" ngModel name="no_of_females_nt" placeholder="" required>
+          <label for="n_o_d_f">Number of disabled female students</label>
+          <input type="text" class="form-control" id="n_o_d_f" ngModel name="no_of_females_d" required>
+        </div>
+
+        <div class="form-group">
+          <label for="n_o_m_hl">Number of male students living in difficult conditions</label>
+          <input type="text" class="form-control" id="n_o_m_hl" ngModel name="no_of_males_hl" required>
+        </div>
+
+        <div class="form-group">
+          <label for="n_o_f_hl">Number of female students living in difficult conditions</label>
+          <input type="text" class="form-control" id="n_o_f_hl" ngModel name="no_of_females_hl" required>
+        </div>
+
+        <div class="form-group">
+          <label for="n_o_m_nt">Number of non Tanzanian male students</label>
+          <input type="text" class="form-control" id="n_o_m_nt" ngModel name="no_of_males_nt" required>
+        </div>
+
+        <div class="form-group">
+          <label for="n_o_f_nt">Number of non Tanzanian female students</label>
+          <input type="text" class="form-control" id="n_o_f_nt" ngModel name="no_of_females_nt" required>
         </div>
 
         <div class="form-group">
 
-          <button class="btn btn-lg btn-custom-primary btn-block" type="submit" [disabled]="!classForm.valid">Add User</button>
+          <button class="btn btn-lg btn-custom-primary btn-block" type="submit" [disabled]="!sdForm.valid">Submit</button>
         </div>
       </form>
     </ng-template>
