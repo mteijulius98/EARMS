@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
-import { AuthguardService }            from './authguard.service';
-import { AuthService }          from './auth.service';
 import { HeaderbrandComponent } from './header/headerbrand.component';
+import { ToggleService } from './toggle.service';
 @NgModule({
   imports: [
     CommonModule
@@ -17,8 +16,7 @@ import { HeaderbrandComponent } from './header/headerbrand.component';
     HeaderbrandComponent
   ],
   providers: [
-    AuthService,
-    AuthguardService
+    ToggleService
   ]
 })
 export class SharedModule { }

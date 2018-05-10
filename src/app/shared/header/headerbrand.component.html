@@ -1,3 +1,7 @@
 <nav class="navbar navbar-expand-sm navbar-dark sticky-top  flex-md-nowrap p-0">
   <a class="navbar-brand" href="#">EARMS</a>
+  <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
+  [attr.aria-expanded]="!isCollapsed" [attr.aria-controls]="id">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 </nav>
