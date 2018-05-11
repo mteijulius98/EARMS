@@ -55,3 +55,9 @@ forms
     font-weight: 50;
     
 }
+/* 
+google material icons
+*/
+.material-icons {
+    font-size: 1.6rem;
+}
