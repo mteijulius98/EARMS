@@ -6,6 +6,7 @@ import { HosComponent } from './hos.component';
 import { SchooldetailsComponent } from './schooldetails/schooldetails.component';
 import { UpdaterecordsComponent } from './updaterecords/updaterecords.component';
 import { DocumentsComponent } from './documents/documents.component';
+import { ReportsComponent } from './reports/reports.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
         path: '',
         // canActivateChild: [AuthguardService],
         children: [
-          { path: 'updaterecords', component: UpdaterecordsComponent },
+          { path: 'studentattendance', component: UpdaterecordsComponent },
+          { path: 'reports', component: ReportsComponent },
           { path: 'documents', component: DocumentsComponent },
           { path: '', component: SchooldetailsComponent}
         ]
