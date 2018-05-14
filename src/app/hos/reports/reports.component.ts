@@ -1,36 +1,41 @@
 import { Component, OnInit, ViewChild, ElementRef, ViewChildren } from '@angular/core';
-import * as jsPDF from 'jspdf';
+import { HeadService } from '../head.service';
+import { IReport } from './reports';
+//import * as jsPDF from 'jspdf';
 @Component({
   selector: 'app-reports',
   templateUrl: './reports.component.html',
   styleUrls: ['./reports.component.css']
 })
 export class ReportsComponent implements OnInit {
+  details: IReport[];
+  errorMessage:string;
+  constructor(private headService:HeadService) { }
 
-  constructor() { 
-    
+  ngOnInit():void{
+    this.headService.viewDetails().subscribe(
+      details => this.details = details,
+      
+      error => this.errorMessage = <any>error);
   }
-
-  ngOnInit() {
-  }
-  @ViewChild('sreport',{read: ElementRef}) sreport: ElementRef;
-  private downloadSreport() {
+  // @ViewChild('sreport',{read: ElementRef}) sreport: ElementRef;
+  // private downloadSreport() {
   //   console.log(this.sreport.nativeElement);
   
-    let doc = new jsPDF();
+    //let doc = new jsPDF();
 
-    let specialElementHandlers = {
-      '#editor': function (element,renderer) {
-        return true;
-      }
-    };
+    // let specialElementHandlers = {
+    //   '#editor': function (element,renderer) {
+    //     return true;
+    //   }
+    // };
      
    // let sreport = this.sreport.nativeElement;
 
-    doc.fromHTML(this.sreport.nativeElement,15,15,{
-      'width':190,
-      'elementHandlers':specialElementHandlers
-    });
-    doc.save('school report.pdf');
-  }
+  //   doc.fromHTML(this.sreport.nativeElement,15,15,{
+  //     'width':190,
+  //     'elementHandlers':specialElementHandlers
+  //   });
+  //   doc.save('school report.pdf');
+  // }
 }

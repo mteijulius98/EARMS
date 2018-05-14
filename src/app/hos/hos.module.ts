@@ -10,6 +10,7 @@ import { UpdaterecordsComponent } from './updaterecords/updaterecords.component'
 import { DocumentsComponent } from './documents/documents.component';
 import { SchooldetailsComponent } from './schooldetails/schooldetails.component';
 import { ReportsComponent } from './reports/reports.component';
+import { HeadService } from './head.service';
 
 
 @NgModule({
@@ -26,6 +27,9 @@ import { ReportsComponent } from './reports/reports.component';
     DocumentsComponent,
     SchooldetailsComponent,
     ReportsComponent
+  ],
+  providers: [
+    HeadService
   ]
 })
 export class HosModule { }
