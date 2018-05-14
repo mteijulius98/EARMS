@@ -13,24 +13,24 @@ export class ReportsComponent implements OnInit {
 
   ngOnInit() {
   }
-  @ViewChild('sreport',{read: ElementRef}) sreport: ElementRef;
-  private downloadSreport() {
-  //   console.log(this.sreport.nativeElement);
+  // @ViewChild('sreport',{read: ElementRef}) sreport: ElementRef;
+  // private downloadSreport() {
+  //  //   console.log(this.sreport.nativeElement);
   
-    let doc = new jsPDF();
+  //   let doc = new jsPDF();
 
-    let specialElementHandlers = {
-      '#editor': function (element,renderer) {
-        return true;
-      }
-    };
+  //   let specialElementHandlers = {
+  //     '#editor': function (element,renderer) {
+  //       return true;
+  //     }
+  //   };
      
-   // let sreport = this.sreport.nativeElement;
+  //   let report = this.sreport.nativeElement;
 
-    doc.fromHTML(this.sreport.nativeElement,15,15,{
-      'width':190,
-      'elementHandlers':specialElementHandlers
-    });
-    doc.save('school report.pdf');
-  }
+  //   doc.fromHTML(report,15,15,{
+  //     'width':190,
+  //     'elementHandlers':specialElementHandlers
+  //   });
+  //   doc.save('school report.pdf');
+  // }
 }
