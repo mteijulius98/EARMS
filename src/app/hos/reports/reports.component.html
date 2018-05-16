@@ -1,58 +1,65 @@
-<div class="card text-center" #sreport>
-    <!-- <div class="card-header">
-
-    </div> -->
-    <div class="card-body">
-        <table class="table table-bordered  table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">Key</th>
-                    <th scope="col" colspan="2">Students</th>
-                    <th scope="col" colspan="2">Orphans</th>
-                    <th scope="col" colspan="2">Disabled</th>
-                    <th scope="col" colspan="2">Difficult conditions</th>
-                    <th scope="col" colspan="2">Nationality</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">Gender</th>
-                    <td>M</td>
-                    <td>F</td>
-                    <td>M</td>
-                    <td>F</td>
-                    <td>M</td>
-                    <td>F</td>
-                    <td>M</td>
-                    <td>F</td>
-                    <td>Tanzanian</td>
-                    <td>Non-Tanzanian</td>
-                </tr>
-                <tr>
-                    <th scope="row">Number</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th scope="row">Total</th>
-                    <td colspan="2"></td>
-                    <td colspan="2"></td>
-                    <td colspan="2"></td>
-                    <td colspan="2"></td>
-                    <td colspan="2"></td>
-
-                </tr>
-            </tbody>
-        </table>
-
+<div class="card mb-c">
+  <div class="card-header bg-transparent border-0 text-center">
+       <h1>School Report</h1>
     </div>
-    <button class="btn btn-custom-primary mx-auto my-3" (click)="downloadSreport()">Download Report</button>
+  <div class="card-body">
+    <form class="form-group w-75 mx-auto my-2 px-4 py-2" #sgreport="ngForm">
+      <h3>Data in numbers</h3>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label>Category</label>
+          </div>
+          <div class="form-group">
+            <label>Number of Students</label>
+          </div>
+          <div class="form-group">
+            <label>Orphan Students</label>
+          </div>
+          <div class="form-group">
+            <label>Disabled Students</label>
+          </div>
+          <div class="form-group">
+            <label>Non Tanzanian</label>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label>Male</label>
+          </div>
+          <div class="form-group">
+            <input type="text" readonly class="form-control-plaintext" id="nom" ngModel name="n_o_m" required autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" readonly class="form-control-plaintext" id="nomo" ngModel name="n_o_m_o" required autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" readonly class="form-control-plaintext" id="nomd" ngModel name="n_o_m_d" required autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" readonly class="form-control-plaintext" id="nonm" ngModel name="n_o_n_m" required autofocus>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label>Female</label>
+          </div>
+          <div class="form-group">
+            <input type="text" readonly class="form-control-plaintext" id="nof" ngModel name="n_o_f" required autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" readonly class="form-control-plaintext" id="nofo" ngModel name="n_o_f_o" required autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" readonly class="form-control-plaintext" id="nomd" ngModel name="n_o_m_d" required autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" readonly class="form-control-plaintext" id="nonf" ngModel name="n_o_n_f" required autofocus>
+          </div>
+        </div>
+      </div>
+      <h3>Data in Percentage</h3>
+    </form>
+  </div>
+  <button class="btn btn-custom-primary mx-auto my-2" (click)="downloadSreport()">Download Report</button>
 </div>
