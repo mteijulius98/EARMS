@@ -1,18 +1,26 @@
 import { Component, OnInit, ViewChild, ElementRef, ViewChildren } from '@angular/core';
-import * as jsPDF from 'jspdf';
+import { HeadService } from '../head.service';
+import { IReport } from './reports';
+//import * as jsPDF from 'jspdf';
 @Component({
   selector: 'app-reports',
   templateUrl: './reports.component.html',
   styleUrls: ['./reports.component.css']
 })
 export class ReportsComponent implements OnInit {
+  details: IReport[];
+  errorMessage:string;
+  constructor(private headService:HeadService) { }
 
-  constructor() { 
-    
+  ngOnInit():void{
+    this.headService.viewDetails().subscribe(
+      details => this.details = details,
+      
+      error => this.errorMessage = <any>error);
   }
 
-  ngOnInit() {
-  }
+  // ngOnInit() {
+  // }
   // @ViewChild('sreport',{read: ElementRef}) sreport: ElementRef;
   // private downloadSreport() {
   //  //   console.log(this.sreport.nativeElement);
