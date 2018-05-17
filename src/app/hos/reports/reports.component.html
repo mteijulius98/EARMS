@@ -44,20 +44,23 @@
           <div class="form-group">
             <label>Female</label>
           </div>
+          <div *ngFor="let detail of schoolDetails">
           <div class="form-group">
-            <input type="text" readonly class="form-control" id="nof" value="6" name="n_o_f" required autofocus>
+            <input type="text" readonly class="form-control" id="nof" value="{{detail.female}}" name="n_o_f" required autofocus>
+          </div>
+        
+          <div class="form-group">
+            <input type="text" readonly class="form-control" id="nofo" value="{{detail.female_orphan}}" name="n_o_f_o" required autofocus>
           </div>
           <div class="form-group">
-            <input type="text" readonly class="form-control" id="nofo" value="1" name="n_o_f_o" required autofocus>
+            <input type="text" readonly class="form-control" id="nomd" value="{{detail.female_disabled}}" name="n_o_m_d" required autofocus>
           </div>
           <div class="form-group">
-            <input type="text" readonly class="form-control" id="nomd" value="3" name="n_o_m_d" required autofocus>
-          </div>
-          <div class="form-group">
-            <input type="text" readonly class="form-control" id="nonf" value="10" name="n_o_n_f" required autofocus>
+            <input type="text" readonly class="form-control" id="nonf" value="{{detail.female_nonTz}}" name="n_o_n_f" required autofocus>
           </div>
         </div>
       </div>
+    </div>
       <h3>Data in Percentage</h3>
     </form>
   </div>

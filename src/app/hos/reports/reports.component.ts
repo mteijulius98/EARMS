@@ -8,13 +8,20 @@ import { IReport } from './reports';
   styleUrls: ['./reports.component.css']
 })
 export class ReportsComponent implements OnInit {
-  details: IReport[];
+  // details: IReport[];
+  schoolDetails=[];
   errorMessage:string;
   constructor(private headService:HeadService) { }
 
   ngOnInit():void{
     this.headService.viewDetails().subscribe(
-      details => this.details = details,
+      details =>{
+        // this.details = details
+        // console.log(details.sdetails)
+        this.schoolDetails=details.sdetails
+        // console.log(this.schoolDetails)
+
+      } ,
       
       error => this.errorMessage = <any>error);
   }

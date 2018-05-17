@@ -32,6 +32,9 @@ return this.http.post("http://localhost/fypyear/public/api/users", body, options
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem('currentUser', JSON.stringify(user));
        localStorage.setItem('token',user.token);
+       if (user.role !== 'admin') {
+         localStorage.setItem('station_name', email);
+       }
     }
     return user;
    });
@@ -40,8 +43,8 @@ return this.http.post("http://localhost/fypyear/public/api/users", body, options
   
   logout() {
     // remove user from local storage to log user out
-    localStorage.removeItem('token');
-    localStorage.removeItem('currentUser');
+   
+    localStorage.clear();
   
 }
 getToken(){
