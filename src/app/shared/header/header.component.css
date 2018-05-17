@@ -12,3 +12,6 @@ nav-bar custom button
     font-weight: 50;
     font-size: .95rem;
 }
+.dropdown-toggle::after {
+  margin-left: 0em;
+}
