@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  //private userData:any=JSON.parse( localStorage.getItem('UserData'));
+  
+ // private station_name:string=this.userData["station_name"];
+  
   constructor() { }
 
   ngOnInit() {
+   
   }
 
 }
