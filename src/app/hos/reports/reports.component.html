@@ -1,17 +1,119 @@
 <div class="card mb-c">
   <div class="card-header bg-transparent border-0 text-center">
-       <h1>School Report</h1>
-    </div>
+    <h1>School Report</h1>
+  </div>
   <div class="card-body">
     <form class="form-group w-75 mx-auto my-2 px-4 py-2" #sgreport="ngForm">
-      <h3>Data in numbers</h3>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label>District</label>
+          </div>
+          <div class="form-group">
+            <label>Ward</label>
+          </div>
+          <div class="form-group">
+            <label>School</label>
+          </div>
+          <div class="form-group">
+            <label>School Reg No.</label>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <input type="text" readonly class="form-control-plaintext" id="district" ngModel name="district" required autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" readonly class="form-control-plaintext" id="ward" ngModel name="ward" required autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" readonly class="form-control-plaintext" id="school" ngModel name="school" required autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" readonly class="form-control-plaintext" id="regno" ngModel name="regNo" required autofocus>
+          </div>
+        </div>
+      </div>
+      <h5>Overall number of students</h5>
       <div class="row">
         <div class="col-sm-4">
           <div class="form-group">
-            <label>Category</label>
+            <label>Male</label>
           </div>
           <div class="form-group">
-            <label>Number of Students</label>
+            <input type="text" readonly class="form-control-plaintext" id="nom" ngModel name="n_o_m" required autofocus>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label>Female</label>
+          </div>
+          <div class="form-group">
+            <input type="text" readonly class="form-control-plaintext" id="nof" ngModel name="n_o_f" required autofocus>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label>Total</label>
+          </div>
+          <div class="form-group">
+            <input type="text" readonly class="form-control-plaintext" id="total" ngModel name="total" required autofocus>
+          </div>
+        </div>
+      </div>
+      <!-- <h5>Students' category</h5> -->
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label>Students category</label>
+          </div>
+          <div class="form-group">
+            <label>Orphan Students</label>
+          </div>
+          <div class="form-group">
+            <label>Disabled Students</label>
+          </div>
+          <div class="form-group">
+            <label>Non Tanzanian</label>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label>Number of males</label>
+          </div>
+          <div class="form-group">
+            <input type="text" readonly class="form-control-plaintext" id="nomo" ngModel name="n_o_m_o" required autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" readonly class="form-control-plaintext" id="nomd" ngModel name="n_o_m_d" required autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" readonly class="form-control-plaintext" id="nonm" ngModel name="n_o_n_m" required autofocus>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label>Number of females</label>
+          </div>
+          <div class="form-group">
+            <input type="text" readonly class="form-control-plaintext" id="nofo" ngModel name="n_o_f_o" required autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" readonly class="form-control-plaintext" id="nomd" ngModel name="n_o_m_d" required autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" readonly class="form-control-plaintext" id="nonf" ngModel name="n_o_n_f" required autofocus>
+          </div>
+        </div>
+      </div>
+      <h5>Percentage</h5>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label>Students category</label>
+          </div>
+          <div class="form-group">
+            <label>Overall</label>
           </div>
           <div class="form-group">
             <label>Orphan Students</label>
@@ -28,16 +130,16 @@
             <label>Male</label>
           </div>
           <div class="form-group">
-            <input type="text" readonly class="form-control-plaintext" id="nom" ngModel name="n_o_m" required autofocus>
+            <input type="text" readonly class="form-control-plaintext" id="pom" ngModel name="p_o_m" required autofocus>
           </div>
           <div class="form-group">
-            <input type="text" readonly class="form-control-plaintext" id="nomo" ngModel name="n_o_m_o" required autofocus>
+            <input type="text" readonly class="form-control-plaintext" id="pomo" ngModel name="p_o_m_o" required autofocus>
           </div>
           <div class="form-group">
-            <input type="text" readonly class="form-control-plaintext" id="nomd" ngModel name="n_o_m_d" required autofocus>
+            <input type="text" readonly class="form-control-plaintext" id="pomd" ngModel name="p_o_m_d" required autofocus>
           </div>
           <div class="form-group">
-            <input type="text" readonly class="form-control-plaintext" id="nonm" ngModel name="n_o_n_m" required autofocus>
+            <input type="text" readonly class="form-control-plaintext" id="ponm" ngModel name="p_o_n_m" required autofocus>
           </div>
         </div>
         <div class="col-sm-4">
@@ -45,21 +147,20 @@
             <label>Female</label>
           </div>
           <div class="form-group">
-            <input type="text" readonly class="form-control-plaintext" id="nof" ngModel name="n_o_f" required autofocus>
+            <input type="text" readonly class="form-control-plaintext" id="pofo" ngModel name="p_o_f_o" required autofocus>
           </div>
           <div class="form-group">
-            <input type="text" readonly class="form-control-plaintext" id="nofo" ngModel name="n_o_f_o" required autofocus>
+            <input type="text" readonly class="form-control-plaintext" id="pofo" ngModel name="p_o_f_o" required autofocus>
           </div>
           <div class="form-group">
-            <input type="text" readonly class="form-control-plaintext" id="nomd" ngModel name="n_o_m_d" required autofocus>
+            <input type="text" readonly class="form-control-plaintext" id="pomd" ngModel name="p_o_m_d" required autofocus>
           </div>
           <div class="form-group">
-            <input type="text" readonly class="form-control-plaintext" id="nonf" ngModel name="n_o_n_f" required autofocus>
+            <input type="text" readonly class="form-control-plaintext" id="ponf" ngModel name="p_o_n_f" required autofocus>
           </div>
         </div>
       </div>
-      <h3>Data in Percentage</h3>
     </form>
   </div>
-  <button class="btn btn-custom-primary mx-auto my-2" (click)="downloadSreport()">Download Report</button>
+  <button class="btn btn-custom-primary mx-auto my-3" (click)="downloadSreport()">Download Report</button>
 </div>
