@@ -16,21 +16,23 @@
             <label>School</label>
           </div>
           <div class="form-group">
-            <label>School Reg No.</label>
+            <label>Year</label>
           </div>
         </div>
         <div class="col-sm-6">
+          <div *ngFor="let detail of schoolDetails">
           <div class="form-group">
-            <input type="text" readonly class="form-control-plaintext" id="district" ngModel name="district" required autofocus>
+            <input type="text" readonly class="form-control-plaintext" id="district" value="{{detail.diistrict_name}}" name="district" required autofocus>
           </div>
           <div class="form-group">
-            <input type="text" readonly class="form-control-plaintext" id="ward" ngModel name="ward" required autofocus>
+            <input type="text" readonly class="form-control-plaintext" id="ward" value="{{detail.ward_name}}" name="ward" required autofocus>
           </div>
           <div class="form-group">
-            <input type="text" readonly class="form-control-plaintext" id="school" ngModel name="school" required autofocus>
+            <input type="text" readonly class="form-control-plaintext" id="school"value="{{detail.school_name}}" name="school" required autofocus>
           </div>
           <div class="form-group">
-            <input type="text" readonly class="form-control-plaintext" id="regno" ngModel name="regNo" required autofocus>
+            <input type="text" readonly class="form-control-plaintext" id="regno" value="{{detail.year}}" name="regNo" required autofocus>
+          </div>
           </div>
         </div>
       </div>
@@ -56,8 +58,10 @@
           <div class="form-group">
             <label>Total</label>
           </div>
+          <div *ngFor="let detail of schoolDetails">
           <div class="form-group">
-            <input type="text" readonly class="form-control-plaintext" id="total" ngModel name="total" required autofocus>
+            <input type="text" readonly class="form-control-plaintext" id="total" value="{{detail.total}}" name="total" required autofocus>
+          </div>
           </div>
         </div>
       </div>
@@ -79,22 +83,30 @@
           <div class="form-group">
             <label>Non Tanzanian</label>
           </div>
+          <div class="form-group">
+              <label>Student with Hardlife</label>
+            </div>
         </div>
         <div class="col-sm-4">
           <div class="form-group">
             <label>Number of males</label>
           </div>
+          <div *ngFor="let detail of schoolDetails">
           <div class="form-group">
-            <input type="text" readonly class="form-control" id="nom" value="10" name="n_o_m"  required autofocus>
+            <input type="text" readonly class="form-control" id="nom" value="{{detail.male}}" name="n_o_m"  required autofocus>
           </div>
           <div class="form-group">
-            <input type="text" readonly class="form-control" id="nomo" value="15" name="n_o_m_o" required autofocus>
+            <input type="text" readonly class="form-control" id="nomo" value="{{detail.male_orphan}}" name="n_o_m_o" required autofocus>
           </div>
           <div class="form-group">
-            <input type="text" readonly class="form-control" id="nomd" value="11" name="n_o_m_d" required autofocus>
+            <input type="text" readonly class="form-control" id="nomd" value="{{detail.male_disabled}}" name="n_o_m_d" required autofocus>
           </div>
           <div class="form-group">
-            <input type="text" readonly class="form-control" id="nonm" value="57" name="n_o_n_m" required autofocus>
+            <input type="text" readonly class="form-control" id="nonm" value="{{detail.male_nonTz}}" name="n_o_n_m" required autofocus>
+          </div>
+          <div class="form-group">
+              <input type="text" readonly class="form-control" id="nonm" value="{{detail.male_hardlife}}" name="n_o_n_m" required autofocus>
+            </div>
           </div>
         </div>
         <div class="col-sm-4">
@@ -114,6 +126,9 @@
           <div class="form-group">
             <input type="text" readonly class="form-control" id="nonf" value="{{detail.female_nonTz}}" name="n_o_n_f" required autofocus>
           </div>
+          <div class="form-group">
+              <input type="text" readonly class="form-control" id="nonm" value="{{detail.female_hardlife}}" name="n_o_n_m" required autofocus>
+            </div>
         </div>
       </div>
     </div>
@@ -124,7 +139,7 @@
             <label>Students category</label>
           </div>
           <div class="form-group">
-            <label>Overall</label>
+            <label>Normal Students</label>
           </div>
           <div class="form-group">
             <label>Orphan Students</label>
@@ -135,40 +150,53 @@
           <div class="form-group">
             <label>Non Tanzanian</label>
           </div>
+          <div class="form-group">
+              <label>Hardlife</label>
+            </div>
         </div>
         <div class="col-sm-4">
           <div class="form-group">
             <label>Male</label>
           </div>
+          <div *ngFor="let detail of schoolDetails">
           <div class="form-group">
-            <input type="text" readonly class="form-control-plaintext" id="pom" ngModel name="p_o_m" required autofocus>
+            <input type="text" readonly class="form-control-plaintext" id="pom" value="{{detail.male_percent}}" name="p_o_m" required autofocus>
           </div>
           <div class="form-group">
-            <input type="text" readonly class="form-control-plaintext" id="pomo" ngModel name="p_o_m_o" required autofocus>
+            <input type="text" readonly class="form-control-plaintext" id="pomo" value="{{detail.male_orphan_percent}}"  name="p_o_m_o" required autofocus>
           </div>
           <div class="form-group">
-            <input type="text" readonly class="form-control-plaintext" id="pomd" ngModel name="p_o_m_d" required autofocus>
+            <input type="text" readonly class="form-control-plaintext" id="pomd" value="{{detail.male_disabled_percent}}" name="p_o_m_d" required autofocus>
           </div>
           <div class="form-group">
-            <input type="text" readonly class="form-control-plaintext" id="ponm" ngModel name="p_o_n_m" required autofocus>
+            <input type="text" readonly class="form-control-plaintext" id="ponm" value="{{detail.male_nonTz_percent}}"  name="p_o_n_m" required autofocus>
           </div>
+          <div class="form-group">
+              <input type="text" readonly class="form-control-plaintext" id="ponm" value="{{detail.male_hardlife_percent}}"  name="p_o_n_m" required autofocus>
+            </div>
+        </div>
         </div>
         <div class="col-sm-4">
           <div class="form-group">
             <label>Female</label>
           </div>
+          <div *ngFor="let detail of schoolDetails">
           <div class="form-group">
-            <input type="text" readonly class="form-control-plaintext" id="pofo" ngModel name="p_o_f_o" required autofocus>
+            <input type="text" readonly class="form-control-plaintext" id="pofo" value="{{detail.female_percent}}" name="p_o_f_o" required autofocus>
           </div>
           <div class="form-group">
-            <input type="text" readonly class="form-control-plaintext" id="pofo" ngModel name="p_o_f_o" required autofocus>
+            <input type="text" readonly class="form-control-plaintext" id="pofo"value="{{detail.female_orphan_percent}}"  name="p_o_f_o" required autofocus>
           </div>
           <div class="form-group">
-            <input type="text" readonly class="form-control-plaintext" id="pomd" ngModel name="p_o_m_d" required autofocus>
+            <input type="text" readonly class="form-control-plaintext" id="pomd" value="{{detail.female_disabled_percent}}" name="p_o_m_d" required autofocus>
           </div>
           <div class="form-group">
-            <input type="text" readonly class="form-control-plaintext" id="ponf" ngModel name="p_o_n_f" required autofocus>
+            <input type="text" readonly class="form-control-plaintext" id="ponf" value="{{detail.female_nonTz_percent}}" name="p_o_n_f" required autofocus>
           </div>
+          <div class="form-group">
+              <input type="text" readonly class="form-control-plaintext" id="ponm" value="{{detail.female_hardlife_percent}}"  name="p_o_n_m" required autofocus>
+            </div>
+        </div>
         </div>
       </div>
     </form>
