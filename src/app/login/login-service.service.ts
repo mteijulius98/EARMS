@@ -41,7 +41,7 @@ return this.http.post("http://localhost/fypyear/public/api/users", body, options
 
   }
   
-  logout() {
+logout() {
     // remove user from local storage to log user out
    
     localStorage.clear();

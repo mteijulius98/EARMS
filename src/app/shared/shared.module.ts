@@ -4,10 +4,12 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
 import { HeaderbrandComponent } from './header/headerbrand.component';
 import { ToggleService } from './toggle.service';
+import { RouterModule } from '@angular/router';
 @NgModule({
   imports: [
     CommonModule,
-    NgbModule
+    NgbModule,
+    RouterModule
   ],
   declarations: [
     HeaderComponent,

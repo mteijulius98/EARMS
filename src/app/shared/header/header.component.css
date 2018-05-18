@@ -15,3 +15,6 @@ nav-bar custom button
 .dropdown-toggle::after {
   margin-left: 0em;
 }
+.align-c {
+  vertical-align: .55em;
+}

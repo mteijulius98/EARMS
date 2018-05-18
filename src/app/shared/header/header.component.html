@@ -1,12 +1,13 @@
 <nav class="navbar navbar-expand-sm navbar-dark sticky-top  flex-md-nowrap  justify-content-end">
-    <div ngbDropdown placement="bottom-right" class="d-inline-block mr-2"><i >{{stationName}}</i>
+    <div ngbDropdown placement="bottom-right" class="d-inline-block mr-2">
+        <i class="align-c">{{stationName}}</i>
         <i class="material-icons" id="account" ngbDropdownToggle>
             account_circle
         </i>
         
         <div ngbDropdownMenu aria-labelledby="account">
-            <a class="dropdown-item">Profile</a>
-            <a class="dropdown-item">Sign out</a>
+            <!-- <a class="dropdown-item">Profile</a> -->
+            <a class="dropdown-item" [routerLink]="['/login']">Sign out</a>
         </div>
     </div>
    

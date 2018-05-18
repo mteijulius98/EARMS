@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginServiceService } from '../../login/login-service.service';
 import { IUsers } from '../../admin/users/users';
 import { AdminService } from '../../admin/admin.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,13 +10,13 @@ import { AdminService } from '../../admin/admin.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  
+  private router: Router;
   errorMessage:string;
   stationName:string="";
   //private userData:any=JSON.parse(localStorage.getItem('UserData'));
  // private station_name:string=this.userData["station_name"];
   
-  constructor(private adminService:AdminService) { }
+  constructor(private adminService:AdminService,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit() {
    
