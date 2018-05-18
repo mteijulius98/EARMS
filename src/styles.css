@@ -61,3 +61,6 @@ google material icons
 .material-icons {
     font-size: 1.6rem;
 }
+label{
+    padding-top: .5rem;
+}
