@@ -1,7 +1,0 @@
-/* 
-Make component scrollable
-*/
-.flow {
-    max-height: 100vh;
-    overflow-y: scroll;
-}
