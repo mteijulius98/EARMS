@@ -1,31 +1,256 @@
-<form class="form-group w-75 m-auto px-4 py-2" #registerSchool="ngForm" (ngSubmit)="form3(registerSchool)">
+<div class="row">
+  <div class="col-sm-6">
 
-  <div class="form-group">
-    <label for="schoolRegNo">School RegNo</label>
-    <input type="text" class="form-control" id="schoolRegNo"  ngModel name="schoolRegNo" placeholder="School RegNo" required autofocus>
+    <!-- start add accomodation categories form -->
+    <div class="card m-2">
+      <div class="card-header">
+        Add school type
+      </div>
+      <div class="card-body">
+        <form class="form-group px-4 py-2" #accomodation="ngForm">
+          <div class="form-group">
+            <label for="type"> Type </label>
+            <input type="text" class="form-control" id="type" name="type" ngModel required autofocus>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-custom-primary btn-block w-50 mx-auto" type="submit" [disabled]="!accomodation.valid">Add Type</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- end add accomodation categories form -->
+
+    <!-- start add ownership form -->
+    <div class="card m-2">
+      <div class="card-header">
+        Add school ownership categories
+      </div>
+      <div class="card-body">
+        <form class="form-group px-4 py-2" #ownership="ngForm">
+          <div class="form-group">
+            <label for="ownership">Ownership category</label>
+            <input type="text" class="form-control" id="ownership" name="ownership" ngModel required autofocus>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-custom-primary btn-block w-50 mx-auto" type="submit" [disabled]="!ownership.valid">Add category</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- end add ownership form -->
+
+    <!-- start school registration form -->
+    <div class="card m-2">
+      <div class="card-header">
+        Register school
+      </div>
+      <div class="card-body">
+        <form class="form-group px-4 py-2" #registerSchool="ngForm" (ngSubmit)="form3(registerSchool)">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="schoolName">Name</label>
+                <input type="text" class="form-control" id="schoolname" ngModel name="schoolname" required>
+              </div>
+              <div class="form-group">
+                <label for="schoolCategory">Type</label>
+                <select class="form-control" id="type" ngModel name="type" required>
+                  <option></option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="ward">Postal address</label>
+                <input type="text" class="form-control" id="wardname" ngModel name="wardname" required autofocus>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="schoolRegNo">Reg Number</label>
+                <input type="text" class="form-control" id="schoolRegNo" ngModel name="schoolRegNo" required autofocus>
+              </div>
+              <div class="form-group">
+                <label for="ward">Ownership</label>
+                <select class="form-control" id="wardname" ngModel name="wardname" required autofocus>
+                  <option></option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="schoolEmail">Email</label>
+                <input type="text" class="form-control" id="schoolEmail" ngModel name="schoolEmail" required>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="schoolRegNo">Reg Date</label>
+                <input type="date" class="form-control" id="schoolRegNo" ngModel name="schoolRegNo" required autofocus>
+              </div>
+              <div class="form-group">
+                <label for="ward">Ward</label>
+                <select class="form-control" id="wardname" ngModel name="wardname" required autofocus>
+                  <option></option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="ward">Phone number</label>
+                <input type="text" class="form-control" id="wardname" ngModel name="wardname" required autofocus>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!registerSchool.valid">Register School</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+    <!-- end school registration form -->
   </div>
 
-  <div class="form-group">
-    <label for="schoolName">School Name</label>
-    <input type="text" class="form-control" id="schoolname"  ngModel name="schoolname" placeholder="School Name" required>
-  </div>
-  <div class="form-group">
-    <label for="ward">Ward</label>
-    <input type="text" class="form-control" id="wardname" ngModel name="wardname" placeholder="Ward" required autofocus>
-  </div>
+  <div class="col-sm-6">
+    <!-- start view school type table -->
+    <div class="card m-2">
+        <div class="card-header">
+          View school types
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-responsive-sm table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Type</th>
+                <th>
+                  <i class="material-icons">
+                    create
+                  </i>
+                </th>
+                <th>
+                  <i class="material-icons">
+                    delete
+                  </i>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>latemba</td>
+                <!-- <td> {{user.firstname}} </td>
+                  <td> {{user.lastname}} </td>
+                  <td> {{user.email}}</td>
+                  <td> {{user.station_name}}</td>
+                  <td> {{user.role}}</td> -->
+                <td>
+                  <button class="btn btn-info btn-sm">
+                    Edit
+                  </button>
+                </td>
+                <td>
+                  <button class="btn btn-danger btn-sm">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+    <!-- end view school type table -->
 
-  <div class="form-group">
-    <label for="schoolP.O.Box">School Address</label>
-    <input type="text" class="form-control" id="PO_Box"  ngModel name="PO_Box" placeholder="School Address" required>
-  </div>
+    <!-- start view school ownership table -->
+    <div class="card m-2">
+        <div class="card-header">
+          View ownership category
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-responsive-sm table-hover">
+            <thead>
+              <tr>
+                <th scope="col">category</th>
+                <th>
+                  <i class="material-icons">
+                    create
+                  </i>
+                </th>
+                <th>
+                  <i class="material-icons">
+                    delete
+                  </i>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>latemba</td>
+                <!-- <td> {{user.firstname}} </td>
+                  <td> {{user.lastname}} </td>
+                  <td> {{user.email}}</td>
+                  <td> {{user.station_name}}</td>
+                  <td> {{user.role}}</td> -->
+                <td>
+                  <button class="btn btn-info btn-sm">
+                    Edit
+                  </button>
+                </td>
+                <td>
+                  <button class="btn btn-danger btn-sm">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+    <!-- end view school ownership table -->
 
-  <div class="form-group">
-    <label for="ownership">Ownership</label>
-    <input type="text" class="form-control" id="ownership"  ngModel name="ownership" placeholder="Ownership" required>
+    <!-- start view schools table -->
+    <div class="card m-2">
+      <div class="card-header">
+        View schools
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered table-responsive-sm table-hover">
+          <thead>
+            <tr>
+              <th scope="col">School Name</th>
+              <th scope="col">Reg No</th>
+              <th scope="col">District</th>
+              <th>
+                <i class="material-icons">
+                  create
+                </i>
+              </th>
+              <th>
+                <i class="material-icons">
+                  delete
+                </i>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>latemba</td>
+              <td>latemba</td>
+              <td>latemba</td>
+              <!-- <td> {{user.firstname}} </td>
+                <td> {{user.lastname}} </td>
+                <td> {{user.email}}</td>
+                <td> {{user.station_name}}</td>
+                <td> {{user.role}}</td> -->
+              <td>
+                <button class="btn btn-info btn-sm">
+                  Edit
+                </button>
+              </td>
+              <td>
+                <button class="btn btn-danger btn-sm">
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end view schools table -->
+    </div>
+    </div>
   </div>
-
-  <div class="form-group">
-    <button class="btn btn-lg btn-custom-primary btn-block" type="submit" [disabled]="!registerSchool.valid">Register School</button>
-  </div>
-
-</form>

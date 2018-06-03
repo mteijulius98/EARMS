@@ -12,21 +12,21 @@
                         <input type="text" class="form-control" id="role" name="role" ngModel required autofocus>
                     </div>
                     <div class="form-group">
-                        <label for="roleinitials">Role Initials</label>
+                        <label for="roleinitials">Initials</label>
                         <input type="text" class="form-control" id="roleinitials" name="roleinitials" ngModel required autofocus>
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-lg btn-custom-primary btn-block w-50 mx-auto" type="submit" [disabled]="!role.valid">Add Role</button>
+                        <button class="btn btn-custom-primary btn-block w-50 mx-auto" type="submit" [disabled]="!role.valid">Add Role</button>
                     </div>
                 </form>
             </div>
         </div>
         <!-- end  add user role form -->
 
-        <!-- start add user form -->
+        <!-- start add  district user form -->
         <div class="card m-2">
             <div class="card-header">
-                Add user
+                Add District user
             </div>
             <div class="card-body">
                 <form class="form-group px-4 py-2" #f="ngForm" (ngSubmit)="ond(f)">
@@ -37,16 +37,17 @@
                                 <input type="text" class="form-control" id="firstName" name="firstname" ngModel required autofocus>
                             </div>
                             <div class="form-group">
-                                <label for="region">Region</label>
-                                <select class="form-control" id="region" name="region" ngModel required>
+                                <label for="district">District</label>
+                                <select class="form-control" id="district" name="district" ngModel required>
                                     <option></option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="postaladdress">Postal Address</label>
-                                <input type="text" class="form-control" id="postaladdress" name="postal_address" ngModel required>
+                                <label for="role">Role</label>
+                                <select class="form-control" id="role" name="role" ngModel required>
+                                    <option></option>
+                                </select>
                             </div>
-
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group">
@@ -54,17 +55,12 @@
                                 <input type="text" class="form-control" id="middleName" name="middlename" ngModel required autofocus>
                             </div>
                             <div class="form-group">
-                                <label for="district">District</label>
-                                <select class="form-control" id="district" name="region" ngModel required>
-                                    <option></option>
-                                </select>
+                                <label for="postaladdress">Postal Address</label>
+                                <input type="text" class="form-control" id="postaladdress" name="postal_address" ngModel required>
                             </div>
+
                             <div class="form-group">
-                                <label for="userEmail">Email address</label>
-                                <input type="email" id="email" name="email" class="form-control" ngModel required autofocus="">
-                            </div>
-                            <div class="form-group">
-                                <label for="userPassword">User Password</label>
+                                <label for="userPassword">Password</label>
                                 <input type="password" class="form-control" id="password" name="password" ngModel required>
                             </div>
                         </div>
@@ -72,6 +68,34 @@
                             <div class="form-group">
                                 <label for="lastName">Last Name</label>
                                 <input type="text" class="form-control" id="lastName" name="lastname" ngModel required>
+                            </div>
+                            <div class="form-group">
+                                <label for="userEmail">Email</label>
+                                <input type="email" id="email" name="email" class="form-control" ngModel required autofocus="">
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-custom-primary btn-block" type="submit">Add User</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <!-- end add district user form -->
+
+        <!-- start add ward user form -->
+        <div class="card m-2">
+            <div class="card-header">
+                Add Ward user
+            </div>
+            <div class="card-body">
+                <form class="form-group px-4 py-2" #f="ngForm" (ngSubmit)="ond(f)">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" class="form-control" id="firstName" name="firstname" ngModel required autofocus>
                             </div>
                             <div class="form-group">
                                 <label for="ward">Ward</label>
@@ -86,14 +110,101 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="middleName">Middle Name</label>
+                                <input type="text" class="form-control" id="middleName" name="middlename" ngModel required autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="postaladdress">Postal Address</label>
+                                <input type="text" class="form-control" id="postaladdress" name="postal_address" ngModel required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="userPassword">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" ngModel required>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" name="lastname" ngModel required>
+                            </div>
+                            <div class="form-group">
+                                <label for="userEmail">Email</label>
+                                <input type="email" id="email" name="email" class="form-control" ngModel required autofocus="">
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-custom-primary btn-block" type="submit">Add User</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <button class="btn btn-lg btn-custom-primary btn-block w-50 mx-auto" type="submit" [disabled]="!f.valid">Add User</button>
-                    </div>
+
                 </form>
             </div>
         </div>
-        <!-- end add user form -->
+        <!-- end add ward user form -->
+
+        <!-- start add school user form -->
+        <div class="card m-2">
+            <div class="card-header">
+                Add School user
+            </div>
+            <div class="card-body">
+                <form class="form-group px-4 py-2" #f="ngForm" (ngSubmit)="ond(f)">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" class="form-control" id="firstName" name="firstname" ngModel required autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="school">School</label>
+                                <select class="form-control" id="school" name="school" ngModel required>
+                                    <option></option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="role">Role</label>
+                                <select class="form-control" id="role" name="role" ngModel required>
+                                    <option></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="middleName">Middle Name</label>
+                                <input type="text" class="form-control" id="middleName" name="middlename" ngModel required autofocus>
+                            </div>
+                            <div class="form-group">
+                                <label for="postaladdress">Postal Address</label>
+                                <input type="text" class="form-control" id="postaladdress" name="postal_address" ngModel required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="userPassword">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" ngModel required>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" name="lastname" ngModel required>
+                            </div>
+                            <div class="form-group">
+                                <label for="userEmail">Email</label>
+                                <input type="email" id="email" name="email" class="form-control" ngModel required autofocus="">
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-custom-primary btn-block" type="submit">Add User</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <!-- end add school user form -->
     </div>
     <div class="col-sm-6">
         <!-- start view user role table -->
@@ -111,17 +222,19 @@
                     </thead>
                     <tbody>
                         <tr>
-
+                            <td>latemba</td>
+                            <td>latemba</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
         <!-- end view user role table -->
-        <!--view users table  -->
+
+        <!--start view district users table  -->
         <div class="card m-2">
             <div class="card-header">
-                View users
+                View District Users
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-responsive-sm table-hover">
@@ -129,13 +242,13 @@
                         <tr>
                             <th scope="col">First Name</th>
                             <th scope="col">Last Name</th>
-                            <th scope="col">Email</th>
+                            <th scope="col">District</th>
                             <th scope="col">Role</th>
                             <th>
-                                    <i class="material-icons">
-                                        create
-                                    </i>
-                                </th>
+                                <i class="material-icons">
+                                    create
+                                </i>
+                            </th>
                             <th>
                                 <i class="material-icons">
                                     delete
@@ -144,17 +257,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let user of users.users">
-                            <td> {{user.firstname}} </td>
+                        <tr>
+                            <td>latemba</td>
+                            <td>latemba</td>
+                            <td>latemba</td>
+                            <td>latemba</td>
+                            <!-- <td> {{user.firstname}} </td>
                             <td> {{user.lastname}} </td>
                             <td> {{user.email}}</td>
                             <td> {{user.station_name}}</td>
-                            <td> {{user.role}}</td>
+                            <td> {{user.role}}</td> -->
                             <td>
-                                    <button class="btn btn-info btn-sm">
-                                        Edit
-                                    </button>
-                                </td>
+                                <button class="btn btn-info btn-sm">
+                                    Edit
+                                </button>
+                            </td>
                             <td>
                                 <button class="btn btn-danger btn-sm">
                                     Delete
@@ -165,6 +282,112 @@
                 </table>
             </div>
         </div>
-        <!-- end view users table -->
+        <!-- end view district users table -->
+
+        <!-- start view ward users table -->
+        <div class="card m-2">
+            <div class="card-header">
+                View Ward Users
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered table-responsive-sm table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Ward</th>
+                            <th scope="col">Role</th>
+                            <th>
+                                <i class="material-icons">
+                                    create
+                                </i>
+                            </th>
+                            <th>
+                                <i class="material-icons">
+                                    delete
+                                </i>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>latemba</td>
+                            <td>latemba</td>
+                            <td>latemba</td>
+                            <td>latemba</td>
+                            <!-- <td> {{user.firstname}} </td>
+                            <td> {{user.lastname}} </td>
+                            <td> {{user.email}}</td>
+                            <td> {{user.station_name}}</td>
+                            <td> {{user.role}}</td> -->
+                            <td>
+                                <button class="btn btn-info btn-sm">
+                                    Edit
+                                </button>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger btn-sm">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- end view ward users table -->
+
+        <!-- start view school users table -->
+        <div class="card m-2">
+            <div class="card-header">
+                View School users
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered table-responsive-sm table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">School</th>
+                            <th scope="col">Role</th>
+                            <th>
+                                <i class="material-icons">
+                                    create
+                                </i>
+                            </th>
+                            <th>
+                                <i class="material-icons">
+                                    delete
+                                </i>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>latemba</td>
+                            <td>latemba</td>
+                            <td>latemba</td>
+                            <td>latemba</td>
+                            <!-- <td> {{user.firstname}} </td>
+                            <td> {{user.lastname}} </td>
+                            <td> {{user.email}}</td>
+                            <td> {{user.station_name}}</td>
+                            <td> {{user.role}}</td> -->
+                            <td>
+                                <button class="btn btn-info btn-sm">
+                                    Edit
+                                </button>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger btn-sm">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- end view school users table -->
     </div>
 </div>
