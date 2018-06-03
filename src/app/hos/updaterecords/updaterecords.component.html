@@ -1,0 +1,106 @@
+<form class="form-group w-75 mx-auto my-3 px-4 py-2" #teachersForm="ngForm">
+
+        <div class="form-group">
+          <label for="schoolName">School</label>
+          <input type="text" class="form-control" id="schoolName" ngModel name="schoolname" required autofocus>
+        </div>
+        <div class="form-group">
+          <label for="sub_c">Subject Category</label>
+          <input type="text" class="form-control" id="sub_c" ngModel name="sub_cat" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="n_o_m">Number of male teachers</label>
+          <input type="text" class="form-control" id="n_o_m" ngModel name="n_o_mt" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="n_o_f">Number of female teachers</label>
+          <input type="text" class="form-control" id="n_o_f" ngModel name="n_o_ft" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="n_o_m_p">Number of male teachers permanently hired</label>
+          <input type="text" class="form-control" id="n_o_m_p" ngModel name="n_o_mp" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="n_o_f_p">Number of female teachers permanently hired</label>
+          <input type="text" class="form-control" id="n_o_f_p" ngModel name="n_o_fp" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="n_o_m_th">Number of male teachers temporarily hired</label>
+          <input type="text" class="form-control" id="n_o_m_t" ngModel name="n_o_mth" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="n_o_f_th">Number of female teachers temporarily hired</label>
+          <input type="text" class="form-control" id="n_o_f_t" ngModel name="n_o_fth" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="n_o_m_s">Number of male teachers specialised in special education</label>
+          <input type="text" class="form-control" id="n_o_m_s" ngModel name="n_o_ms" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="n_o_f_s">Number of female teachers specialised in special education</label>
+          <input type="text" class="form-control" id="n_o_f_s" ngModel name="n_o_fs" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="n_o_m">Number of male students</label>
+          <input type="text" class="form-control" id="n_o_m" ngModel name="no_of_males" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="n_o_f">Number of female students</label>
+          <input type="text" class="form-control" id="n_o_f" ngModel name="no_of_females" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="n_o_o_m">Number of orphan male students</label>
+          <input type="text" class="form-control" id="n_o_o_m" ngModel name="no_of_males_o" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="n_o_o_f">Number of orphan female students</label>
+          <input type="text" class="form-control" id="n_o_o_f" ngModel name="no_of_females_o" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="n_o_d_m">Number of disabled male students</label>
+          <input type="text" class="form-control" id="n_o_d_m" ngModel name="no_of_males_d" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="n_o_d_f">Number of disabled female students</label>
+          <input type="text" class="form-control" id="n_o_d_f" ngModel name="no_of_females_d" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="n_o_m_hl">Number of male students living in difficult conditions</label>
+          <input type="text" class="form-control" id="n_o_m_hl" ngModel name="no_of_males_hl" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="n_o_f_hl">Number of female students living in difficult conditions</label>
+          <input type="text" class="form-control" id="n_o_f_hl" ngModel name="no_of_females_hl" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="n_o_m_nt">Number of non Tanzanian male students</label>
+          <input type="text" class="form-control" id="n_o_m_nt" ngModel name="no_of_males_nt" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="n_o_f_nt">Number of non Tanzanian female students</label>
+          <input type="text" class="form-control" id="n_o_f_nt" ngModel name="no_of_females_nt" required>
+        </div>
+  
+        <div class="form-group">
+          <button class="btn btn-lg btn-custom-primary btn-block" type="submit" [disabled]="!teachersForm.valid">Submit Details</button>
+        </div>
+  
+      </form>

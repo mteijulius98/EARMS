@@ -7,7 +7,7 @@ import { HosRoutingModule } from './hos-routing.module';
 import { HosComponent } from './hos.component';
 import { UpdaterecordsComponent } from './updaterecords/updaterecords.component';
 import { DocumentsComponent } from './documents/documents.component';
-import { SchooldetailsComponent } from './schooldetails/schooldetails.component';
+import { SchoolstaffsComponent } from './schoolstaffs/schoolstaffs.component';
 import { ReportsComponent } from './reports/reports.component';
 import { HeadService } from './head.service';
 
@@ -23,7 +23,7 @@ import { HeadService } from './head.service';
     HosComponent,
     UpdaterecordsComponent,
     DocumentsComponent,
-    SchooldetailsComponent,
+    SchoolstaffsComponent,
     ReportsComponent
   ],
   providers: [
