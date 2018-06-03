@@ -1,0 +1,180 @@
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card m-2">
+      <div class="card-header">
+        Register teachers
+      </div>
+      <div class="card-body">
+        <form class="form-group px-4 py-2" #sdForm="ngForm" (ngSubmit)="form3(sdForm)">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="fname">First name</label>
+                <input type="text" class="form-control" id="fname" ngModel name="fname" required autofocus>
+              </div>
+              <div class="form-group">
+                <label for="sex">Sex</label>
+                <select class="form-control" id="sex" name="sex" ngModel required>
+                  <option>M</option>
+                  <option>F</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="doe">Date of employment</label>
+                <input type="date" class="form-control" id="doe" ngModel name="doe" required>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="mname">Middle name</label>
+                <input type="text" class="form-control" id="mname" ngModel name="mname" required>
+              </div>
+              <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" class="form-control" id="dob" ngModel name="dob" required>
+              </div>
+              <div class="form-group">
+                <label for="e_id">Employment id</label>
+                <input type="text" class="form-control" id="e_id" ngModel name="e_id" required>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="lname">Last name</label>
+                <input type="text" class="form-control" id="lname" ngModel name="lname" required>
+              </div>
+              <div class="form-group">
+                <label for="edu_lvl">Education level</label>
+                <select class="form-control" id="edu_lvl" name="edu_lvl" ngModel required>
+                  <option></option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="school_id">School</label>
+                <input type="text" class="form-control" id="school_id" ngModel name="school_id" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-lg btn-custom-primary btn-block" type="submit" [disabled]="!sdForm.valid">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="card m-2">
+      <div class="card-header">
+        Non-teaching staffs
+      </div>
+      <div class="card-body">
+        <form class="form-group w-75 mx-auto my-3 px-4 py-2" #nontsForm="ngForm">
+          <div class="form-group">
+            <label for="d_n">Designation</label>
+            <input type="text" class="form-control" id="d_n" ngModel name="d_n" required autofocus>
+          </div>
+          <div class="form-group">
+            <label for="dn_c">Designation Count</label>
+            <input type="text" class="form-control" id="dn-c" ngModel name="dn_c" required>
+          </div>
+          <div class="form-group">
+            <input type="hidden" class="form-control" id="school_id" ngModel name="school_id" required>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="card m-2">
+      <div class="card-header">
+        View Teachers
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered table-responsive-sm table-hover">
+          <thead>
+            <tr>
+              <th scope="col">First name</th>
+              <th scope="col">Last name</th>
+              <th>
+                <i class="material-icons">
+                  create
+                </i>
+              </th>
+              <th>
+                <i class="material-icons">
+                  delete
+                </i>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>latemba</td>
+              <td>latemba</td>
+              <!-- <td> {{user.firstname}} </td>
+                <td> {{user.lastname}} </td>
+                <td> {{user.email}}</td>
+                <td> {{user.station_name}}</td>
+                <td> {{user.role}}</td> -->
+              <td>
+                <button class="btn btn-info btn-sm">
+                  Edit
+                </button>
+              </td>
+              <td>
+                <button class="btn btn-danger btn-sm">
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card m-2">
+      <div class="card-header">
+        View number of non teaching staffs
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered table-responsive-sm table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Designation</th>
+              <th scope="col">Count</th>
+              <th>
+                <i class="material-icons">
+                  create
+                </i>
+              </th>
+              <th>
+                <i class="material-icons">
+                  delete
+                </i>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>latemba</td>
+              <td>latemba</td>
+              <!-- <td> {{user.firstname}} </td>
+                <td> {{user.lastname}} </td>
+                <td> {{user.email}}</td>
+                <td> {{user.station_name}}</td>
+                <td> {{user.role}}</td> -->
+              <td>
+                <button class="btn btn-info btn-sm">
+                  Edit
+                </button>
+              </td>
+              <td>
+                <button class="btn btn-danger btn-sm">
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { HeadService } from '../head.service';
 
 @Component({
-  selector: 'app-schooldetails',
-  templateUrl: './schooldetails.component.html',
-  styleUrls: ['./schooldetails.component.css']
+  selector: 'app-schoolstaffs',
+  templateUrl: './schoolstaffs.component.html',
+  styleUrls: ['./schoolstaffs.component.css']
 })
-export class SchooldetailsComponent implements OnInit {
+export class SchoolstaffsComponent implements OnInit {
 
   constructor(private headService:HeadService) { }
 
