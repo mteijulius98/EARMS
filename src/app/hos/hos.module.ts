@@ -10,6 +10,7 @@ import { DocumentsComponent } from './documents/documents.component';
 import { SchoolstaffsComponent } from './schoolstaffs/schoolstaffs.component';
 import { ReportsComponent } from './reports/reports.component';
 import { HeadService } from './head.service';
+import { SchoolresourcesComponent } from './schoolresources/schoolresources.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { HeadService } from './head.service';
     UpdaterecordsComponent,
     DocumentsComponent,
     SchoolstaffsComponent,
-    ReportsComponent
+    ReportsComponent,
+    SchoolresourcesComponent
   ],
   providers: [
     HeadService

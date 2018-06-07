@@ -26,7 +26,7 @@
         <!-- start add  district user form -->
         <div class="card m-2">
             <div class="card-header">
-                Add District user
+                Add user
             </div>
             <div class="card-body">
                 <form class="form-group px-4 py-2" #f="ngForm" (ngSubmit)="ond(f)">
@@ -55,6 +55,12 @@
                                 <input type="text" class="form-control" id="middleName" name="middlename" ngModel required autofocus>
                             </div>
                             <div class="form-group">
+                                <label for="ward">Ward</label>
+                                <select class="form-control" id="ward" name="ward" ngModel required>
+                                    <option></option>
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label for="postaladdress">Postal Address</label>
                                 <input type="text" class="form-control" id="postaladdress" name="postal_address" ngModel required>
                             </div>
@@ -68,6 +74,12 @@
                             <div class="form-group">
                                 <label for="lastName">Last Name</label>
                                 <input type="text" class="form-control" id="lastName" name="lastname" ngModel required>
+                            </div>
+                            <div class="form-group">
+                                <label for="school">School</label>
+                                <select class="form-control" id="school" name="school" ngModel required>
+                                    <option></option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="userEmail">Email</label>
@@ -85,7 +97,7 @@
         <!-- end add district user form -->
 
         <!-- start add ward user form -->
-        <div class="card m-2">
+        <!-- <div class="card m-2">
             <div class="card-header">
                 Add Ward user
             </div>
@@ -142,11 +154,11 @@
 
                 </form>
             </div>
-        </div>
+        </div> -->
         <!-- end add ward user form -->
 
         <!-- start add school user form -->
-        <div class="card m-2">
+        <!-- <div class="card m-2">
             <div class="card-header">
                 Add School user
             </div>
@@ -203,7 +215,7 @@
 
                 </form>
             </div>
-        </div>
+        </div> -->
         <!-- end add school user form -->
     </div>
     <div class="col-sm-6">
