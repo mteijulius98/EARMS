@@ -6,6 +6,7 @@ import { HosService } from '../hos.service';
   templateUrl: './staffs.component.html',
   styleUrls: ['./staffs.component.css']
 })
+
 export class StaffsComponent implements OnInit {
 
   constructor(private hosService:HosService) { }
