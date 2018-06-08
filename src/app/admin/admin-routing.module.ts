@@ -9,7 +9,7 @@ import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   {
-    path: 'admin',
+    path: '1',
     component: AdminComponent,
         children: [
       {
@@ -17,7 +17,7 @@ const routes: Routes = [
         children: [
           { path: 'users', component: UsersComponent },
           { path: 'registerschool', component: RegisterschoolComponent },
-          { path: 'registerdistrict', component: RegisterstationsComponent },
+          { path: 'registerstations', component: RegisterstationsComponent },
           { path: '', component: DashboardComponent}
         ]
       }

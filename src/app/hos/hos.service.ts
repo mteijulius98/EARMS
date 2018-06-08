@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http,Response,Headers } from '@angular/http';
+import 'rxjs/Rx';
+import {Observable} from "rxjs";
 
 @Injectable()
 export class HosService {
@@ -26,6 +28,34 @@ return this.http.post("http://localhost/fypyear/public/api/sdetail", body, optio
    headers.append('Authorization','jwt '+ this.token);
    headers.append('Content-Type', 'application/json');
   return this.http.get('http://localhost/fypyear/public/api/sdetails',{headers:headers}).map(
+(res:Response)=>res.json(),
+
+
+    );
+}
+public getDistricts(){ 
+  let headers=new Headers()
+   headers.append('Authorization','jwt '+ this.token);
+   headers.append('Content-Type', 'application/json');
+  return this.http.get('http://localhost/fypyear/public/api/districts',{headers:headers}).map(
+(res:Response)=>res.json(),
+
+
+    );
+}
+// getDistricts():Observable<any>{
+//   return this.http.get('http://localhost/fypyear/public/api/districts')
+//   .map(
+//       (response:Response) => {
+//           return response.json().districts;
+//       }
+//   );
+// }
+public getWards(){ 
+  let headers=new Headers()
+   headers.append('Authorization','jwt '+ this.token);
+   headers.append('Content-Type', 'application/json');
+  return this.http.get('http://localhost/fypyear/public/api/wards',{headers:headers}).map(
 (res:Response)=>res.json(),
 
 

@@ -37,7 +37,7 @@
                 autofocus>
             </div>
             <div class="form-group">
-              <input type="text" readonly class="form-control-plaintext" id="regno" value="{{detail.regno}}" name="regNo" required autofocus>
+              <input type="text" readonly class="form-control-plaintext" id="regno" value="{{detail.school_reg}}" name="regNo" required autofocus>
             </div>
             <div class="form-group">
               <input type="text" readonly class="form-control-plaintext" id="year" value="{{detail.year}}" name="year" required autofocus>
@@ -51,16 +51,20 @@
           <div class="form-group">
             <label>Male</label>
           </div>
+          <div *ngFor="let detail of schoolDetails">
           <div class="form-group">
-            <input type="text" readonly class="form-control-plaintext" id="nom" value="" name="n_o_m" required autofocus>
+            <input type="text" readonly class="form-control-plaintext" id="nom" value="{{detail.male_total}}" name="n_o_m" required autofocus>
+          </div>
           </div>
         </div>
         <div class="col-sm-4">
           <div class="form-group">
             <label>Female</label>
           </div>
+          <div *ngFor="let detail of schoolDetails">
           <div class="form-group">
-            <input type="text" readonly class="form-control-plaintext" id="nof" ngModel name="n_o_f" required autofocus>
+            <input type="text" readonly class="form-control-plaintext" id="nof" value="{{detail.female_total}}" name="n_o_f" required autofocus>
+          </div>
           </div>
         </div>
         <div class="col-sm-4">
@@ -102,19 +106,19 @@
           </div>
           <div *ngFor="let detail of schoolDetails">
             <div class="form-group">
-              <input type="text" readonly class="form-control" id="nom" value="{{detail.male}}" name="n_o_m" required autofocus>
+              <input type="text" readonly class="form-control-plaintext" id="nom" value="{{detail.male}}" name="n_o_m" required autofocus>
             </div>
             <div class="form-group">
-              <input type="text" readonly class="form-control" id="nomo" value="{{detail.male_orphan}}" name="n_o_m_o" required autofocus>
+              <input type="text" readonly class="form-control-plaintext" id="nomo" value="{{detail.male_orphan}}" name="n_o_m_o" required autofocus>
             </div>
             <div class="form-group">
-              <input type="text" readonly class="form-control" id="nomd" value="{{detail.male_disabled}}" name="n_o_m_d" required autofocus>
+              <input type="text" readonly class="form-control-plaintext" id="nomd" value="{{detail.male_disabled}}" name="n_o_m_d" required autofocus>
             </div>
             <div class="form-group">
-              <input type="text" readonly class="form-control" id="nonm" value="{{detail.male_nonTz}}" name="n_o_n_m" required autofocus>
+              <input type="text" readonly class="form-control-plaintext" id="nonm" value="{{detail.male_nonTz}}" name="n_o_n_m" required autofocus>
             </div>
             <div class="form-group">
-              <input type="text" readonly class="form-control" id="nonm" value="{{detail.male_hardlife}}" name="n_o_n_m" required autofocus>
+              <input type="text" readonly class="form-control-plaintext" id="nonm" value="{{detail.male_hardlife}}" name="n_o_n_m" required autofocus>
             </div>
           </div>
         </div>
@@ -124,19 +128,19 @@
           </div>
           <div *ngFor="let detail of schoolDetails">
             <div class="form-group">
-              <input type="text" readonly class="form-control" id="nof" value="{{detail.female}}" name="n_o_f" required autofocus>
+              <input type="text" readonly class="form-control-plaintext" id="nof" value="{{detail.female}}" name="n_o_f" required autofocus>
             </div>
             <div class="form-group">
-              <input type="text" readonly class="form-control" id="nofo" value="{{detail.female_orphan}}" name="n_o_f_o" required autofocus>
+              <input type="text" readonly class="form-control-plaintext" id="nofo" value="{{detail.female_orphan}}" name="n_o_f_o" required autofocus>
             </div>
             <div class="form-group">
-              <input type="text" readonly class="form-control" id="nomd" value="{{detail.female_disabled}}" name="n_o_m_d" required autofocus>
+              <input type="text" readonly class="form-control-plaintext" id="nomd" value="{{detail.female_disabled}}" name="n_o_m_d" required autofocus>
             </div>
             <div class="form-group">
-              <input type="text" readonly class="form-control" id="nonf" value="{{detail.female_nonTz}}" name="n_o_n_f" required autofocus>
+              <input type="text" readonly class="form-control-plaintext" id="nonf" value="{{detail.female_nonTz}}" name="n_o_n_f" required autofocus>
             </div>
             <div class="form-group">
-              <input type="text" readonly class="form-control" id="nonm" value="{{detail.female_hardlife}}" name="n_o_n_m" required autofocus>
+              <input type="text" readonly class="form-control-plaintext" id="nonm" value="{{detail.female_hardlife}}" name="n_o_n_m" required autofocus>
             </div>
           </div>
         </div>
@@ -208,11 +212,11 @@
                 required autofocus>
             </div>
             <div class="form-group">
-              <input type="text" readonly class="form-control-plaintext" id="ponf" value="{{detail.female_nonTz_percent}}" name="p_o_n_f"
+              <input type="text" readonly class="form-control-plaintext" data-ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" id="ponf" value="{{detail.female_nonTz_percent}}" name="p_o_n_f"
                 required autofocus>
             </div>
             <div class="form-group">
-              <input type="text" readonly class="form-control-plaintext" id="ponm" value="{{detail.female_hardlife_percent}}" name="p_o_n_m"
+              <input type="text" readonly class="form-control-plaintext"  id="ponm" value="{{detail.female_hardlife_percent}}" name="p_o_n_m"
                 required autofocus>
             </div>
           </div>
@@ -220,5 +224,5 @@
       </div>
     </form>
   </div>
-  <button class="btn btn-custom-primary mx-auto my-3" (click)="downloadSreport()">Download Report</button>
+  <button class="btn btn-custom-primary mx-auto my-3" (click)="downloadSreport()">Update</button>
 </div>

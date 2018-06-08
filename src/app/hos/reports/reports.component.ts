@@ -10,20 +10,38 @@ import { IReport } from './reports';
 export class ReportsComponent implements OnInit {
   // details: IReport[];
   schoolDetails=[];
+  ourDistrict=[];
+  
+  ourWard=[];
   errorMessage:string;
   constructor(private hosService:HosService) { }
 
   ngOnInit():void{
     this.hosService.viewDetails().subscribe(
       details =>{
-        // this.details = details
-        // console.log(details.sdetails)
+        //this.details = details
+         console.log("details",details)
         this.schoolDetails=details.sdetails
-        // console.log(this.schoolDetails)
+        console.log(this.schoolDetails)
 
-      } ,
+      },
       
       error => this.errorMessage = <any>error);
+      this.headService.getDistricts().subscribe(
+        district =>{
+        this.ourDistrict=district.district
+        console.log('our',this.ourDistrict)
+        //(districts:ourDistrict[]) => this.districts= districts,
+        },
+        error => this.errorMessage = <any>error);
+
+        this.headService.getWards().subscribe(
+          wards=> {
+           this.ourDistrict=wards.wards
+          
+          },
+          error => this.errorMessage = <any>error);
+
   }
 
   // ngOnInit() {

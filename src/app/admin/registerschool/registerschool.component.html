@@ -10,7 +10,7 @@
         <form class="form-group px-4 py-2" #accomodation="ngForm">
           <div class="form-group">
             <label for="type"> Type </label>
-            <input type="text" class="form-control" id="type" name="type" ngModel required autofocus>
+            <input type="text" class="form-control" id="type" name="categoryname" ngModel required autofocus>
           </div>
           <div class="form-group">
             <button class="btn btn-custom-primary btn-block w-50 mx-auto" type="submit" [disabled]="!accomodation.valid">Add Type</button>
@@ -29,7 +29,7 @@
         <form class="form-group px-4 py-2" #ownership="ngForm">
           <div class="form-group">
             <label for="ownership">Ownership category</label>
-            <input type="text" class="form-control" id="ownership" name="ownership" ngModel required autofocus>
+            <input type="text" class="form-control" id="ownership" name="ownershipname" ngModel required autofocus>
           </div>
           <div class="form-group">
             <button class="btn btn-custom-primary btn-block w-50 mx-auto" type="submit" [disabled]="!ownership.valid">Add category</button>
@@ -50,7 +50,7 @@
             <div class="col-sm-4">
               <div class="form-group">
                 <label for="schoolName">Name</label>
-                <input type="text" class="form-control" id="schoolname" ngModel name="schoolname" required>
+                <input type="text" class="form-control" id="schoolname" ngModel name="name" required>
               </div>
               <div class="form-group">
                 <label for="schoolCategory">Type</label>
@@ -60,17 +60,17 @@
               </div>
               <div class="form-group">
                 <label for="ward">Postal address</label>
-                <input type="text" class="form-control" id="wardname" ngModel name="wardname" required autofocus>
+                <input type="text" class="form-control" id="wardname" ngModel name="postal_address" required autofocus>
               </div>
             </div>
             <div class="col-sm-4">
               <div class="form-group">
                 <label for="schoolRegNo">Reg Number</label>
-                <input type="text" class="form-control" id="schoolRegNo" ngModel name="schoolRegNo" required autofocus>
+                <input type="text" class="form-control" id="schoolRegNo" ngModel name="regno" required autofocus>
               </div>
               <div class="form-group">
                 <label for="ward">Ownership</label>
-                <select class="form-control" id="wardname" ngModel name="wardname" required autofocus>
+                <select class="form-control" id="wardname" ngModel name="ownership" required autofocus>
                   <option></option>
                 </select>
               </div>
@@ -83,11 +83,11 @@
             <div class="col-sm-4">
               <div class="form-group">
                 <label for="schoolRegNo">Reg Date</label>
-                <input type="date" class="form-control" id="schoolRegNo" ngModel name="schoolRegNo" required autofocus>
+                <input type="date" class="form-control" id="schoolRegNo" ngModel name="regdate" required autofocus>
               </div>
               <div class="form-group">
                 <label for="ward">Ward</label>
-                <select class="form-control" id="wardname" ngModel name="wardname" required autofocus>
+                <select class="form-control" id="wardname" ngModel name="ward" required autofocus>
                   <option></option>
                 </select>
               </div>
