@@ -7,7 +7,7 @@ import { SchoolstaffsComponent } from './schoolstaffs/schoolstaffs.component';
 import { StudentsComponent } from './students/students.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { ReportsComponent } from './reports/reports.component';
-import { SchoolresourcesComponent } from './schoolresources/schoolresources.component';
+import { ResourcesComponent } from './resources/resources.component';
 
 const routes: Routes = [
   {
@@ -20,7 +20,7 @@ const routes: Routes = [
         // canActivateChild: [AuthguardService],
         children: [
           { path: 'students', component: StudentsComponent },
-          { path: 'resources', component: SchoolresourcesComponent },
+          { path: 'resources', component: ResourcesComponent },
           { path: 'reports', component: ReportsComponent },
           { path: 'documents', component: DocumentsComponent },
           { path: '', component: SchoolstaffsComponent}

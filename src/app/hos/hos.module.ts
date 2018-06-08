@@ -10,7 +10,7 @@ import { DocumentsComponent } from './documents/documents.component';
 import { SchoolstaffsComponent } from './schoolstaffs/schoolstaffs.component';
 import { ReportsComponent } from './reports/reports.component';
 import { HosService } from './hos.service';
-import { SchoolresourcesComponent } from './schoolresources/schoolresources.component';
+import { ResourcesComponent } from './resources/resources.component';
 import { FinancialsComponent } from './financials/financials.component';
 
 
@@ -27,7 +27,7 @@ import { FinancialsComponent } from './financials/financials.component';
     DocumentsComponent,
     SchoolstaffsComponent,
     ReportsComponent,
-    SchoolresourcesComponent,
+    ResourcesComponent,
     FinancialsComponent
   ],
   providers: [
