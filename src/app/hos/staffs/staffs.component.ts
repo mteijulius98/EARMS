@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { HosService } from '../hos.service';
 
 @Component({
-  selector: 'app-schoolstaffs',
-  templateUrl: './schoolstaffs.component.html',
-  styleUrls: ['./schoolstaffs.component.css']
+  selector: 'app-staffs',
+  templateUrl: './staffs.component.html',
+  styleUrls: ['./staffs.component.css']
 })
-export class SchoolstaffsComponent implements OnInit {
+export class StaffsComponent implements OnInit {
 
   constructor(private hosService:HosService) { }
 

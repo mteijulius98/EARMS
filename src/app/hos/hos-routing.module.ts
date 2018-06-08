@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AuthguardService } from '../shared/authguard.service';
 import { HosComponent } from './hos.component';
-import { SchoolstaffsComponent } from './schoolstaffs/schoolstaffs.component';
+import { StaffsComponent } from './staffs/staffs.component';
 import { StudentsComponent } from './students/students.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { ReportsComponent } from './reports/reports.component';
@@ -23,7 +23,7 @@ const routes: Routes = [
           { path: 'resources', component: ResourcesComponent },
           { path: 'reports', component: ReportsComponent },
           { path: 'documents', component: DocumentsComponent },
-          { path: '', component: SchoolstaffsComponent}
+          { path: '', component: StaffsComponent}
         ]
       }
     ]
