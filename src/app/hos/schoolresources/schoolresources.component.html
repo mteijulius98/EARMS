@@ -1,0 +1,111 @@
+<div class="row">
+  <div class="col-sm-6">
+    <!-- start infrastructure reg form -->
+    <div class="card m-2">
+      <div class="card-header">
+        Register Infrastructure
+      </div>
+      <div class="card-body">
+        <form class="form-group my-3 px-4 py-2" #InfraForm="ngForm">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" ngModel name="name" required autofocus>
+              </div>
+              <div class="form-group">
+                <label for="no_a">Number available</label>
+                <input type="text" class="form-control" id="no_a" ngModel name="no_a" required autofocus>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="cat">Category</label>
+                <select class="form-control" id="cat" name="cat" ngModel required>
+                  <option></option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="mname">Number needed</label>
+                <input type="text" class="form-control" id="no_n" ngModel name="no_n" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!teachersForm.valid">Submit Details</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- end infrastructure reg form -->
+
+    <!-- start tlm form -->
+    <div class="card m-2">
+      <div class="card-header">
+        Register TLM
+      </div>
+      <div class="card-body">
+        <form class="form-group my-3 px-4 py-2" #tlmForm="ngForm">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="av_male">Name</label>
+                <input type="text" class="form-control" id="name" ngModel name="name" required autofocus>
+              </div>
+              <div class="form-group">
+                <label for="cat">Category</label>
+                <select class="form-control" id="cat" name="cat" ngModel required>
+                  <option></option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="class">Class</label>
+                <select class="form-control" id="class" name="class" ngModel required>
+                  <option></option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="no_a">Number available</label>
+                <input type="text" class="form-control" id="no_a" ngModel name="no_a" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!teachersForm.valid">Submit Details</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- end tlm form -->
+
+    <!-- start services form -->
+    <div class="card m-2">
+      <div class="card-header">
+        Specify offered services
+      </div>
+      <div class="card-body">
+        <form class="form-group my-3 px-4 py-2" #tlmForm="ngForm">
+          <div class="form-group">
+            <label for="av_male">Name</label>
+            <input type="text" class="form-control" id="name" ngModel name="name" required autofocus>
+          </div>
+          <div class="form-group">
+            <label for="av">Availability</label>
+            <select class="form-control" id="av" name="av" ngModel required>
+              <option></option>
+            </select>
+          </div>
+          <div class="form-group">
+            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!teachersForm.valid">Submit Details</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- end services form -->
+  </div>
+  <div class="col-sm-6">
+
+  </div>
+</div>

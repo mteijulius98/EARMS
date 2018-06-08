@@ -7,8 +7,9 @@
                 <nav class="d-none d-md-block">
                     <div class="leftcolumn-sticky px-3 pt-3">
                         <nav class="nav flex-column">
-                            <a class="nav-item nav-link" routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Add School Details</a>
-                            <a class="nav-item nav-link" routerLink="./studentattendance" routerLinkActive="active">Student attendance</a>
+                            <a class="nav-item nav-link" routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Staffs</a>
+                            <a class="nav-item nav-link" routerLink="./studentattendance" routerLinkActive="active">Students</a>
+                            <a class="nav-item nav-link" routerLink="./schoolresource" routerLinkActive="active">Resources</a>
                             <a class="nav-item nav-link" routerLink="./reports" routerLinkActive="active">Report</a>
                             <a class="nav-item nav-link" routerLink="./documents" routerLinkActive="active">Documents</a>
                         </nav>
@@ -24,7 +25,7 @@
         <!--START PAGE CONTENT-->
         <div class="col-sm-10 px-0">
             <app-header></app-header>
-            <main role="main" class="ml-sm-auto px-4 pt-4 flow">
+            <main role="main" class="ml-sm-auto px-4 pt-4 custom-scroll">
                 <router-outlet></router-outlet>
             </main>
         </div>

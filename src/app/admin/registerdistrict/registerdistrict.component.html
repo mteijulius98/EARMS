@@ -1,23 +1,111 @@
-<form class="form-group w-75 m-auto px-4 py-2" #registerDistrict="ngForm" (ngSubmit)="form1(registerDistrict)">
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card m-2">
+      <div class="card-header">
+        Register region
+      </div>
+      <div class="card-body">
+        <form class="form-group w-75 m-auto px-4 py-2" #registerRegion="ngForm" (ngSubmit)="form1(registerRegion)">
 
-  <div class="form-group">
-    <label for="districtName">District Name</label>
-    <input type="text" class="form-control" id="districtname"  ngModel name="districtname" placeholder="District Name" required autofocus>
+          <div class="form-group">
+            <label for="districtName">Region</label>
+            <input type="text" class="form-control" id="regionname" ngModel name="regionname" placeholder="Region Name" required autofocus>
+          </div>
+
+          <div class="form-group">
+            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!registerRegion.valid">Add Region</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+    <div class="card m-2">
+      <div class="card-header">
+        Register district
+      </div>
+      <div class="card-body">
+        <form class="form-group w-75 m-auto px-4 py-2" #registerDistrict="ngForm" (ngSubmit)="form1(registerDistrict)">
+          <div class="form-group">
+            <label for="region">Region</label>
+            <select class="form-control" id="region" name="region" ngModel required>
+              <option></option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="districtName">District</label>
+            <input type="text" class="form-control" id="districtname" ngModel name="districtname" placeholder="District Name" required
+              autofocus>
+          </div>
+
+          <div class="form-group">
+            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!registerDistrict.valid">Add District</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+    <div class="card m-2">
+      <div class="card-header">
+        Register ward
+      </div>
+      <div class="card-body">
+        <form class="form-group w-75 m-auto px-4 py-2" #registerWard="ngForm" (ngSubmit)="form2(registerWard)">
+          <div class="form-group">
+            <label for="district">District</label>
+            <select class="form-control" id="district" name="district" ngModel required>
+              <option></option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="wardName">Ward</label>
+            <input type="text" class="form-control" id="wardname" ngModel name="wardname" placeholder="Ward Name" required autofocus>
+          </div>
+
+          <div class="form-group">
+            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!registerWard.valid">Add Ward</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="districtP.O.Box">Region</label>
-    <input type="text" class="form-control" id="region"  ngModel name="region" placeholder="Region" required>
+  <div class="col-sm-6">
+    <div class="card m-2">
+      <div class="card-header">
+        View stations
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered table-responsive-sm table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Region</th>
+              <th>
+                <i class="material-icons">
+                  create
+                </i>
+              </th>
+              <th>
+                <i class="material-icons">
+                  delete
+                </i>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users.users">
+              <td> {{user.firstname}} </td>
+              <td>
+                <button class="btn btn-info btn-sm">
+                  Edit
+                </button>
+              </td>
+              <td>
+                <button class="btn btn-danger btn-sm">
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
-
-  
-
-  <div class="form-group">
-    <label for="districtP.O.Box">District Address</label>
-    <input type="text" class="form-control" id="PO_Box"  ngModel name="PO_Box" placeholder="District Address" required>
-  </div>
-
-  <div class="form-group">
-    <button class="btn btn-lg btn-custom-primary btn-block" type="submit" [disabled]="!registerDistrict.valid">Add District</button>
-  </div>
-
-</form>

@@ -1,15 +1,13 @@
 <nav class="navbar navbar-expand-sm navbar-dark sticky-top  flex-md-nowrap  justify-content-end">
-    <div ngbDropdown placement="bottom-right" class="d-inline-block mr-2">
+    <div class="dropdown-toggle d-inline-block mr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="align-c">{{stationName}}</i>
-        <i class="material-icons" id="account" ngbDropdownToggle>
+        <i class="material-icons" id="account">
             account_circle
         </i>
-        
-        <div ngbDropdownMenu aria-labelledby="account">
-            <!-- <a class="dropdown-item">Profile</a> -->
+
+        <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item">Profile</a>
             <a class="dropdown-item" [routerLink]="['/login']">Sign out</a>
         </div>
     </div>
-   
-    
 </nav>

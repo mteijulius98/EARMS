@@ -1,0 +1,126 @@
+<div class="row">
+  <div class="col-sm-6">
+    <!-- start student registration form -->
+    <div class="card">
+      <div class="card-header">
+        Register students
+      </div>
+      <div class="card-body">
+        <form class="form-group my-3 px-4 py-2" #teachersForm="ngForm">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="fname">First name</label>
+                <input type="text" class="form-control" id="fname" ngModel name="fname" required autofocus>
+              </div>
+              <div class="form-group">
+                <label for="sex">Sex</label>
+                <select class="form-control" id="sex" name="sex" ngModel required>
+                  <option>M</option>
+                  <option>F</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="orphan">Orphan</label>
+                <select class="form-control" id="orphan" name="orphan" ngModel required>
+                  <option>No</option>
+                  <option>Single</option>
+                  <option>Both</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="mname">Middle name</label>
+                <input type="text" class="form-control" id="mname" ngModel name="mname" required>
+              </div>
+              <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" class="form-control" id="dob" ngModel name="dob" required>
+              </div>
+              <div class="form-group">
+                <label for="disability">Disability</label>
+                <select class="form-control" id="disability" name="disability" ngModel required>
+                  <option></option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="lname">Last name</label>
+                <input type="text" class="form-control" id="lname" ngModel name="lname" required>
+              </div>
+              <div class="form-group">
+                <label for="regno">Reg no</label>
+                <input type="text" class="form-control" id="regno" ngModel name="regno" required autofocus>
+              </div>
+              <div class="form-group">
+                <label for="diff_c">Life Status</label>
+                <select class="form-control" id="diff_c" name="diff_c" ngModel required>
+                  <option>No</option>
+                  <option>Yes</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <input type="hidden" class="form-control" id="school_id" ngModel name="school_id" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!teachersForm.valid">Submit Details</button>
+          </div>
+        </form>
+      </div>
+    </div>
+     <!-- end student registration form -->
+
+      <!-- start student attendance form -->
+    <div class="card">
+      <div class="card-header">
+        Student attendance
+      </div>
+      <div class="card-body">
+        <form class="form-group my-3 px-4 py-2" #teachersForm="ngForm">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="av_male">Average no. of male</label>
+                <input type="text" class="form-control" id="av_male" ngModel name="av_male" required autofocus>
+              </div>
+              <div class="form-group">
+                <label for="from_date">From</label>
+                <input type="date" class="form-control" id="from_date" ngModel name="from_date" required autofocus>
+              </div>
+              <div class="form-group">
+                <label for="class">Class</label>
+                <select class="form-control" id="class" name="class" ngModel required>
+                  <option></option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="mname">Average no. of female</label>
+                <input type="text" class="form-control" id="mname" ngModel name="mname" required>
+              </div>
+              <div class="form-group">
+                <label for="to_date">To</label>
+                <input type="date" class="form-control" id="to_date" ngModel name="to_date" required>
+              </div>
+              <div class="form-group">
+                <input type="hidden" class="form-control" id="school_id" ngModel name="school_id" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!teachersForm.valid">Submit Details</button>
+          </div>
+        </form>
+      </div>
+    </div>
+     <!-- end student registration form -->
+  </div>
+  <div class="col-sm-6">
+
+  </div>
+</div>
