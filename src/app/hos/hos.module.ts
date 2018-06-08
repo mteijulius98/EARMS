@@ -5,12 +5,13 @@ import { SharedModule } from '../shared/shared.module';
 
 import { HosRoutingModule } from './hos-routing.module';
 import { HosComponent } from './hos.component';
-import { UpdaterecordsComponent } from './updaterecords/updaterecords.component';
+import { StudentsComponent } from './students/students.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { SchoolstaffsComponent } from './schoolstaffs/schoolstaffs.component';
 import { ReportsComponent } from './reports/reports.component';
-import { HeadService } from './head.service';
+import { HosService } from './hos.service';
 import { SchoolresourcesComponent } from './schoolresources/schoolresources.component';
+import { FinancialsComponent } from './financials/financials.component';
 
 
 @NgModule({
@@ -22,14 +23,15 @@ import { SchoolresourcesComponent } from './schoolresources/schoolresources.comp
   ],
   declarations: [
     HosComponent,
-    UpdaterecordsComponent,
+    StudentsComponent,
     DocumentsComponent,
     SchoolstaffsComponent,
     ReportsComponent,
-    SchoolresourcesComponent
+    SchoolresourcesComponent,
+    FinancialsComponent
   ],
   providers: [
-    HeadService
+    HosService
   ]
 })
 export class HosModule { }
