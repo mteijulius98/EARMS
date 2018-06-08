@@ -8,6 +8,7 @@ import { StudentsComponent } from './students/students.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { ReportsComponent } from './reports/reports.component';
 import { ResourcesComponent } from './resources/resources.component';
+import { FinancialsComponent } from './financials/financials.component';
 
 const routes: Routes = [
   {
@@ -19,11 +20,12 @@ const routes: Routes = [
         path: '',
         // canActivateChild: [AuthguardService],
         children: [
-          { path: 'students', component: StudentsComponent },
+          { path: 'staffs', component: StaffsComponent },
           { path: 'resources', component: ResourcesComponent },
+          { path: 'financials', component: FinancialsComponent },
           { path: 'reports', component: ReportsComponent },
           { path: 'documents', component: DocumentsComponent },
-          { path: '', component: StaffsComponent}
+          { path: '', component: StudentsComponent}
         ]
       }
     ]
