@@ -22,10 +22,20 @@
           <label for="schoolName">Ward Name</label>
           <input type="text" class="form-control" id="wardname" ngModel name="wardname" required>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label for="schoolName">District Name</label>
           <input type="text" class="form-control" id="districtname" ngModel name="districtname" required>
+        </div> -->
+        <div class="form-group">
+          <label for="schoolType">District Name</label>
+          <div *ngFor="let detail of ourDistrict">
+         <select  type="text" class="form-control" id="districtname" ngModel name="districtname">
+            <option>{{detail.name}}</option>
+      
+          </select>
         </div>
+        </div>
+
 
         <div class="form-group">
           <label for="schoolType">School Type</label>

@@ -7,10 +7,18 @@ import { HeadService } from '../head.service';
   styleUrls: ['./schooldetails.component.css']
 })
 export class SchooldetailsComponent implements OnInit {
-
+  ourDistrict=[];
+  errorMessage:string;
   constructor(private headService:HeadService) { }
 
   ngOnInit() {
+    this.headService.getDistricts().subscribe(
+      district =>{
+      this.ourDistrict=district.district
+      console.log('our',this.ourDistrict)
+      //(districts:ourDistrict[]) => this.districts= districts,
+      },
+      error => this.errorMessage = <any>error);
   }
   form3(form:any){
     
