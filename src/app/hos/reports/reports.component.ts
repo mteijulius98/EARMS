@@ -27,7 +27,7 @@ export class ReportsComponent implements OnInit {
       },
       
       error => this.errorMessage = <any>error);
-      this.headService.getDistricts().subscribe(
+      this.hosService.getDistricts().subscribe(
         district =>{
         this.ourDistrict=district.district
         console.log('our',this.ourDistrict)
@@ -35,7 +35,7 @@ export class ReportsComponent implements OnInit {
         },
         error => this.errorMessage = <any>error);
 
-        this.headService.getWards().subscribe(
+        this.hosService.getWards().subscribe(
           wards=> {
            this.ourDistrict=wards.wards
           
