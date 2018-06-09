@@ -14,7 +14,7 @@ export class RegisterschoolComponent implements OnInit {
   }
   form3(form:any){
     
-    this.adminService.registerSchool(form.value.schoolRegNo,form.value.schoolname,form.value.wardname,form.value.PO_Box,form.value.ownership)
+    this.adminService.registerSchool(form.value.name,form.value.regno,form.value.regdate,form.value.postal_address,form.value.category,form.value.ownership,form.value.district,form.value.ward,form.value.region)
 
     .subscribe(
       resp =>alert('School  created!!'),

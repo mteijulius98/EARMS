@@ -11,13 +11,13 @@ export class SchoolstaffsComponent implements OnInit {
   constructor(private headService:HeadService) { }
 
   ngOnInit() {
-    this.headService.getDistricts().subscribe(
-      district =>{
-      this.ourDistrict=district.district
-      console.log('our',this.ourDistrict)
-      //(districts:ourDistrict[]) => this.districts= districts,
-      },
-      error => this.errorMessage = <any>error);
+    // this.headService.getDistricts().subscribe(
+    //   district =>{
+    //   this.ourDistrict=district.district
+    //   console.log('our',this.ourDistrict)
+    //   //(districts:ourDistrict[]) => this.districts= districts,
+    //   },
+    //   error => this.errorMessage = <any>error);
   }
   form3(form:any){
     

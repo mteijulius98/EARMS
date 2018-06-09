@@ -20,22 +20,22 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
    
-    this.adminService.viewUsers().subscribe(
-      users =>{
+    //  this.adminService.viewUsers().subscribe(
+    //    users =>{
         
-        //console.log( localStorage.getItem('station_name'))
-        //console.log(users.users)
-        for (let index = 0; index < users.users.length; index++) {
-          console.log(users.users[index].email)
-          if (users.users[index].email == localStorage.getItem('station_name')) {
-            this.stationName=users.users[index].station_name
-            console.log(this.stationName)
-          }
+    //     //console.log( localStorage.getItem('station_name'))
+    //     //console.log(users.users)
+    //     for (let index = 0; index < users.users.length; index++) {
+    //       console.log(users.users[index].email)
+    //       if (users.users[index].email == localStorage.getItem('station_name')) {
+    //         this.stationName=users.users[index].station_name
+    //         console.log(this.stationName)
+    //       }
           
-        }
-     } ,
+    //     }
+    //  } ,
       
-      error => this.errorMessage = <any>error);
+    //   error => this.errorMessage = <any>error);
       
       
   }

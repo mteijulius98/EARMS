@@ -7,7 +7,7 @@ import 'rxjs/Rx';
 export class LoginServiceService {
   public token=localStorage.getItem("token")
   constructor(private http:Http) { }
-  addUsers(firstname:any, lastname:any,email:any, password:any,station_name:any,role:any){
+  addUsers(firstname:any,middlename:any,lastname:any,email:any, password:any,role:any,district:any,ward:any,school:any){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization','jwt '+ this.token);
@@ -15,7 +15,7 @@ export class LoginServiceService {
     let options = {
     headers: headers
 };
-let body = JSON.stringify({firstname: firstname, lastname:lastname,email:email, password:password,station_name:station_name,role:role});
+let body = JSON.stringify({fname: firstname, mname:middlename,lname:lastname,email:email, password:password,role_id:role,district_id:district,ward_id:ward,school_id:school});
 return this.http.post("http://localhost/fypyear/public/api/users", body, options).map( (response:Response) => response.json());
    
     

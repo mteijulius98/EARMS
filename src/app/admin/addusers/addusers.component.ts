@@ -14,7 +14,7 @@ export class AddusersComponent implements OnInit {
   }
   ond(form:any){
     
-    this.loginService.addUsers(form.value.firstname,form.value.lastname,form.value.email,form.value.password,form.value.station_name,form.value.role)
+    this.loginService.addUsers(form.value.firstname,form.value.middlename,form.value.lastname,form.value.email,form.value.password,form.value.district,form.value.role,form.value.school,form.value.ward)
     
     .subscribe(
       resp =>alert('Account created!!'),

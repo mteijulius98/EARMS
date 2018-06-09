@@ -11,7 +11,7 @@ import { AddusersComponent } from './addusers/addusers.component';
 
 const routes: Routes = [
   {
-    path: 'admin',
+    path: '1',
     component: AdminComponent,
         children: [
       {
