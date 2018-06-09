@@ -5,7 +5,7 @@
         Register teachers
       </div>
       <div class="card-body">
-        <form class="form-group px-4 py-2" #sdForm="ngForm" (ngSubmit)="form3(sdForm)">
+        <form class="form-group px-4 py-2" #tsForm="ngForm" (ngSubmit)="form3(sdForm)">
           <div class="row">
             <div class="col-sm-4">
               <div class="form-group">
@@ -55,7 +55,7 @@
             </div>
           </div>
           <div class="form-group">
-            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!sdForm.valid">Submit</button>
+            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!tsForm.valid">Submit</button>
           </div>
         </form>
       </div>
@@ -78,7 +78,7 @@
             <input type="hidden" class="form-control" id="school_id" ngModel name="school_id" required>
           </div>
           <div class="form-group">
-            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!teachersForm.valid">Submit Details</button>
+            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!nontsForm.valid">Submit Details</button>
           </div>
         </form>
       </div>
@@ -112,11 +112,6 @@
             <tr>
               <td>latemba</td>
               <td>latemba</td>
-              <!-- <td> {{user.firstname}} </td>
-                <td> {{user.lastname}} </td>
-                <td> {{user.email}}</td>
-                <td> {{user.station_name}}</td>
-                <td> {{user.role}}</td> -->
               <td>
                 <button class="btn btn-info btn-sm">
                   Edit
@@ -158,11 +153,6 @@
             <tr>
               <td>latemba</td>
               <td>latemba</td>
-              <!-- <td> {{user.firstname}} </td>
-                <td> {{user.lastname}} </td>
-                <td> {{user.email}}</td>
-                <td> {{user.station_name}}</td>
-                <td> {{user.role}}</td> -->
               <td>
                 <button class="btn btn-info btn-sm">
                   Edit
