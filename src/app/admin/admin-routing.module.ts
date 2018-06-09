@@ -2,12 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { RegisterschoolComponent } from './registerschool/registerschool.component';
-import { RegisterwardComponent } from './registerward/registerward.component';
-import { RegisterdistrictComponent } from './registerdistrict/registerdistrict.component';
+import { RegisterstationsComponent } from './registerstations/registerstations.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthguardService } from '../shared/authguard.service';
 import { UsersComponent } from './users/users.component';
-import { AddusersComponent } from './addusers/addusers.component';
 
 const routes: Routes = [
   {
@@ -18,10 +16,8 @@ const routes: Routes = [
         path: '',
         children: [
           { path: 'users', component: UsersComponent },
-          { path: 'addusers', component: AddusersComponent },
           { path: 'registerschool', component: RegisterschoolComponent },
-          { path: 'registerward', component: RegisterwardComponent},
-          { path: 'registerdistrict', component: RegisterdistrictComponent },
+          { path: 'registerstations', component: RegisterstationsComponent },
           { path: '', component: DashboardComponent}
         ]
       }

@@ -3,11 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AuthguardService } from '../shared/authguard.service';
 import { HosComponent } from './hos.component';
-import { SchoolstaffsComponent } from './schoolstaffs/schoolstaffs.component';
-import { UpdaterecordsComponent } from './updaterecords/updaterecords.component';
+import { StaffsComponent } from './staffs/staffs.component';
+import { StudentsComponent } from './students/students.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { ReportsComponent } from './reports/reports.component';
-import { SchoolresourcesComponent } from './schoolresources/schoolresources.component';
+import { ResourcesComponent } from './resources/resources.component';
 
 const routes: Routes = [
   {
@@ -19,11 +19,11 @@ const routes: Routes = [
         path: '',
         // canActivateChild: [AuthguardService],
         children: [
-          { path: 'studentattendance', component: UpdaterecordsComponent },
-          { path: 'schoolresource', component: SchoolresourcesComponent },
+          { path: 'students', component: StudentsComponent },
+          { path: 'resources', component: ResourcesComponent },
           { path: 'reports', component: ReportsComponent },
           { path: 'documents', component: DocumentsComponent },
-          { path: '', component: SchoolstaffsComponent}
+          { path: '', component: StaffsComponent}
         ]
       }
     ]

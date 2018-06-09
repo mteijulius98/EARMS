@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../admin.service';
 
 @Component({
-  selector: 'app-registerdistrict',
-  templateUrl: './registerdistrict.component.html',
-  styleUrls: ['./registerdistrict.component.css']
+  selector: 'app-registerstations',
+  templateUrl: './registerstations.component.html',
+  styleUrls: ['./registerstations.component.css']
 })
-export class RegisterdistrictComponent implements OnInit {
+export class RegisterstationsComponent implements OnInit {
   regions=[];
   districts=[];
   errorMessage:string;

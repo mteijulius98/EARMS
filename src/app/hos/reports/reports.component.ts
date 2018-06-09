@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, ViewChildren } from '@angular/core';
-import { HeadService } from '../head.service';
+import { HosService } from '../hos.service';
 import { IReport } from './reports';
 //import * as jsPDF from 'jspdf';
 @Component({
@@ -14,10 +14,10 @@ export class ReportsComponent implements OnInit {
   
   ourWard=[];
   errorMessage:string;
-  constructor(private headService:HeadService) { }
+  constructor(private hosService:HosService) { }
 
   ngOnInit():void{
-    this.headService.viewDetails().subscribe(
+    this.hosService.viewDetails().subscribe(
       details =>{
         //this.details = details
          console.log("details",details)

@@ -4,7 +4,7 @@ import 'rxjs/Rx';
 import {Observable} from "rxjs";
 
 @Injectable()
-export class HeadService {
+export class HosService {
   public token=localStorage.getItem("token")
   constructor(private http:Http) { }
  public schoolDetails(year:any,schoolname:any,wardname:any,districtname:any,schooltype:any,agerange:any,

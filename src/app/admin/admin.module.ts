@@ -6,11 +6,9 @@ import { SharedModule } from '../shared/shared.module';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { RegisterschoolComponent } from './registerschool/registerschool.component';
-import { RegisterwardComponent } from './registerward/registerward.component';
-import { RegisterdistrictComponent } from './registerdistrict/registerdistrict.component';
+import { RegisterstationsComponent } from './registerstations/registerstations.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './users/users.component';
-import { AddusersComponent } from './addusers/addusers.component';
 import { AdminService } from './admin.service';
 
 
@@ -25,11 +23,9 @@ import { AdminService } from './admin.service';
     declarations: [
         AdminComponent,
         RegisterschoolComponent,
-        RegisterwardComponent,
-        RegisterdistrictComponent,
+        RegisterstationsComponent,
         DashboardComponent,
         UsersComponent,
-        AddusersComponent
     ],
     providers: [
         AdminService
