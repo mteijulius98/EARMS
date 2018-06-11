@@ -15,7 +15,7 @@ export class LoginServiceService {
     let options = {
     headers: headers
 };
-let body = JSON.stringify({fname: firstname, mname:middlename,lname:lastname,email:email, password:password,role_id:role,district_id:district,ward_id:ward,school_id:school});
+let body = JSON.stringify({fname:firstname, mname:middlename,lname:lastname,email:email, password:password,role_id:role,district_id:district,ward_id:ward,school_id:school});
 return this.http.post("http://localhost/fypyear/public/api/users", body, options).map( (response:Response) => response.json());
    
     

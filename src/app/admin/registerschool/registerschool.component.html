@@ -7,7 +7,7 @@
         Add school type
       </div>
       <div class="card-body">
-        <form class="form-group px-4 py-2" #accomodation="ngForm">
+        <form class="form-group px-4 py-2" #accomodation="ngForm" (ngSubmit)="form7(accomodation)">
           <div class="form-group">
             <label for="type"> Type </label>
             <input type="text" class="form-control" id="type" name="categoryname" ngModel required autofocus>
@@ -26,7 +26,7 @@
         Add school ownership categories
       </div>
       <div class="card-body">
-        <form class="form-group px-4 py-2" #ownership="ngForm">
+        <form class="form-group px-4 py-2" #ownership="ngForm" (ngSubmit)="form6(ownership)">
           <div class="form-group">
             <label for="ownership">Ownership category</label>
             <input type="text" class="form-control" id="ownership" name="ownershipname" ngModel required autofocus>
@@ -50,50 +50,50 @@
             <div class="col-sm-4">
               <div class="form-group">
                 <label for="schoolName">Name</label>
-                <input type="text" class="form-control" id="schoolname" ngModel name="name" required>
+                <input type="text" class="form-control" id="schoolname" ngModel name="schoolname" required>
               </div>
               <div class="form-group">
                 <label for="schoolCategory">Type</label>
-                <select class="form-control" id="type" ngModel name="type" required>
-                  <option></option>
+                <select class="form-control" id="category" ngModel name="category" required>
+                  <option  *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="ward">Postal address</label>
-                <input type="text" class="form-control" id="wardname" ngModel name="postal_address" required autofocus>
+                <input type="text" class="form-control" id="postal_address" ngModel name="postal_address" required autofocus>
               </div>
             </div>
             <div class="col-sm-4">
               <div class="form-group">
                 <label for="schoolRegNo">Reg Number</label>
-                <input type="text" class="form-control" id="schoolRegNo" ngModel name="regno" required autofocus>
+                <input type="text" class="form-control" id="regno" ngModel name="regno" required autofocus>
               </div>
               <div class="form-group">
                 <label for="ward">Ownership</label>
-                <select class="form-control" id="wardname" ngModel name="ownership" required autofocus>
-                  <option></option>
+                <select class="form-control" id="ownership" ngModel name="ownership" required autofocus>
+                  <option  *ngFor="let ownership of ownerships" value="{{ownership.id}}">{{ownership.name}}</option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="schoolEmail">Email</label>
-                <input type="text" class="form-control" id="schoolEmail" ngModel name="schoolEmail" required>
+                <input type="text" class="form-control" id="email" ngModel name="email" required>
               </div>
             </div>
 
             <div class="col-sm-4">
               <div class="form-group">
                 <label for="schoolRegNo">Reg Date</label>
-                <input type="date" class="form-control" id="schoolRegNo" ngModel name="regdate" required autofocus>
+                <input type="date" class="form-control" id="regdate" ngModel name="regdate" required autofocus>
               </div>
               <div class="form-group">
                 <label for="ward">Ward</label>
-                <select class="form-control" id="wardname" ngModel name="ward" required autofocus>
-                  <option></option>
+                <select class="form-control" id="ward" ngModel name="ward" required autofocus>
+                  <option  *ngFor="let ward of wards" value="{{ward.id}}">{{ward.wname}}</option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="ward">Phone number</label>
-                <input type="text" class="form-control" id="wardname" ngModel name="wardname" required autofocus>
+                <input type="text" class="form-control" id="phonenumber" ngModel name="phonenumber" required autofocus>
               </div>
             </div>
           </div>
@@ -131,8 +131,8 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>latemba</td>
+              <tr *ngFor="let category of categories">
+                <td>{{category.name}}</td>
                 <!-- <td> {{user.firstname}} </td>
                   <td> {{user.lastname}} </td>
                   <td> {{user.email}}</td>
@@ -178,8 +178,8 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>latemba</td>
+              <tr *ngFor="let ownership of ownerships">
+                <td>{{ownership.name}}</td>
                 <!-- <td> {{user.firstname}} </td>
                   <td> {{user.lastname}} </td>
                   <td> {{user.email}}</td>
@@ -213,7 +213,7 @@
             <tr>
               <th scope="col">School Name</th>
               <th scope="col">Reg No</th>
-              <th scope="col">District</th>
+              <th scope="col">Ward</th>
               <th>
                 <i class="material-icons">
                   create
@@ -227,10 +227,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>latemba</td>
-              <td>latemba</td>
-              <td>latemba</td>
+            <tr *ngFor="let school of schools">
+              <td>{{school.name}}</td>
+              <td>{{school.regno}}</td>
+              <td>{{school.wname}}</td>
               <!-- <td> {{user.firstname}} </td>
                 <td> {{user.lastname}} </td>
                 <td> {{user.email}}</td>

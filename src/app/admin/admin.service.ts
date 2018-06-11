@@ -17,18 +17,18 @@ let body = JSON.stringify({wname:wardname, district_id:districtname,postal_addre
 return this.http.post("http://localhost/fypyear/public/api/ward", body, options).map( (response:Response) => response.json());
     
  }
- registerUser(wardname:any, districtname:any,postal_address:any){
-  let headers = new Headers();
-  headers.append('Content-Type', 'application/json');
-  headers.append('Authorization','jwt '+ this.token);
-  headers.append('X-Requested-With','XMLHttpRequest');
-  let options = {
-  headers: headers
-};
-let body = JSON.stringify({wname:wardname, district_id:districtname,postal_address:postal_address});
-return this.http.post("http://localhost/fypyear/public/api/ward", body, options).map( (response:Response) => response.json());
+//  registerUser(wardname:any, districtname:any,postal_address:any){
+//   let headers = new Headers();
+//   headers.append('Content-Type', 'application/json');
+//   headers.append('Authorization','jwt '+ this.token);
+//   headers.append('X-Requested-With','XMLHttpRequest');
+//   let options = {
+//   headers: headers
+// };
+// let body = JSON.stringify({wname:wardname, district_id:districtname,postal_address:postal_address});
+// return this.http.post("http://localhost/fypyear/public/api/ward", body, options).map( (response:Response) => response.json());
   
-}
+// }
  registerDistrict(districtname:any,region:any,postal_address:any){
   let headers = new Headers();
   headers.append('Content-Type', 'application/json');
@@ -89,7 +89,7 @@ let body = JSON.stringify({roname:role_name,roinitial:role_initial});
 return this.http.post("http://localhost/fypyear/public/api/role", body, options).map( (response:Response) => response.json());
   
 }
-registerSchool(schoolname:any,regno:any,regdate:any,postal_address:any,ownership:any,type:any,district:any,ward:any,region:any){
+registerSchool(schoolname:any,regno:any,regdate:any,postal_address:any,ownership:any,category:any,email:any,ward:any,phonenumber:any){
   let headers = new Headers();
   headers.append('Content-Type', 'application/json');
   headers.append('Authorization','jwt '+ this.token);
@@ -97,7 +97,7 @@ registerSchool(schoolname:any,regno:any,regdate:any,postal_address:any,ownership
   let options = {
   headers: headers
 };
-let body = JSON.stringify({name:schoolname,regno:regno,regdate:regdate,postal_address:postal_address,sownership_id:ownership,scategory_id:type,district_id:district,ward_id:ward,region_id:region});
+let body = JSON.stringify({name:schoolname,regno:regno,regdate:regdate,postal_address:postal_address,sownership_id:ownership,phone_number:phonenumber,email:email,scategory_id:category,ward_id:ward});
 return this.http.post("http://localhost/fypyear/public/api/school", body, options).map( (response:Response) => response.json());
   
 }
@@ -141,4 +141,76 @@ public viewRoles(){
 
 );
 }
+public viewWards(){ 
+  let headers=new Headers()
+   headers.append('Authorization','jwt '+ this.token);
+   headers.append('Content-Type', 'application/json');
+  return this.http.get('http://localhost/fypyear/public/api/wards',{headers:headers}).map(
+(res:Response)=>res.json(),
+
+
+);
+}
+public viewSchools(){ 
+  let headers=new Headers()
+   headers.append('Authorization','jwt '+ this.token);
+   headers.append('Content-Type', 'application/json');
+  return this.http.get('http://localhost/fypyear/public/api/schools',{headers:headers}).map(
+(res:Response)=>res.json(),
+
+
+);
+}
+public viewDusers(){ 
+  let headers=new Headers()
+   headers.append('Authorization','jwt '+ this.token);
+   headers.append('Content-Type', 'application/json');
+  return this.http.get('http://localhost/fypyear/public/api/dusers',{headers:headers}).map(
+(res:Response)=>res.json(),
+
+
+);
+}
+public viewSusers(){ 
+  let headers=new Headers()
+   headers.append('Authorization','jwt '+ this.token);
+   headers.append('Content-Type', 'application/json');
+  return this.http.get('http://localhost/fypyear/public/api/susers',{headers:headers}).map(
+(res:Response)=>res.json(),
+
+
+);
+}
+public viewWusers(){ 
+  let headers=new Headers()
+   headers.append('Authorization','jwt '+ this.token);
+   headers.append('Content-Type', 'application/json');
+  return this.http.get('http://localhost/fypyear/public/api/wusers',{headers:headers}).map(
+(res:Response)=>res.json(),
+
+
+);
+}
+public viewCategories(){ 
+  let headers=new Headers()
+   headers.append('Authorization','jwt '+ this.token);
+   headers.append('Content-Type', 'application/json');
+  return this.http.get('http://localhost/fypyear/public/api/categories',{headers:headers}).map(
+(res:Response)=>res.json(),
+
+
+);
+}
+public viewOwnerships(){ 
+  let headers=new Headers()
+   headers.append('Authorization','jwt '+ this.token);
+   headers.append('Content-Type', 'application/json');
+  return this.http.get('http://localhost/fypyear/public/api/ownerships',{headers:headers}).map(
+(res:Response)=>res.json(),
+
+
+);
+}
+
+
 }
