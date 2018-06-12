@@ -3,7 +3,7 @@
         <!-- start add user role form-->
         <div class="card m-2">
             <div class="card-header">
-                Add user roles
+                Add User Roles
             </div>
             <div class="card-body">
                 <form class="form-group px-4 py-2"#addRole="ngForm" (ngSubmit)="form4(addRole)" >
@@ -26,7 +26,7 @@
         <!-- start add  district user form -->
         <div class="card m-2">
             <div class="card-header">
-                Add user
+                Add User
             </div>
             <div class="card-body">
                 <form class="form-group px-4 py-2" #addUser="ngForm" (ngSubmit)="form5(addUser)">
@@ -83,7 +83,7 @@
                                 <input type="email" id="email" name="email" class="form-control" ngModel required autofocus="">
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-custom-primary btn-block" type="submit">Add User</button>
+                                <button class="btn btn-custom-primary btn-block" type="submit" [disabled]="!addUser.valid">Add User</button>
                             </div>
                         </div>
                     </div>
@@ -349,7 +349,7 @@
         <!-- start view school users table -->
         <div class="card m-2">
             <div class="card-header">
-                View School users
+                View School Users
             </div>
             <div class="card-body">
                 <table class="table table-bordered table-responsive-sm table-hover">
