@@ -1,12 +1,11 @@
 /* 
 login
 */
-.fill{
+.fill-login{
     position: fixed;
     top: 0;
     bottom: 0;
-    left: 0;
-    padding: 0;
+    
 }
 .center {
   display: -ms-flexbox;
@@ -18,10 +17,36 @@ login
   align-items: center;
   -webkit-box-pack: center;
   justify-content: center;
-  padding-top: 40px;
+  padding-top: 80px;
   padding-bottom: 40px;
-  background-color: #f5f5f5;
 }
+.header-c {
+  padding-bottom: 1.5rem!important;
+  margin-bottom: .5rem!important;
+  background-color:#b3d9ff;
+}
+.footer-c {
+  position: relative;
+ 
+}
+
+/* 
+navbar
+*/
+.navbar {
+  background-color: #66b3ff;
+} 
+/* 
+navbar-brand
+*/
+.navbar-brand {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    padding-left: .5rem;
+    padding-right: .75rem;
+    font-size: 1rem;
+    font-weight: 800;
+   }
 .form-signin {
     width: 100%;
     max-width: 330px;
@@ -55,4 +80,7 @@ login
   }
   .sr-only {
       position: relative;
+  }
+  .h5-c {
+    background-color: #bfbfbf;
   }
