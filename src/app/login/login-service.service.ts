@@ -33,7 +33,7 @@ return this.http.post("http://localhost/fypyear/public/api/users", body, options
         localStorage.setItem('currentUser', JSON.stringify(user));
        localStorage.setItem('token',user.token);
        if (user.role !== 'admin') {
-         localStorage.setItem('station_name', email);
+         localStorage.setItem('fname', email);
        }
     }
     return user;
