@@ -99,23 +99,5 @@ form4(form:any){
  form.reset();
 }
 
-    this.loginService.addUsers(form.value.firstname, form.value.middlename, form.value.lastname, form.value.email, form.value.password, form.value.district, form.value.role, form.value.school, form.value.ward)
-
-      .subscribe(
-        resp => alert('Account created!!'),
-        error => alert('error')
-      );
-    form.reset();
-  }
-  form4(form: any){
-
-    this.adminService.registerRole(form.value.role_name, form.value.role_initial)
-
-      .subscribe(
-        resp => alert('Role created!!'),
-        error => alert('error')
-      );
-    form.reset();
-  }
   
 }
