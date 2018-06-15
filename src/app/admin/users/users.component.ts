@@ -88,7 +88,7 @@ export class UsersComponent implements OnInit {
       );
     form.reset();
   }
-  form4(form: any) {
+  form4(form: any){
 
     this.adminService.registerRole(form.value.role_name, form.value.role_initial)
 
