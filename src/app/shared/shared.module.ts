@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { HeaderbrandComponent } from './header/headerbrand.component';
 import { ToggleService } from './toggle.service';
-import { RouterModule } from '@angular/router';
+import { TimeService } from './time.service';
 @NgModule({
   imports: [
     CommonModule,
@@ -18,7 +19,8 @@ import { RouterModule } from '@angular/router';
     HeaderbrandComponent
   ],
   providers: [
-    ToggleService
+    ToggleService,
+    TimeService
   ]
 })
 export class SharedModule { }
