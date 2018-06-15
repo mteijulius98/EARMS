@@ -79,7 +79,7 @@ ngOnInit(){
 } 
 form5(form:any){
     
-  this.loginService.addUsers(form.value.firstname,form.value.middlename,form.value.lastname,form.value.email,form.value.password,form.value.district,form.value.role,form.value.school,form.value.ward)
+  this.loginService.addUsers(form.value.firstname,form.value.middlename,form.value.lastname,form.value.email,form.value.password,form.value.role,form.value.district,form.value.school,form.value.ward)
   
   .subscribe(
     resp =>alert('Account created!!'),

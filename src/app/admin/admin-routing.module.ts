@@ -9,7 +9,7 @@ import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   {
-    path: '1',
+    path: 'admin',
     component: AdminComponent,
         children: [
       {

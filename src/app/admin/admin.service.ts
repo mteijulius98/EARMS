@@ -97,7 +97,7 @@ registerSchool(schoolname:any,regno:any,regdate:any,postal_address:any,ownership
   let options = {
   headers: headers
 };
-let body = JSON.stringify({name:schoolname,regno:regno,regdate:regdate,postal_address:postal_address,sownership_id:ownership,phone_number:phonenumber,email:email,scategory_id:category,ward_id:ward});
+let body = JSON.stringify({name:schoolname,regno:regno,regdate:regdate,postal_address:postal_address,sownership_id:ownership,scategory_id:category,email:email,ward_id:ward,phone_number:phonenumber});
 return this.http.post("http://localhost/fypyear/public/api/school", body, options).map( (response:Response) => response.json());
   
 }
@@ -186,6 +186,16 @@ public viewWusers(){
    headers.append('Authorization','jwt '+ this.token);
    headers.append('Content-Type', 'application/json');
   return this.http.get('http://localhost/fypyear/public/api/wusers',{headers:headers}).map(
+(res:Response)=>res.json(),
+
+
+);
+}
+public vieUsers(){ 
+  let headers=new Headers()
+   headers.append('Authorization','jwt '+ this.token);
+   headers.append('Content-Type', 'application/json');
+  return this.http.get('http://localhost/fypyear/public/api/users',{headers:headers}).map(
 (res:Response)=>res.json(),
 
 

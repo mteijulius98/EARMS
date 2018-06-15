@@ -6,12 +6,12 @@
         Revenue
       </div>
       <div class="card-body">
-        <form class="form-group my-3 px-4 py-2" #revenueForm="ngForm">
+        <form class="form-group my-3 px-4 py-2" #revenueForm="ngForm" (ngSubmit)="form12(revenueForm)">
           <div class="row">
             <div class="col-sm-6">
               <div class="form-group">
                 <label for="">Source</label>
-                <input type="text" class="form-control" id="name" ngModel name="name" required autofocus>
+                <input type="text" class="form-control" id="source" ngModel name="source" required autofocus>
               </div>
               <div class="form-group">
                 <label for="from">From</label>
@@ -21,7 +21,7 @@
             <div class="col-sm-6">
               <div class="form-group">
                 <label for="no_a">Amount</label>
-                <input type="text" class="form-control" id="no_a" ngModel name="no_a" required autofocus>
+                <input type="text" class="form-control" id="amount" ngModel name="amount" required autofocus>
               </div>
               <div class="form-group">
                 <label for="to">To</label>
@@ -30,7 +30,7 @@
             </div>
           </div>
           <div class="form-group">
-            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!teachersForm.valid">Submit Details</button>
+            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!revenurForm.valid">Submit Details</button>
           </div>
         </form>
       </div>

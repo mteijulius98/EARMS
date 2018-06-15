@@ -13,14 +13,23 @@ export class StaffsComponent implements OnInit {
 
   ngOnInit() {
   }
-  form3(form:any){
+  form13(form:any){
     
-    this.hosService.schoolDetails(form.value.year,form.value.schoolname,form.value.wardname,form.value.districtname,form.value.schooltype,form.value.agerange,form.value.no_of_males,form.value.no_of_females,form.value.no_of_males_o,form.value.no_of_females_o,
-      form.value.no_of_males_d,form.value.no_of_females_d,form.value.no_of_males_hl,form.value.no_of_females_hl,form.value.no_of_males_nt,form.value.no_of_females_nt)
+    this.hosService.registerNtstaff(form.value.designation,form.value.count)
     
     .subscribe(
       resp =>alert('Information Submitted'),
-      error=>alert('There is no either school,ward or district registered with that name,Check it and try again')
+      
+    );
+   form.reset();
+  }
+  form14(form:any){
+    
+    this.hosService.registerTeacher(form.value.fname,form.value.mname,form.value.lname,form.value.sex,form.value.birth,form.value.edlevel,form.value.epdate,form.value.epid)
+    
+    .subscribe(
+      resp =>alert('Information Submitted'),
+      
     );
    form.reset();
   }
