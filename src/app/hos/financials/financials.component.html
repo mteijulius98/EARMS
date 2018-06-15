@@ -27,17 +27,156 @@
                 <label for="to">To</label>
                 <input type="date" class="form-control" id="to" ngModel name="to" required>
               </div>
+              <div class="form-group">
+                <input type="hidden" class="form-control" id="school_id" ngModel name="school_id" required>
+              </div>
             </div>
           </div>
           <div class="form-group">
+<<<<<<< HEAD
             <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!revenurForm.valid">Submit Details</button>
+=======
+            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!revForm.valid">Submit Details</button>
+>>>>>>> 97669930535df159004d2b27c4ce642f88b964ed
           </div>
         </form>
       </div>
     </div>
     <!-- end revenue form -->
+
+    <!-- start expenditure form -->
+    <div class="card m-2">
+      <div class="card-header">
+        Expenditure
+      </div>
+      <div class="card-body">
+        <form class="form-group my-3 px-4 py-2" #expForm="ngForm">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="">Name</label>
+                <input type="text" class="form-control" id="name" ngModel name="name" required autofocus>
+              </div>
+              <div class="form-group">
+                <label for="from">From</label>
+                <input type="date" class="form-control" id="from" ngModel name="from" required autofocus>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="no_a">Amount</label>
+                <input type="text" class="form-control" id="no_a" ngModel name="no_a" required autofocus>
+              </div>
+              <div class="form-group">
+                <label for="to">To</label>
+                <input type="date" class="form-control" id="to" ngModel name="to" required>
+              </div>
+              <div class="form-group">
+                <input type="hidden" class="form-control" id="school_id" ngModel name="school_id" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="rev_u">Revenue source used</label>
+            <select class="form-control" id="rev_u" name="rev_u" ngModel required>
+              <option></option>
+            </select>
+          </div>
+          <div class="form-group">
+            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!expForm.valid">Submit Details</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- end expenditure form -->
   </div>
   <div class="col-sm-6">
-
+     <!-- start view school revenue -->
+     <div class="card m-2">
+        <div class="card-header">
+          School Revenue
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-responsive-sm table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Source</th>
+                <th scope="col">Amount</th>
+                <th>
+                  <i class="material-icons">
+                    create
+                  </i>
+                </th>
+                <th>
+                  <i class="material-icons">
+                    delete
+                  </i>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>latemba</td>
+                <td>latemba</td>
+                <td>
+                  <button class="btn btn-info btn-sm">
+                    Edit
+                  </button>
+                </td>
+                <td>
+                  <button class="btn btn-danger btn-sm">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- end view school revenue -->
+      
+    <!-- start view school expenditure -->
+    <div class="card m-2">
+      <div class="card-header">
+        School Expenditure
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered table-responsive-sm table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Expenditure</th>
+              <th scope="col">Amount</th>
+              <th>
+                <i class="material-icons">
+                  create
+                </i>
+              </th>
+              <th>
+                <i class="material-icons">
+                  delete
+                </i>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>latemba</td>
+              <td>latemba</td>
+              <td>
+                <button class="btn btn-info btn-sm">
+                  Edit
+                </button>
+              </td>
+              <td>
+                <button class="btn btn-danger btn-sm">
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- end view school expenditure -->
   </div>
 </div>
