@@ -17,16 +17,16 @@ export class ReportsComponent implements OnInit {
   constructor(private hosService:HosService) { }
 
   ngOnInit():void{
-    this.hosService.viewDetails().subscribe(
-      details =>{
-        //this.details = details
-         console.log("details",details)
-        this.schoolDetails=details.sdetails
-        console.log(this.schoolDetails)
+    // this.hosService.viewDetails().subscribe(
+    //   details =>{
+    //     //this.details = details
+    //      console.log("details",details)
+    //     this.schoolDetails=details.sdetails
+    //     console.log(this.schoolDetails)
 
-      },
+    //   },
       
-      error => this.errorMessage = <any>error);
+    //   error => this.errorMessage = <any>error);
       this.hosService.getDistricts().subscribe(
         district =>{
         this.ourDistrict=district.district

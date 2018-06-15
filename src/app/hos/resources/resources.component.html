@@ -6,7 +6,7 @@
         Register Infrastructure
       </div>
       <div class="card-body">
-        <form class="form-group my-3 px-4 py-2" #InfraForm="ngForm">
+        <form class="form-group my-3 px-4 py-2" #InfraForm="ngForm" (ngSubmit)="form8(InfraForm)">
           <div class="row">
             <div class="col-sm-6">
               <div class="form-group">
@@ -15,22 +15,19 @@
               </div>
               <div class="form-group">
                 <label for="no_a">Number available</label>
-                <input type="text" class="form-control" id="no_a" ngModel name="no_a" required autofocus>
+                <input type="text" class="form-control" id="available" ngModel name="available" required autofocus>
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form-group">
                 <label for="cat">Category</label>
-                <select class="form-control" id="cat" name="cat" ngModel required>
-                  <option></option>
+                <select class="form-control" id="category" name="category" ngModel required>
+                  <option  *ngFor="let icategory of icategories" value="{{icategory.id}}">{{icategory.name}}</option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="mname">Number needed</label>
-                <input type="text" class="form-control" id="no_n" ngModel name="no_n" required>
-              </div>
-              <div class="form-group">
-                <input type="hidden" class="form-control" id="school_id" ngModel name="school_id" required>
+                <input type="text" class="form-control" id="needed" ngModel name="needed" required>
               </div>
             </div>
           </div>
@@ -48,7 +45,7 @@
         Register TLM
       </div>
       <div class="card-body">
-        <form class="form-group my-3 px-4 py-2" #tlmForm="ngForm">
+        <form class="form-group my-3 px-4 py-2" #tlForm="ngForm" (ngSubmit)="form9(tlForm)">
           <div class="row">
             <div class="col-sm-6">
               <div class="form-group">
@@ -57,29 +54,27 @@
               </div>
               <div class="form-group">
                 <label for="cat">Category</label>
-                <select class="form-control" id="cat" name="cat" ngModel required>
-                  <option></option>
+                <select class="form-control" id="tlcatagory" name="tlcategory" ngModel required>
+                  <option  *ngFor="let tlcategory of tlmcategories" value="{{tlcategory.id}}">{{tlcategory.name}}</option>
                 </select>
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form-group">
                 <label for="class">Class</label>
-                <select class="form-control" id="class" name="class" ngModel required>
-                  <option></option>
+                <select class="form-control" id="sclass" name="sclass" ngModel required>
+                  <option  *ngFor="let class of sclasses" value="{{class.id}}" >{{class.name}}</option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="no_a">Number available</label>
-                <input type="text" class="form-control" id="no_a" ngModel name="no_a" required>
+                <input type="text" class="form-control" id="available" ngModel name="available" required>
               </div>
-              <div class="form-group">
-                <input type="hidden" class="form-control" id="school_id" ngModel name="school_id" required>
-              </div>
+              
             </div>
           </div>
           <div class="form-group">
-            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!tlmForm.valid">Submit Details</button>
+            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!tlForm.valid">Submit Details</button>
           </div>
         </form>
       </div>
@@ -92,7 +87,7 @@
         Register Equipment
       </div>
       <div class="card-body">
-        <form class="form-group my-3 px-4 py-2" #equipForm="ngForm">
+        <form class="form-group my-3 px-4 py-2" #eqForm="ngForm"  (ngSubmit)="form10(eqForm)">
           <div class="row">
             <div class="col-sm-6">
               <div class="form-group">
@@ -101,29 +96,26 @@
               </div>
               <div class="form-group">
                 <label for="cat">Category</label>
-                <select class="form-control" id="cat" name="cat" ngModel required>
-                  <option></option>
+                <select class="form-control" id="eqcategory" name="eqcategory" ngModel required>
+                  <option  *ngFor="let category of eqcategories" value="{{category.id}}">{{category.name}}</option>
                 </select>
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form-group">
                 <label for="class">Class</label>
-                <select class="form-control" id="class" name="class" ngModel required>
-                  <option></option>
+                <select class="form-control" id="sclass" name="sclass" ngModel required>
+                  <option  *ngFor="let class of sclasses" value="{{class.id}}" >{{class.name}}</option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="no_a">Number available</label>
-                <input type="text" class="form-control" id="no_a" ngModel name="no_a" required>
-              </div>
-              <div class="form-group">
-                <input type="hidden" class="form-control" id="school_id" ngModel name="school_id" required>
+                <input type="text" class="form-control" id="available" ngModel name="available" required>
               </div>
             </div>
           </div>
           <div class="form-group">
-            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!equipForm.valid">Submit Details</button>
+            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!eqForm.valid">Submit Details</button>
           </div>
         </form>
       </div>
@@ -136,19 +128,16 @@
         Specify offered services
       </div>
       <div class="card-body">
-        <form class="form-group my-3 px-4 py-2" #srvForm="ngForm">
+        <form class="form-group my-3 px-4 py-2" #srvForm="ngForm"  (ngSubmit)="form11(srvForm)">
           <div class="form-group">
-            <label for="av_male">Name</label>
+            <label for="name">Name</label>
             <input type="text" class="form-control" id="name" ngModel name="name" required autofocus>
           </div>
           <div class="form-group">
-            <label for="av">Availability</label>
-            <select class="form-control" id="av" name="av" ngModel required>
-              <option></option>
+            <label for="availability">Availability</label>
+            <select class="form-control" id="availability" name="availability" ngModel required>
+              <option>Far</option>
             </select>
-          </div>
-          <div class="form-group">
-            <input type="hidden" class="form-control" id="school_id" ngModel name="school_id" required>
           </div>
           <div class="form-group">
             <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!srvForm.valid">Submit Details</button>
