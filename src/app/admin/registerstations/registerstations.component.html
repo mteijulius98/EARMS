@@ -26,11 +26,11 @@
         <form class="form-group w-75 m-auto px-4 py-2" #registerDistrict="ngForm" (ngSubmit)="form2(registerDistrict)">
           <div class="form-group">
             <label for="region">Region</label>
-            <div  >
-            <select type="text" class="form-control" id="region" name="region"  ngModel required>
-              <option *ngFor="let region of regions" value="{{region.id}}" >{{region.rname}}</option>
-            </select>
-          </div>
+            <div>
+              <select type="text" class="form-control" id="region" name="region" ngModel required>
+                <option *ngFor="let region of regions" value="{{region.id}}">{{region.rname}}</option>
+              </select>
+            </div>
           </div>
           <div class="form-group">
             <label for="districtName">District</label>
@@ -58,10 +58,10 @@
         <form class="form-group w-75 m-auto px-4 py-2" #registerWard="ngForm" (ngSubmit)="form3(registerWard)">
           <div class="form-group">
             <label for="district">District</label>
-            <div  >
-            <select class="form-control" id="district"  name="districtname" ngModel required>
-              <option *ngFor="let district of districts" value="{{district.id}}" >{{district.dname}}</option>
-            </select>
+            <div>
+              <select class="form-control" id="district" name="districtname" ngModel required>
+                <option *ngFor="let district of districts" value="{{district.id}}">{{district.dname}}</option>
+              </select>
             </div>
           </div>
           <div class="form-group">
@@ -103,8 +103,14 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let region of regions">
-              <td> {{region.rname}} </td>
+            <!-- start regions -->
+            <tr *ngFor="let region of regions" class="clickable" data-toggle="collapse" id="row" data-target=".row">
+              <td>
+                <i class="material-icons">
+                  expand_more
+                </i>
+                {{region.rname}}
+              </td>
               <td>
                 <button class="btn btn-info btn-sm">
                   Edit
@@ -115,7 +121,38 @@
                   Delete
                 </button>
               </td>
+              <!--start districts -->
+            <tr class="collapse row" data-toggle="collapse" id="row1" data-target=".row1">
+                <td> {{region.dname}} </td>
+                <td>
+                  <button class="btn btn-info btn-sm">
+                    Edit
+                  </button>
+                </td>
+                <td>
+                  <button class="btn btn-danger btn-sm">
+                    Delete
+                  </button>
+                </td>
+                <!-- start ward -->
+                <tr class="collapse row1">
+                    <td> {{region.wname}} </td>
+                    <td>
+                      <button class="btn btn-info btn-sm">
+                        Edit
+                      </button>
+                    </td>
+                    <td>
+                      <button class="btn btn-danger btn-sm">
+                        Delete
+                      </button>
+                    </td>
+                    </tr>
+                <!-- end ward -->
+              </tr>
+              <!-- end districts -->
             </tr>
+            <!-- end regions -->
           </tbody>
         </table>
       </div>
