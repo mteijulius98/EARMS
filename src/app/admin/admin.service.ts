@@ -77,6 +77,90 @@ let body = JSON.stringify({name:categoryname});
 return this.http.post("http://localhost/fypyear/public/api/category", body, options).map( (response:Response) => response.json());
   
 }
+registerClass(name:any){
+  let headers = new Headers();
+  headers.append('Content-Type', 'application/json');
+  headers.append('Authorization','jwt '+ this.token);
+  headers.append('X-Requested-With','XMLHttpRequest');
+  let options = {
+  headers: headers
+};
+let body = JSON.stringify({name:name});
+return this.http.post("http://localhost/fypyear/public/api/class", body, options).map( (response:Response) => response.json());
+  
+}
+registerInfracategory(name:any){
+  let headers = new Headers();
+  headers.append('Content-Type', 'application/json');
+  headers.append('Authorization','jwt '+ this.token);
+  headers.append('X-Requested-With','XMLHttpRequest');
+  let options = {
+  headers: headers
+};
+let body = JSON.stringify({name:name});
+return this.http.post("http://localhost/fypyear/public/api/incategory", body, options).map( (response:Response) => response.json());
+  
+}
+registerTlmcategory(name:any){
+  let headers = new Headers();
+  headers.append('Content-Type', 'application/json');
+  headers.append('Authorization','jwt '+ this.token);
+  headers.append('X-Requested-With','XMLHttpRequest');
+  let options = {
+  headers: headers
+};
+let body = JSON.stringify({name:name});
+return this.http.post("http://localhost/fypyear/public/api/tlmcategory", body, options).map( (response:Response) => response.json());
+  
+}
+registerEqcategory(name:any){
+  let headers = new Headers();
+  headers.append('Content-Type', 'application/json');
+  headers.append('Authorization','jwt '+ this.token);
+  headers.append('X-Requested-With','XMLHttpRequest');
+  let options = {
+  headers: headers
+};
+let body = JSON.stringify({name:name});
+return this.http.post("http://localhost/fypyear/public/api/eqcategory", body, options).map( (response:Response) => response.json());
+  
+}
+registerSdisability(name:any){
+  let headers = new Headers();
+  headers.append('Content-Type', 'application/json');
+  headers.append('Authorization','jwt '+ this.token);
+  headers.append('X-Requested-With','XMLHttpRequest');
+  let options = {
+  headers: headers
+};
+let body = JSON.stringify({name:name});
+return this.http.post("http://localhost/fypyear/public/api/disability", body, options).map( (response:Response) => response.json());
+  
+}
+registerSubject(name:any){
+  let headers = new Headers();
+  headers.append('Content-Type', 'application/json');
+  headers.append('Authorization','jwt '+ this.token);
+  headers.append('X-Requested-With','XMLHttpRequest');
+  let options = {
+  headers: headers
+};
+let body = JSON.stringify({name:name});
+return this.http.post("http://localhost/fypyear/public/api/subject", body, options).map( (response:Response) => response.json());
+  
+}
+registerDreason(rname:any){
+  let headers = new Headers();
+  headers.append('Content-Type', 'application/json');
+  headers.append('Authorization','jwt '+ this.token);
+  headers.append('X-Requested-With','XMLHttpRequest');
+  let options = {
+  headers: headers
+};
+let body = JSON.stringify({reason:rname});
+return this.http.post("http://localhost/fypyear/public/api/reason", body, options).map( (response:Response) => response.json());
+  
+}
 registerRole(role_name:any, role_initial:any){
   let headers = new Headers();
   headers.append('Content-Type', 'application/json');

@@ -271,10 +271,10 @@
 
         <div id="addClass" class="collapse" aria-labelledby="headn4" data-parent="#accordion2">
           <div class="card-body">
-            <form class="form-group px-4 py-2" #sclass="ngForm" (ngSubmit)="form7(sclass)">
+            <form class="form-group px-4 py-2" #sclass="ngForm" (ngSubmit)="form16(sclass)">
               <div class="form-group">
                 <label for="type"> Class</label>
-                <input type="text" class="form-control" id="type" name="categoryname" ngModel required autofocus>
+                <input type="text" class="form-control" id="name" name="name" ngModel required autofocus>
               </div>
               <div class="form-group">
                 <button class="btn btn-custom-primary btn-block w-50 mx-auto" type="submit" [disabled]="!sclass.valid">Add Class</button>
@@ -294,10 +294,10 @@
 
         <div id="addSubject" class="collapse" aria-labelledby="headn5" data-parent="#accordion2">
           <div class="card-body">
-            <form class="form-group px-4 py-2" #subject="ngForm" (ngSubmit)="form7(subject)">
+            <form class="form-group px-4 py-2" #subject="ngForm" (ngSubmit)="form22(subject)">
               <div class="form-group">
-                <label for="type"> Class</label>
-                <input type="text" class="form-control" id="type" name="categoryname" ngModel required autofocus>
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" ngModel required autofocus>
               </div>
               <div class="form-group">
                 <button class="btn btn-custom-primary btn-block w-50 mx-auto" type="submit" [disabled]="!subject.valid">Add Subject</button>
@@ -317,10 +317,10 @@
         </div>
         <div id="addDisability" class="collapse" aria-labelledby="headn6" data-parent="#accordion2">
           <div class="card-body">
-            <form class="form-group px-4 py-2" #disability="ngForm" (ngSubmit)="form7(disability)">
+            <form class="form-group px-4 py-2" #disability="ngForm" (ngSubmit)="form21(disability)">
               <div class="form-group">
                 <label for="type"> Disability</label>
-                <input type="text" class="form-control" id="type" name="categoryname" ngModel required autofocus>
+                <input type="text" class="form-control" id="name" name="name" ngModel required autofocus>
               </div>
               <div class="form-group">
                 <button class="btn btn-custom-primary btn-block w-50 mx-auto" type="submit" [disabled]="!disability.valid">Add Category</button>
@@ -340,10 +340,10 @@
         </div>
         <div id="addReason" class="collapse" aria-labelledby="headn7" data-parent="#accordion2">
           <div class="card-body">
-            <form class="form-group px-4 py-2" #dOut="ngForm" (ngSubmit)="form7(Dout)">
+            <form class="form-group px-4 py-2" #dOut="ngForm" (ngSubmit)="form23(dOut)">
               <div class="form-group">
-                <label for="type"> Reason</label>
-                <input type="text" class="form-control" id="type" name="categoryname" ngModel required autofocus>
+                <label for="rname">Reason</label>
+                <input type="text" class="form-control" id="rname" name="rname" ngModel required autofocus>
               </div>
               <div class="form-group">
                 <button class="btn btn-custom-primary btn-block w-50 mx-auto" type="submit" [disabled]="!dOut.valid">Add Reason</button>
@@ -363,10 +363,10 @@
         </div>
         <div id="infraCat" class="collapse" aria-labelledby="headn8" data-parent="#accordion2">
           <div class="card-body">
-            <form class="form-group px-4 py-2" #iCat="ngForm" (ngSubmit)="form7(iCat)">
+            <form class="form-group px-4 py-2" #iCat="ngForm" (ngSubmit)="form18(iCat)">
               <div class="form-group">
                 <label for="type"> Category</label>
-                <input type="text" class="form-control" id="type" name="categoryname" ngModel required autofocus>
+                <input type="text" class="form-control" id="name" name="name" ngModel required autofocus>
               </div>
               <div class="form-group">
                 <button class="btn btn-custom-primary btn-block w-50 mx-auto" type="submit" [disabled]="!iCat.valid">Add Category</button>
@@ -386,10 +386,10 @@
         </div>
         <div id="tlmCat" class="collapse" aria-labelledby="headn9" data-parent="#accordion2">
           <div class="card-body">
-            <form class="form-group px-4 py-2" #tlmcat="ngForm" (ngSubmit)="form7(tlmcat)">
+            <form class="form-group px-4 py-2" #tlmcat="ngForm" (ngSubmit)="form19(tlmcat)">
               <div class="form-group">
                 <label for="type"> Category</label>
-                <input type="text" class="form-control" id="type" name="categoryname" ngModel required autofocus>
+                <input type="text" class="form-control" id="name" name="name" ngModel required autofocus>
               </div>
               <div class="form-group">
                 <button class="btn btn-custom-primary btn-block w-50 mx-auto" type="submit" [disabled]="!tlmcat.valid">Add Category</button>
@@ -409,10 +409,10 @@
         </div>
         <div id="equipCat" class="collapse" aria-labelledby="headn10" data-parent="#accordion2">
           <div class="card-body">
-            <form class="form-group px-4 py-2" #eCat="ngForm" (ngSubmit)="form7(eCat)">
+            <form class="form-group px-4 py-2" #eCat="ngForm" (ngSubmit)="form20(eCat)">
               <div class="form-group">
-                <label for="type"> Category</label>
-                <input type="text" class="form-control" id="type" name="categoryname" ngModel required autofocus>
+                <label for="name"> Category</label>
+                <input type="text" class="form-control" id="name" name="name" ngModel required autofocus>
               </div>
               <div class="form-group">
                 <button class="btn btn-custom-primary btn-block w-50 mx-auto" type="submit" [disabled]="!eCat.valid">Add Category</button>

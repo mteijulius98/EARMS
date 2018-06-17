@@ -74,5 +74,74 @@ export class RegisterschoolComponent implements OnInit {
     );
    form.reset();
   }
+  form16(form:any){
+    
+    this.adminService.registerClass(form.value.name)
 
+    .subscribe(
+      resp =>alert('Class  created!!'),
+      error=>alert('error')
+    );
+   form.reset();
+  }
+  form18(form:any){
+    
+    this.adminService.registerInfracategory(form.value.name)
+
+    .subscribe(
+      resp =>alert('Category  created!!'),
+      error=>alert('error')
+    );
+   form.reset();
+  }
+  form19(form:any){
+    
+    this.adminService.registerTlmcategory(form.value.name)
+
+    .subscribe(
+      resp =>alert('Category  created!!'),
+      error=>alert('error')
+    );
+   form.reset();
+  }
+  form20(form:any){
+    
+    this.adminService.registerEqcategory(form.value.name)
+
+    .subscribe(
+      resp =>alert('Category  created!!'),
+      error=>alert('error')
+    );
+   form.reset();
+  }
+  form21(form:any){
+    
+    this.adminService.registerSdisability(form.value.name)
+
+    .subscribe(
+      resp =>alert('Information Added!!'),
+      error=>alert('error')
+    );
+   form.reset();
+  }
+   form22(form:any){
+    
+    this.adminService.registerSubject(form.value.name)
+
+    .subscribe(
+      resp =>alert('Subject Added!!'),
+      error=>alert('error')
+    );
+   form.reset();
+  }
+ form23(form:any){
+    
+    this.adminService.registerDreason(form.value.rname)
+
+    .subscribe(
+      resp =>alert('Reason Added!!'),
+      error=>alert('error')
+    );
+   form.reset();
+  }
 }
