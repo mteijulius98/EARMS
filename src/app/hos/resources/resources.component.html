@@ -58,6 +58,10 @@
                   <option  *ngFor="let tlcategory of tlmcategories" value="{{tlcategory.id}}">{{tlcategory.name}}</option>
                 </select>
               </div>
+              <div class="form-group">
+                <label for="needed">Needed</label>
+                <input type="text" class="form-control" id="needed" ngModel name="needed" required>
+              </div>
             </div>
             <div class="col-sm-6">
               <div class="form-group">
@@ -67,7 +71,7 @@
                 </select>
               </div>
               <div class="form-group">
-                <label for="no_a">Number available</label>
+                <label for="no_1">Number available</label>
                 <input type="text" class="form-control" id="available" ngModel name="available" required>
               </div>
               
@@ -100,18 +104,23 @@
                   <option  *ngFor="let category of eqcategories" value="{{category.id}}">{{category.name}}</option>
                 </select>
               </div>
+              <div class="form-group">
+                <label for="needed">Needed</label>
+                <input type="text" class="form-control" id="needed" ngModel name="needed" required>
+              </div>
             </div>
             <div class="col-sm-6">
               <div class="form-group">
-                <label for="class">Class</label>
-                <select class="form-control" id="sclass" name="sclass" ngModel required>
+                <label for="class1">Class</label>
+                <select class="form-control" id="sclass1" name="sclass1" ngModel required>
                   <option  *ngFor="let class of sclasses" value="{{class.id}}" >{{class.name}}</option>
                 </select>
               </div>
               <div class="form-group">
-                <label for="no_a">Number available</label>
+                <label for="no_2">Number available</label>
                 <input type="text" class="form-control" id="available" ngModel name="available" required>
               </div>
+             
             </div>
           </div>
           <div class="form-group">
@@ -174,11 +183,11 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>latemba</td>
-              <td>latemba</td>
-              <td>latemba</td>
-              <td>latemba</td>
+            <tr *ngFor="let infrastructure of infrastructures">
+              <td>{{infrastructure.Name}}</td>
+              <td>{{infrastructure.category}}</td>
+              <td>{{infrastructure.available}}</td>
+              <td>{{infrastructure.needed}}</td>
               <td>
                 <button class="btn btn-info btn-sm">
                   Edit
@@ -222,11 +231,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>latemba</td>
-              <td>latemba</td>
-              <td>latemba</td>
-              <td>latemba</td>
+            <tr *ngFor="let tlmaterial of tlmaterials">
+              <td>{{tlmaterial.Name}}</td>
+              <td>{{tlmaterial.category}}</td>
+              <td>{{tlmaterial.available}}</td>
+              <td>{{tlmaterial.needed}}</td>
+              
               <td>
                 <button class="btn btn-info btn-sm">
                   Edit
@@ -270,11 +280,11 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>latemba</td>
-                <td>latemba</td>
-                <td>latemba</td>
-                <td>latemba</td>
+              <tr *ngFor="let equipment of equipments">
+                <td>{{equipment.Name}}</td>
+                <td>{{equipment.category}}</td>
+                <td>{{equipment.available}}</td>
+                <td>{{equipment.needed}}</td>
                 <td>
                   <button class="btn btn-info btn-sm">
                     Edit

@@ -8,10 +8,26 @@ import { HosService } from '../hos.service';
 })
 
 export class StaffsComponent implements OnInit {
-
+    teachers=[];
+    errorMessage:string;
+    ntstaffs=[];
   constructor(private hosService:HosService) { }
 
   ngOnInit() {
+    this.hosService.viewTeachers().subscribe(
+      teacher =>{
+      this.teachers=teacher.teachers
+      console.log('our',teacher)
+      //(districts:ourDistrict[]) => this.districts= districts,
+      },
+      error => this.errorMessage = <any>error);
+      this.hosService.viewNtStaff().subscribe(
+        ntstaff =>{
+        this.ntstaffs=ntstaff.ntstaffs
+        console.log('our',ntstaff)
+        //(districts:ourDistrict[]) => this.districts= districts,
+        },
+        error => this.errorMessage = <any>error);
   }
   form13(form:any){
     
