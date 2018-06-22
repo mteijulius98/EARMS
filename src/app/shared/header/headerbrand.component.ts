@@ -13,7 +13,5 @@ export class HeaderbrandComponent implements OnInit {
   ngOnInit() {
   }
 
-  id = this.toggleService.showId();
-  
-  isCollapsed = this.toggleService.toggle();
+ 
 }
