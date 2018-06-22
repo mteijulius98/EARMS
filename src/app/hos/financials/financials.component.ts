@@ -23,6 +23,7 @@ export class FinancialsComponent implements OnInit {
         this.expenditures=expenditure.expenditures
         },
         error => this.errorMessage = <any>error);
+  
   }
   form12(form:any){
     
@@ -34,15 +35,17 @@ export class FinancialsComponent implements OnInit {
     );
    form.reset();
   }
-  form23(form:any){
+  form30(form:any){
     
     this.hosService.registerExpenditure(form.value.name,form.value.amount1,form.value.kuanzia,form.value.mpaka,form.value.revenue)
     
     .subscribe(
       resp =>alert('Expenditure  Added'),
-      error=>alert('error')
+      error=>alert('error'), 
     );
+   
    form.reset();
+   
   }
-
+  
 }

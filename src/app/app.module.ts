@@ -7,6 +7,7 @@ import { SloModule } from './slo/slo.module';
 import { DeoModule } from './deo/deo.module';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -22,6 +23,7 @@ import { HttpModule } from '@angular/http';
     BrowserModule,
     FormsModule,
     HttpModule,
+    NgxSpinnerModule,
     DeoModule,
     SloModule,
     WeoModule,

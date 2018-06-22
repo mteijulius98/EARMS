@@ -125,6 +125,7 @@ let body = JSON.stringify({name:name});
 return this.http.post("http://localhost/fypyear/public/api/eqcategory", body, options).map( (response:Response) => response.json());
   
 }
+
 registerSdisability(name:any){
   let headers = new Headers();
   headers.append('Content-Type', 'application/json');
@@ -136,6 +137,27 @@ registerSdisability(name:any){
 let body = JSON.stringify({name:name});
 return this.http.post("http://localhost/fypyear/public/api/disability", body, options).map( (response:Response) => response.json());
   
+}
+deleteUser(id:number){
+  let headers = new Headers();
+  headers.append('Content-Type', 'application/json');
+  headers.append('Authorization','jwt '+ this.token);
+  headers.append('X-Requested-With','XMLHttpRequest');
+  let options = {
+  headers: headers
+};
+return this.http.delete("http://localhost/fypyear/public/api/user/ "+ id,options).map( (response:Response) => response.json());  
+}
+updateUser(id:number, firstname:any,middlename:any,lastname:any,email:any){
+  let headers = new Headers();
+  headers.append('Content-Type', 'application/json');
+  headers.append('Authorization','jwt '+ this.token);
+  headers.append('X-Requested-With','XMLHttpRequest');
+  let options = {
+  headers: headers
+};
+  let body = JSON.stringify({fname:firstname,mname:middlename,lname:lastname,email:email});
+  return this.http.put('http://localhost/nfypyear/public/api/user/' + id,body,options).map( (response:Response) => response.json());
 }
 registerSubject(name:any){
   let headers = new Headers();
