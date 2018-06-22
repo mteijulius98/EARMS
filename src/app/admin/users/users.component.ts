@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input,Output,EventEmitter} from '@angular/core';
 import { AdminService } from '../admin.service';
 import { IUsers } from './users';
 import { LoginServiceService } from '../../login/login-service.service';
@@ -9,6 +9,9 @@ import { LoginServiceService } from '../../login/login-service.service';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+@Input() duser:IUsers;
+@Input() wuser:IUsers;
+@Output() userDeleted = new EventEmitter<IUsers>();
   role: string;
   users: IUsers[];
   errorMessage: string;
@@ -71,6 +74,7 @@ export class UsersComponent implements OnInit {
                 //(districts:ourDistrict[]) => this.districts= districts,
                 },
                 error => this.errorMessage = <any>error);
+               
   // this.adminService.viewUsers().subscribe(
   //     users => this.users = users,
       
@@ -78,6 +82,16 @@ export class UsersComponent implements OnInit {
       
   
 } 
+onDelete(id){
+  console.log(id)
+  this.adminService.deleteUser(id)
+  .subscribe(
+    () => {
+       this.userDeleted.emit(id);
+      resp =>alert('User deleted');
+    }
+  );
+}
 form5(form:any){
     
   this.loginService.addUsers(form.value.firstname,form.value.middlename,form.value.lastname,form.value.email,form.value.password,form.value.role,form.value.district,form.value.school,form.value.ward)

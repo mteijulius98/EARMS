@@ -36,18 +36,18 @@ return this.http.post("http://localhost/fypyear/public/api/sdetail", body, optio
 let body = JSON.stringify({name:name,available:available,needed:needed,icategory_id:category});
 return this.http.post("http://localhost/fypyear/public/api/infrastructure?token=" + token, body, options).map( (response:Response) => response.json());
  }
- public viewInfrastructures(){
-  const token=this.loginService.getToken(); 
-  let headers=new Headers()
-   headers.append('Content-Type', 'application/json');
-   headers.append('X-Requested-With','XMLHttpRequest');
-  return this.http.get('http://localhost/fypyear/public/api/infrastructures?token=' + token,{headers:headers}).map(
-(res:Response)=>res.json(),
+//  public viewInfrastructures(){
+//   const token=this.loginService.getToken(); 
+//   let headers=new Headers()
+//    headers.append('Content-Type', 'application/json');
+//    headers.append('X-Requested-With','XMLHttpRequest');
+//   return this.http.get('http://localhost/fypyear/public/api/infrastructures?token=' + token,{headers:headers}).map(
+// (res:Response)=>res.json(),
 
 
-    );
-}
- public registerTlmaterial(name:any,tlcategory:any,sclass:any,available:any){
+//     );
+// }
+ public registerTlmaterial(name:any,tlcategory:any,sclass:any,available:any,needed:any){
   const token=this.loginService.getToken();
   let headers = new Headers();
   headers.append('Content-Type', 'application/json');
@@ -57,10 +57,10 @@ return this.http.post("http://localhost/fypyear/public/api/infrastructure?token=
   headers:headers
 };
 
-let body = JSON.stringify({name:name,available:available,sclass_id:sclass,category_id:tlcategory});
+let body = JSON.stringify({name:name,tlmcategory_id:tlcategory,sclass_id:sclass,available:available,needed:needed});
 return this.http.post("http://localhost/fypyear/public/api/tlmaterial?token=" + token, body, options).map( (response:Response) => response.json());
  }
- public registerEquipment(name:any,eqcategory:any,sclass:any,available:any){
+ public registerEquipment(name:any,eqcategory:any,sclass1:any,available:any,needed:any){
   const token=this.loginService.getToken();
   let headers = new Headers();
   headers.append('Content-Type', 'application/json');
@@ -70,7 +70,7 @@ return this.http.post("http://localhost/fypyear/public/api/tlmaterial?token=" + 
   headers:headers
 };
 
-let body = JSON.stringify({name:name,available:available,sclass_id:sclass,eqcategory_id:eqcategory});
+let body = JSON.stringify({name:name,available:available,sclass_id:sclass1,eqcategory_id:eqcategory,needed:needed});
 return this.http.post("http://localhost/fypyear/public/api/equipment?token=" + token, body, options).map( (response:Response) => response.json());
  }
  public registerService(name:any,availability:any){
@@ -121,6 +121,19 @@ return this.http.post("http://localhost/fypyear/public/api/ntstaff?token=" + tok
 let body = JSON.stringify({fname:fname,mname:mname,lname:lname,sex:sex,birth:birth,edlevel:edlevel,epdate:epdate,epid:epid});
 return this.http.post("http://localhost/fypyear/public/api/teacher?token=" + token, body, options).map( (response:Response) => response.json());
  }
+ public registerExpenditure(name:any,amount1:any,kuanzia:any,mpaka:any,revenue:any){
+  const token=this.loginService.getToken();
+  let headers = new Headers();
+  headers.append('Content-Type', 'application/json');
+
+  headers.append('X-Requested-With','XMLHttpRequest');
+  let options = {
+  headers:headers
+};
+let body = JSON.stringify({name:name,amount:amount1,kuanzia:kuanzia,mpaka:mpaka,revenue_id:revenue});
+return this.http.post("http://localhost/fypyear/public/api/expenditure?token=" + token, body, options).map( (response:Response) => response.json());
+ }
+ 
  public viewIncategory(){ 
   let headers=new Headers()
    headers.append('Authorization','jwt '+ this.token);
@@ -131,6 +144,78 @@ return this.http.post("http://localhost/fypyear/public/api/teacher?token=" + tok
 
     );
 }
+public viewRevenues(){ 
+  let headers=new Headers()
+   headers.append('Authorization','jwt '+ this.token);
+   headers.append('Content-Type', 'application/json');
+  return this.http.get('http://localhost/fypyear/public/api/revenues',{headers:headers}).map(
+(res:Response)=>res.json(),
+
+
+    );
+}
+public viewExpenditures(){ 
+  let headers=new Headers()
+   headers.append('Authorization','jwt '+ this.token);
+   headers.append('Content-Type', 'application/json');
+  return this.http.get('http://localhost/fypyear/public/api/expenditures',{headers:headers}).map(
+(res:Response)=>res.json(),
+
+
+    );
+}
+
+public viewInfrastructure(){ 
+  let headers=new Headers()
+   headers.append('Authorization','jwt '+ this.token);
+   headers.append('Content-Type', 'application/json');
+  return this.http.get('http://localhost/fypyear/public/api/infrastructures',{headers:headers}).map(
+(res:Response)=>res.json(),
+
+
+    );
+}
+public viewTlmaterials(){ 
+  let headers=new Headers()
+   headers.append('Authorization','jwt '+ this.token);
+   headers.append('Content-Type', 'application/json');
+  return this.http.get('http://localhost/fypyear/public/api/tlmaterials',{headers:headers}).map(
+(res:Response)=>res.json(),
+
+
+    );
+}
+public viewEquipments(){ 
+  let headers=new Headers()
+   headers.append('Authorization','jwt '+ this.token);
+   headers.append('Content-Type', 'application/json');
+  return this.http.get('http://localhost/fypyear/public/api/equipments',{headers:headers}).map(
+(res:Response)=>res.json(),
+
+
+    );
+}
+public viewTeachers(){ 
+  let headers=new Headers()
+   headers.append('Authorization','jwt '+ this.token);
+   headers.append('Content-Type', 'application/json');
+  return this.http.get('http://localhost/fypyear/public/api/teachers',{headers:headers}).map(
+(res:Response)=>res.json(),
+
+
+    );
+}
+public viewNtStaff(){ 
+  let headers=new Headers()
+   headers.append('Authorization','jwt '+ this.token);
+   headers.append('Content-Type', 'application/json');
+  return this.http.get('http://localhost/fypyear/public/api/ntstaffs',{headers:headers}).map(
+(res:Response)=>res.json(),
+
+
+    );
+}
+
 public viewEqcategory(){ 
   let headers=new Headers()
    headers.append('Authorization','jwt '+ this.token);

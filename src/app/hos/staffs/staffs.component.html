@@ -103,9 +103,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>latemba</td>
-              <td>latemba</td>
+            <tr *ngFor="let teacher of teachers">
+              <td>{{teacher.fname}}</td>
+              <td>{{teacher.lname}}</td>
               <td>
                 <button class="btn btn-info btn-sm">
                   Edit
@@ -144,9 +144,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>latemba</td>
-              <td>latemba</td>
+            <tr *ngFor="let ntstaff of ntstaffs">
+              <td>{{ntstaff.designation}}</td>
+              <td>{{ntstaff.count}}</td>
               <td>
                 <button class="btn btn-info btn-sm">
                   Edit

@@ -104,7 +104,7 @@
           </thead>
           <tbody>
             <!-- start regions -->
-            <tr *ngFor="let region of regions" class="clickable" data-toggle="collapse" id="row" data-target=".row">
+            <!-- <tr *ngFor="let region of regions" class="clickable" data-toggle="collapse" id="row" data-target=".row">
               <td>
                 <i class="material-icons">
                   expand_more
@@ -121,11 +121,9 @@
                   Delete
                 </button>
               </td>
-            </tr>
-            <!-- end regions -->
-            <!--start districts -->
+              <!--start districts -->
             <!-- <tr class="collapse row" data-toggle="collapse" id="row1" data-target=".row1">
-                <td> {{region.rname}} </td>
+                <td> {{region.dname}} </td>
                 <td>
                   <button class="btn btn-info btn-sm">
                     Edit
@@ -135,25 +133,26 @@
                   <button class="btn btn-danger btn-sm">
                     Delete
                   </button>
-                </td>
-               
-              </tr> -->
+                </td> -->
+                <!-- start ward -->
+                <!-- <tr class="collapse row1">
+                    <td> {{region.wname}} </td>
+                    <td>
+                      <button class="btn btn-info btn-sm">
+                        Edit
+                      </button>
+                    </td>
+                    <td>
+                      <button class="btn btn-danger btn-sm">
+                        Delete
+                      </button>
+                    </td>
+                    </tr> -->
+                <!-- end ward -->
+              <!-- </tr> -->
               <!-- end districts -->
-             <!-- start ward -->
-             <!-- <tr class="collapse row1">
-                <td> {{region.rname}} </td>
-                <td>
-                  <button class="btn btn-info btn-sm">
-                    Edit
-                  </button>
-                </td>
-                <td>
-                  <button class="btn btn-danger btn-sm">
-                    Delete
-                  </button>
-                </td>
-                </tr> -->
-            <!-- end ward -->
+            <!-- </tr> -->
+            <!-- end regions --> 
           </tbody>
         </table>
       </div>

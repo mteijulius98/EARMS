@@ -11,6 +11,9 @@ export class ResourcesComponent implements OnInit {
   sclasses=[];
   tlmcategories=[];
   eqcategories=[];
+  infrastructures=[];
+  tlmaterials=[];
+  equipments=[];
   errorMessage:string;
   constructor(private hosService:HosService) { }
 
@@ -18,31 +21,46 @@ export class ResourcesComponent implements OnInit {
     this.hosService.viewIncategory().subscribe(
       icategory =>{
       this.icategories=icategory.icategories
-      console.log('our',icategory)
       //(districts:ourDistrict[]) => this.districts= districts,
       },
       error => this.errorMessage = <any>error);
       this.hosService.viewClasses().subscribe(
         sclass =>{
         this.sclasses=sclass.sclasses
-        console.log('our',sclass)
+        
         //(districts:ourDistrict[]) => this.districts= districts,
         },
         error => this.errorMessage = <any>error);
         this.hosService.viewTlcategories().subscribe(
           tlmcategory =>{
           this.tlmcategories=tlmcategory.tlmcategories
-          console.log('our',tlmcategory)
+        
           //(districts:ourDistrict[]) => this.districts= districts,
           },
           error => this.errorMessage = <any>error);
           this.hosService.viewEqcategory().subscribe(
             eqcategory =>{
             this.eqcategories=eqcategory.eqcategories
-            console.log('our',eqcategory)
+          
             //(districts:ourDistrict[]) => this.districts= districts,
             },
             error => this.errorMessage = <any>error);
+            this.hosService.viewInfrastructure().subscribe(
+              infrastructure =>{
+              this.infrastructures=infrastructure.infrastructures
+              },
+              error => this.errorMessage = <any>error);
+              this.hosService.viewEquipments().subscribe(
+                equipment =>{
+                this.equipments=equipment.equipments
+                },
+                error => this.errorMessage = <any>error);
+                this.hosService.viewTlmaterials().subscribe(
+                  tlmaterial =>{
+                  this.tlmaterials=tlmaterial.tlmaterials
+                  
+                  },
+                  error => this.errorMessage = <any>error);
   }
   form8(form:any){
     
@@ -56,7 +74,7 @@ export class ResourcesComponent implements OnInit {
   }
   form9(form:any){
     
-    this.hosService.registerTlmaterial(form.value.name,form.value.available,form.value.sclass,form.value.tlcategory)
+    this.hosService.registerTlmaterial(form.value.name,form.value.tlcategory,form.value.sclass,form.value.available,form.value.needed)
     
     .subscribe(
       resp =>alert('Material Added'),
@@ -66,7 +84,7 @@ export class ResourcesComponent implements OnInit {
   }
 form10(form:any){
     
-  this.hosService.registerEquipment(form.value.name,form.value.available,form.value.sclass,form.value.eqcategory)
+  this.hosService.registerEquipment(form.value.name,form.value.available,form.value.sclass1,form.value.eqcategory,form.value.needed)
     
     .subscribe(
       resp =>alert('Equipment Added'),

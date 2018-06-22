@@ -1,8 +1,9 @@
 export interface IUsers{
-    firstname: string;
-    lastname: string;
+    id:number;
+    fname: string;
+    lname: string;
+    mname: string;
     email:string;
-    station_name: string;
-    role: string;
+    role_id:number;
     
 }
