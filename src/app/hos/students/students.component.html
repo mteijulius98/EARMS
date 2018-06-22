@@ -6,7 +6,7 @@
         Register students
       </div>
       <div class="card-body">
-        <form class="form-group my-3 px-4 py-2" #teachersForm="ngForm">
+        <form class="form-group my-3 px-4 py-2" #studentsForm="ngForm">
           <div class="row">
             <div class="col-sm-4">
               <div class="form-group">
@@ -18,6 +18,13 @@
                 <select class="form-control" id="sex" name="sex" ngModel required>
                   <option>M</option>
                   <option>F</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="class">Class</label>
+                <select class="form-control" id="class" name="class" ngModel required>
+                  <option>No</option>
+                  <option>Yes</option>
                 </select>
               </div>
               <div class="form-group">
@@ -39,6 +46,14 @@
                 <input type="date" class="form-control" id="dob" ngModel name="dob" required>
               </div>
               <div class="form-group">
+                <label for="status">Status</label>
+                <select class="form-control" id="status" name="status" ngModel required>
+                  <option>Ongoing</option>
+                  <option>Completed</option>
+                  <option>Dropout</option>
+                </select>
+              </div>
+              <div class="form-group">
                 <label for="disability">Disability</label>
                 <select class="form-control" id="disability" name="disability" ngModel required>
                   <option></option>
@@ -51,7 +66,7 @@
                 <input type="text" class="form-control" id="lname" ngModel name="lname" required>
               </div>
               <div class="form-group">
-                <label for="regno">Reg no</label>
+                <label for="regno">Admission no</label>
                 <input type="text" class="form-control" id="regno" ngModel name="regno" required autofocus>
               </div>
               <div class="form-group">
@@ -62,12 +77,22 @@
                 </select>
               </div>
               <div class="form-group">
+                <label for="diff_c">Nationality</label>
+                <select class="form-control" id="nationality" name="nationality" ngModel required>
+                  <option>No</option>
+                  <option>Yes</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <input type="hidden" class="form-control" id="year" ngModel name="year" required>
+              </div>
+              <div class="form-group">
                 <input type="hidden" class="form-control" id="school_id" ngModel name="school_id" required>
               </div>
             </div>
           </div>
           <div class="form-group">
-            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!teachersForm.valid">Submit Details</button>
+            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!studentsForm.valid">Submit Details</button>
           </div>
         </form>
       </div>
@@ -121,6 +146,91 @@
      <!-- end student attendance form -->
   </div>
   <div class="col-sm-6">
-
+    <div class="card m-2">
+      <div class="card-header">
+        View students
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered table-responsive-sm table-hover">
+          <thead>
+            <tr>
+              <th scope="col">First name</th>
+              <th scope="col">Last name</th>
+              <th>
+                <i class="material-icons">
+                  create
+                </i>
+              </th>
+              <th>
+                <i class="material-icons">
+                  delete
+                </i>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>latemba</td>
+              <td>latemba</td>
+              <td>
+                <button class="btn btn-info btn-sm">
+                  Edit
+                </button>
+              </td>
+              <td>
+                <button class="btn btn-danger btn-sm">
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card m-2">
+      <div class="card-header">
+        View Attendance
+      </div>
+      <div class="card-body">
+        <table class="table table-bordered table-responsive-sm table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Month</th>
+              <th scope="col">Class</th>
+              <th scope="col">Male</th>
+               <th scope="col">Female</th>     
+              <th>
+                <i class="material-icons">
+                  create
+                </i>
+              </th>
+              <th>
+                <i class="material-icons">
+                  delete
+                </i>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>latemba</td>
+              <td>latemba</td>
+              <td>40</td>
+              <td>50</td>
+              <td>
+                <button class="btn btn-info btn-sm">
+                  Edit
+                </button>
+              </td>
+              <td>
+                <button class="btn btn-danger btn-sm">
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
