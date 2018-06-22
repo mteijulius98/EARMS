@@ -237,172 +237,211 @@
         <!-- end add school user form -->
     </div>
     <div class="col-sm-6">
-        <!-- start view user role table -->
-        <div class="card m-2">
-            <div class="card-header">
-                View Roles
-            </div>
-            <div class="card-body">
-                <table class="table table-bordered table-responsive-sm table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">Role</th>
-                            <th scope="col">Initials</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let role of roles">
-                            <td>{{role.roname}}</td>
-                            <td>{{role.roinitial}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <!-- end view user role table -->
+        <div class="accordion" id="accordion">
+            <!--start view district users table  -->
+            <div class="card m-2">
+                <div class="card-header bg-transparent" id="headn1">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#viewDusers" aria-expanded="false"
+                            aria-controls="viewDusers">
+                            View District Users
+                        </button>
+                    </h5>
+                </div>
+                <div id="viewDusers" class="collapse show" aria-labelledby="headn1" data-parent="#accordion">
+                    <div class="card-body">
+                        <table class="table table-bordered table-responsive-sm table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">First Name</th>
+                                    <th scope="col">Last Name</th>
+                                    <th scope="col">District</th>
+                                    <th scope="col">Role</th>
+                                    <th>
+                                        <i class="material-icons">
+                                            create
+                                        </i>
+                                    </th>
+                                    <th>
+                                        <i class="material-icons">
+                                            delete
+                                        </i>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let district of dusers">
+                                    <td>{{district.fname}}</td>
+                                    <td>{{district.lname}}</td>
+                                    <td>{{district.dname}}</td>
+                                    <td>{{district.roinitial}}</td>
+                                    <td>
+                                        <button class="btn btn-info btn-sm">
+                                            Edit
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-danger btn-sm">
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
-        <!--start view district users table  -->
-        <div class="card m-2">
-            <div class="card-header">
-                View District Users
             </div>
-            <div class="card-body">
-                <table class="table table-bordered table-responsive-sm table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">First Name</th>
-                            <th scope="col">Last Name</th>
-                            <th scope="col">District</th>
-                            <th scope="col">Role</th>
-                            <th>
-                                <i class="material-icons">
-                                    create
-                                </i>
-                            </th>
-                            <th>
-                                <i class="material-icons">
-                                    delete
-                                </i>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let district of dusers">
-                            <td>{{district.fname}}</td>
-                            <td>{{district.lname}}</td>
-                            <td>{{district.dname}}</td>
-                            <td>{{district.roinitial}}</td>
-                            <td>
-                                <button class="btn btn-info btn-sm">
-                                    Edit
-                                </button>
-                            </td>
-                            <td>
-                                <button class="btn btn-danger btn-sm">
-                                    Delete
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <!-- end view district users table -->
+            <!-- end view district users table -->
+            <!-- start view ward users table -->
+            <div class="card m-2">
+                <div class="card-header bg-transparent" id="headn2">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#viewWusers" aria-expanded="false"
+                            aria-controls="viewWusers">
+                            View Ward Users
+                        </button>
+                    </h5>
+                </div>
+                <div id="viewWusers" class="collapse" aria-labelledby="headn2" data-parent="#accordion">
+                    <div class="card-body">
+                        <table class="table table-bordered table-responsive-sm table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">First Name</th>
+                                    <th scope="col">Last Name</th>
+                                    <th scope="col">Ward</th>
+                                    <th scope="col">Role</th>
+                                    <th>
+                                        <i class="material-icons">
+                                            create
+                                        </i>
+                                    </th>
+                                    <th>
+                                        <i class="material-icons">
+                                            delete
+                                        </i>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let ward of wusers">
+                                    <td>{{ward.fname}}</td>
+                                    <td>{{ward.lname}}</td>
+                                    <td>{{ward.wname}}</td>
+                                    <td>{{ward.roinitial}}</td>
+                                    <td>
+                                        <button class="btn btn-info btn-sm">
+                                            Edit
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-danger btn-sm">
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
-        <!-- start view ward users table -->
-        <div class="card m-2">
-            <div class="card-header">
-                View Ward Users
             </div>
-            <div class="card-body">
-                <table class="table table-bordered table-responsive-sm table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">First Name</th>
-                            <th scope="col">Last Name</th>
-                            <th scope="col">Ward</th>
-                            <th scope="col">Role</th>
-                            <th>
-                                <i class="material-icons">
-                                    create
-                                </i>
-                            </th>
-                            <th>
-                                <i class="material-icons">
-                                    delete
-                                </i>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let ward of wusers">
-                            <td>{{ward.fname}}</td>
-                            <td>{{ward.lname}}</td>
-                            <td>{{ward.wname}}</td>
-                            <td>{{ward.roinitial}}</td>
-                            <td>
-                                <button class="btn btn-info btn-sm">
-                                    Edit
-                                </button>
-                            </td>
-                            <td>
-                                <button class="btn btn-danger btn-sm">
-                                    Delete
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <!-- end view ward users table -->
+            <!-- end view ward users table -->
 
-        <!-- start view school users table -->
-        <div class="card m-2">
-            <div class="card-header">
-                View School Users
+            <!-- start view school users table -->
+            <div class="card m-2">
+                <div class="card-header bg-transparent" id="headn3">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#viewSusers" aria-expanded="false"
+                            aria-controls="viewSusers">
+                            View School Users
+                        </button>
+                    </h5>
+                </div>
+                <div id="viewSusers" class="collapse" aria-labelledby="headn3" data-parent="#accordion">
+                    <div class="card-body">
+                        <table class="table table-bordered table-responsive-sm table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">First Name</th>
+                                    <th scope="col">Last Name</th>
+                                    <th scope="col">School</th>
+                                    <th scope="col">Role</th>
+                                    <th>
+                                        <i class="material-icons">
+                                            create
+                                        </i>
+                                    </th>
+                                    <th>
+                                        <i class="material-icons">
+                                            delete
+                                        </i>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let suser of susers">
+                                    <td>{{suser.fname}}</td>
+                                    <td>{{suser.lname}}</td>
+                                    <td>{{suser.name}}</td>
+                                    <td>{{suser.roinitial}}</td>
+                                    <td>
+                                        <button class="btn btn-info btn-sm">
+                                            Edit
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-danger btn-sm">
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
             </div>
-            <div class="card-body">
-                <table class="table table-bordered table-responsive-sm table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">First Name</th>
-                            <th scope="col">Last Name</th>
-                            <th scope="col">School</th>
-                            <th scope="col">Role</th>
-                            <th>
-                                <i class="material-icons">
-                                    create
-                                </i>
-                            </th>
-                            <th>
-                                <i class="material-icons">
-                                    delete
-                                </i>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let suser of susers">
-                            <td>{{suser.fname}}</td>
-                            <td>{{suser.lname}}</td>
-                            <td>{{suser.name}}</td>
-                            <td>{{suser.roinitial}}</td>
-                            <td>
-                                <button class="btn btn-info btn-sm">
-                                    Edit
-                                </button>
-                            </td>
-                            <td>
-                                <button class="btn btn-danger btn-sm">
-                                    Delete
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <!-- end view school users table -->
+
+            <!-- start view user role table -->
+            <div class="card m-2">
+                <div class="card-header bg-transparent" id="headn4">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#viewRoles" aria-expanded="false"
+                            aria-controls="viewRoles">
+                            View Roles
+                        </button>
+                    </h5>
+                </div>
+                <div id="viewRoles" class="collapse" aria-labelledby="headn4" data-parent="#accordion">
+                    <div class="card-body">
+                        <table class="table table-bordered table-responsive-sm table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Role</th>
+                                    <th scope="col">Initials</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let role of roles">
+                                    <td>{{role.roname}}</td>
+                                    <td>{{role.roinitial}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
+            <!-- end view user role table -->
         </div>
-        <!-- end view school users table -->
+
+
+
+
+
+
+
     </div>
 </div>
