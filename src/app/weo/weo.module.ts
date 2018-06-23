@@ -6,7 +6,6 @@ import { WeoRoutingModule } from './weo-routing.module';
 import { WeoComponent } from './weo.component';
 import { ReportsComponent } from './reports/reports.component';
 import { DashboardComponent } from './dashboard.component';
-//import { SchoolreportsComponent } from './reports/schoolreports/schoolreports.component';
 
 @NgModule({
   imports: [
