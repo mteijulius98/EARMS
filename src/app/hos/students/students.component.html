@@ -6,12 +6,12 @@
         Register students
       </div>
       <div class="card-body">
-        <form class="form-group my-3 px-4 py-2" #studentsForm="ngForm">
+        <form class="form-group my-3 px-4 py-2" #studentsForm="ngForm" (ngSubmit)="form31(studentsForm)">
           <div class="row">
             <div class="col-sm-4">
               <div class="form-group">
-                <label for="fname">First name</label>
-                <input type="text" class="form-control" id="fname" ngModel name="fname" required autofocus>
+                <label for="firstname">First name</label>
+                <input type="text" class="form-control" id="firstname" ngModel name="firstname" required autofocus>
               </div>
               <div class="form-group">
                 <label for="sex">Sex</label>
@@ -21,10 +21,9 @@
                 </select>
               </div>
               <div class="form-group">
-                <label for="class">Class</label>
-                <select class="form-control" id="class" name="class" ngModel required>
-                  <option>No</option>
-                  <option>Yes</option>
+                <label for="sclass">Class</label>
+                <select class="form-control" id="sclass" name="sclass" ngModel required>
+                  <option  *ngFor="let class of sclasses" value="{{class.id}}" >{{class.name}}</option>
                 </select>
               </div>
               <div class="form-group">
@@ -38,12 +37,12 @@
             </div>
             <div class="col-sm-4">
               <div class="form-group">
-                <label for="mname">Middle name</label>
-                <input type="text" class="form-control" id="mname" ngModel name="mname" required>
+                <label for="middlename">Middle name</label>
+                <input type="text" class="form-control" id="middlename" ngModel name="middlename" required>
               </div>
               <div class="form-group">
-                <label for="dob">Date of Birth</label>
-                <input type="date" class="form-control" id="dob" ngModel name="dob" required>
+                <label for="birthdate">Date of Birth</label>
+                <input type="date" class="form-control" id="birthdate" ngModel name="birthdate" required>
               </div>
               <div class="form-group">
                 <label for="status">Status</label>
@@ -54,40 +53,37 @@
                 </select>
               </div>
               <div class="form-group">
-                <label for="disability">Disability</label>
-                <select class="form-control" id="disability" name="disability" ngModel required>
-                  <option></option>
+                <label for="sdisability">Disability</label>
+                <select class="form-control" id="sdisability" name="sdisability" ngModel required>
+                  <option  *ngFor="let sdisability of sdisabilities" value="{{sdisability.id}}" >{{sdisability.name}}</option>
                 </select>
               </div>
             </div>
             <div class="col-sm-4">
               <div class="form-group">
-                <label for="lname">Last name</label>
-                <input type="text" class="form-control" id="lname" ngModel name="lname" required>
+                <label for="lastname">Last name</label>
+                <input type="text" class="form-control" id="lastname" ngModel name="lastname" required>
               </div>
               <div class="form-group">
-                <label for="regno">Admission no</label>
-                <input type="text" class="form-control" id="regno" ngModel name="regno" required autofocus>
+                <label for="admisn">Admission no</label>
+                <input type="text" class="form-control" id="admisn" ngModel name="admisn" required autofocus>
               </div>
               <div class="form-group">
-                <label for="diff_c">Life Status</label>
-                <select class="form-control" id="diff_c" name="diff_c" ngModel required>
-                  <option>No</option>
-                  <option>Yes</option>
+                <label for="lifestatus">Life Status</label>
+                <select class="form-control" id="lifestatus" name="lifestatus" ngModel required>
+                  <option>Hard</option>
+                  <option>Mid</option>
                 </select>
               </div>
               <div class="form-group">
-                <label for="diff_c">Nationality</label>
+                <label for="nationality">Nationality</label>
                 <select class="form-control" id="nationality" name="nationality" ngModel required>
                   <option>No</option>
                   <option>Yes</option>
                 </select>
               </div>
               <div class="form-group">
-                <input type="hidden" class="form-control" id="year" ngModel name="year" required>
-              </div>
-              <div class="form-group">
-                <input type="hidden" class="form-control" id="school_id" ngModel name="school_id" required>
+                <input type="hidden" class="form-control" id="year" ngModel name="year" value="{{currentYear}}" required>
               </div>
             </div>
           </div>
@@ -105,40 +101,38 @@
         Student attendance
       </div>
       <div class="card-body">
-        <form class="form-group my-3 px-4 py-2" #teachersForm="ngForm">
+        <form class="form-group my-3 px-4 py-2" #atForm="ngForm" (ngSubmit)="form32(atForm)">
           <div class="row">
             <div class="col-sm-6">
               <div class="form-group">
-                <label for="av_male">Average no. of male</label>
-                <input type="text" class="form-control" id="av_male" ngModel name="av_male" required autofocus>
+                <label for="avgmale">Average no. of male</label>
+                <input type="text" class="form-control" id="avgmale" ngModel name="avgmale" required autofocus>
               </div>
               <div class="form-group">
-                <label for="from_date">From</label>
-                <input type="date" class="form-control" id="from_date" ngModel name="from_date" required autofocus>
+                <label for="from">From</label>
+                <input type="date" class="form-control" id="from" ngModel name="from" required autofocus>
               </div>
               <div class="form-group">
-                <label for="class">Class</label>
-                <select class="form-control" id="class" name="class" ngModel required>
-                  <option></option>
+                <label for="sclass">Class</label>
+                <select class="form-control" id="sclass" name="sclass" ngModel required>
+                  <option  *ngFor="let class of sclasses" value="{{class.id}}" >{{class.name}}</option>
                 </select>
               </div>
             </div>
             <div class="col-sm-6">
               <div class="form-group">
-                <label for="mname">Average no. of female</label>
-                <input type="text" class="form-control" id="mname" ngModel name="mname" required>
+                <label for="avgfemale">Average no. of female</label>
+                <input type="text" class="form-control" id="avgfemale" ngModel name="avgfemale" required>
               </div>
               <div class="form-group">
-                <label for="to_date">To</label>
-                <input type="date" class="form-control" id="to_date" ngModel name="to_date" required>
+                <label for="to">To</label>
+                <input type="date" class="form-control" id="to" ngModel name="to" required>
               </div>
-              <div class="form-group">
-                <input type="hidden" class="form-control" id="school_id" ngModel name="school_id" required>
-              </div>
+             
             </div>
           </div>
           <div class="form-group">
-            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!teachersForm.valid">Submit Details</button>
+            <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!atForm.valid">Submit Details</button>
           </div>
         </form>
       </div>
@@ -161,27 +155,27 @@
                   create
                 </i>
               </th>
-              <th>
+              <!-- <th>
                 <i class="material-icons">
                   delete
                 </i>
-              </th>
+              </th> -->
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>latemba</td>
-              <td>latemba</td>
+            <tr  *ngFor="let student of students">
+              <td>{{student.fname}}</td>
+              <td>{{student.lname}}</td>
               <td>
                 <button class="btn btn-info btn-sm">
                   Edit
                 </button>
               </td>
-              <td>
+              <!-- <td>
                 <button class="btn btn-danger btn-sm">
                   Delete
                 </button>
-              </td>
+              </td> -->
             </tr>
           </tbody>
         </table>
@@ -195,7 +189,8 @@
         <table class="table table-bordered table-responsive-sm table-hover">
           <thead>
             <tr>
-              <th scope="col">Month</th>
+              <th scope="col">StartDate</th>
+              <th scope="col">EndDate</th>
               <th scope="col">Class</th>
               <th scope="col">Male</th>
                <th scope="col">Female</th>     
@@ -204,29 +199,30 @@
                   create
                 </i>
               </th>
-              <th>
+              <!-- <th>
                 <i class="material-icons">
                   delete
                 </i>
-              </th>
+              </th> -->
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>latemba</td>
-              <td>latemba</td>
-              <td>40</td>
-              <td>50</td>
+            <tr *ngFor="let sattendance of sattendances">
+              <td>{{sattendance.start_from}}</td>
+              <td>{{sattendance.end_to}}</td>
+              <td>{{sattendance.name}}</td>
+              <td>{{sattendance.avmale}}</td>
+              <td>{{sattendance.avfemale}}</td>
               <td>
                 <button class="btn btn-info btn-sm">
                   Edit
                 </button>
               </td>
-              <td>
+              <!-- <td>
                 <button class="btn btn-danger btn-sm">
                   Delete
                 </button>
-              </td>
+              </td> -->
             </tr>
           </tbody>
         </table>
