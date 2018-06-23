@@ -6,6 +6,40 @@ html,body {
     height:100%;
 }
 /* 
+navbar
+*/
+.navbar {
+    background-color: #66b3ff;
+  } 
+
+.navbar-c-bg {
+    background-color: #0073e6;
+  } 
+  /* 
+  navbar-brand
+  */
+.navbar-brand {
+      padding-top: .75rem;
+      padding-bottom: .75rem;
+      padding-left: 1.5rem;
+      padding-right: .75rem;
+      font-size: 1rem;
+     }
+  /* 
+  nav-bar custom button
+  */
+  .navbar-btn-c-p{
+      background-color: #66b3ff;
+      font-weight: 50;
+      font-size: .95rem;
+  }
+  .dropdown-toggle::after {
+    margin-left: 0em;
+  }
+  .align-c {
+    vertical-align: .40em;
+  }
+/* 
 fill make container span all body
 */
 .fill{
