@@ -183,6 +183,7 @@ let body = JSON.stringify({reason:rname});
 return this.http.post("http://localhost/fypyear/public/api/reason", body, options).map( (response:Response) => response.json());
   
 }
+
 registerRole(role_name:any, role_initial:any){
   let headers = new Headers();
   headers.append('Content-Type', 'application/json');
