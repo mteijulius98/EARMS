@@ -7,7 +7,7 @@ import 'rxjs/Rx';
 export class LoginServiceService {
   public token=localStorage.getItem("token")
   constructor(private http:Http) { }
-  addUsers(firstname:any,middlename:any,lastname:any,email:any, password:any,role:any,district:any,ward:any,school:any){
+  addUsers(firstname:any,middlename:any,lastname:any,email:any,password:any,role:any,district:any,ward:any,school:any){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization','jwt '+ this.token);
