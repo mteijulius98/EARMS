@@ -5,6 +5,7 @@ import { SharedModule } from '../shared/shared.module';
 import { WeoRoutingModule } from './weo-routing.module';
 import { WeoComponent } from './weo.component';
 import { ReportsComponent } from './reports/reports.component';
+import { DashboardComponent } from './dashboard.component';
 
 @NgModule({
   imports: [
@@ -12,6 +13,6 @@ import { ReportsComponent } from './reports/reports.component';
     SharedModule,
     WeoRoutingModule
   ],
-  declarations: [WeoComponent, ReportsComponent]
+  declarations: [WeoComponent, ReportsComponent, DashboardComponent]
 })
 export class WeoModule { }

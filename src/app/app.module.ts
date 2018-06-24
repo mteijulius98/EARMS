@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { LoginServiceService } from './login/login-service.service';
 import { HttpModule } from '@angular/http';
+import { SchoolreportsModule } from './schoolreports/schoolreports.module';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { HttpModule } from '@angular/http';
     WeoModule,
     HosModule,
     AdminModule,
+    SchoolreportsModule,
     AppRoutingModule
   ],
   providers: [
