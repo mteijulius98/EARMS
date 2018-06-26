@@ -41,7 +41,7 @@ export class StudentsComponent implements OnInit {
   }
   form31(form:any){
     
-    this.hosService.registerStudent(form.value.firstname,form.value.sex,form.value.sclass,form.value.orphan,form.value.middlename,form.value.birthdate,form.value.status,form.value.sdisability,form.value.lastname,form.value.admsn,form.value.lifestatus,form.value.nationality,form.value.year)
+    this.hosService.registerStudent(form.value.firstname,form.value.sex,form.value.sclass,form.value.orphan,form.value.middlename,form.value.birthdate,form.value.status,form.value.sdisability1,form.value.lastname,form.value.admsn,form.value.lifestatus,form.value.nationality)
     
     .subscribe(
       resp =>alert('Student Added'),

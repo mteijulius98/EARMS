@@ -104,7 +104,7 @@
                                 <input type="email" id="email" name="email" class="form-control" ngModel required autofocus="">
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-custom-primary btn-block" type="submit" [disabled]="!addUser.valid">Add User</button>
+                                <button class="btn btn-custom-primary btn-block" [routerLink]="['/admin/users']" type="submit" >Add User</button>
                             </div>
                         </div>
                     </div>

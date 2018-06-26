@@ -152,7 +152,7 @@ return this.http.post("http://localhost/fypyear/public/api/expenditure?token=" +
 let body = JSON.stringify({avmale:avgmale,avfemale:avgfemale,start_from:from,end_to:to,sclass_id:sclass});
 return this.http.post("http://localhost/fypyear/public/api/attendance?token=" + token, body, options).map( (response:Response) => response.json());
  } 
- public registerStudent(firstname:any,middlename:any,lastname:any,sex:any,birthdate:any,admisn:any,sclass:any,status:any,lifestatus:any,orphan:any,sdisability:any,nationality:any,year:any){
+ public registerStudent(firstname:any,middlename:any,lastname:any,sex:any,birthdate:any,admisn:any,sclass:any,status:any,lifestatus:any,orphan:any,sdisability1:any,nationality:any){
   const token=this.loginService.getToken();
   let headers = new Headers();
   headers.append('Content-Type', 'application/json');
@@ -160,7 +160,7 @@ return this.http.post("http://localhost/fypyear/public/api/attendance?token=" + 
   let options = {
   headers:headers
 };
-let body = JSON.stringify({fname:firstname,mname:middlename,lname:lastname,sex:sex,bdate:birthdate,anumber:admisn,sclass_id:sclass,status:status,lstatus:lifestatus,orphan:orphan,sdisability_id:sdisability,nationality:nationality,year:year});
+let body = JSON.stringify({fname:firstname,mname:middlename,lname:lastname,sex:sex,bdate:birthdate,anumber:admisn,sclass_id:sclass,status:status,lstatus:lifestatus,orphan:orphan,sdisability_id:sdisability1,nationality:nationality});
 return this.http.post("http://localhost/fypyear/public/api/student?token=" + token, body, options).map( (response:Response) => response.json());
  } 
  public viewIncategory(){ 
