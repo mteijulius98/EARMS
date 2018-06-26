@@ -20,8 +20,9 @@
                           </a>
 
                           <div class="collapse" id="collapseReports">
-                              <a class="nav-item nav-link" data-toggle="collapse" href="#collapseStudents" role="button" aria-expanded="false" aria-controls="collapseStudents">Students</a>
-                              <a class="nav-item nav-link" data-toggle="collapse" href="#collapseTeachers" role="button" aria-expanded="false" aria-controls="collapseTeachers">Teachers</a>
+                            <a class="nav-item nav-link" routerLink="./students" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Students</a>
+                            <a class="nav-item nav-link"  routerLink="./teachers" routerLinkActive="active">Teachers</a>
+                      
                           </div>
                       </nav>
                   </div>
@@ -49,19 +50,8 @@
               </div>
           </nav>
           <!-- end header -->
-          <main role="main" class="ml-sm-auto px-4 pt-4">
-              <div class="collapse" id="collapseStudents">
-                  <div class="card card-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
-                      craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                  </div>
-              </div>
-              <div class="collapse" id="collapseTeachers">
-                  <div class="card card-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
-                      craft beer labore wes anderson cred nesciunt sapiente ea proident.
-                  </div>
-              </div>
+          <main role="main" class="ml-sm-auto px-4 pt-4 custom-scroll">
+            <router-outlet></router-outlet>
           </main>
       </div>
 
