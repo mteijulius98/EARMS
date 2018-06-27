@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DeoComponent } from './deo.component';
-import { AuthguardService } from '../shared/authguard.service';
-import { ReportsComponent } from './reports/reports.component';
+
+import { DashboardComponent } from './dashboard.component';
+import { ReportsComponent } from './reports.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,8 @@ const routes: Routes = [
         path: '',
         // canActivateChild: [AuthguardService],
         children: [
-          {path:'',component:ReportsComponent}
+          {path:'',component:DashboardComponent},
+          {path:'reports',component:ReportsComponent}
         ]
       }
     ]

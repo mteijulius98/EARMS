@@ -4,7 +4,8 @@ import { SharedModule } from '../shared/shared.module';
 
 import { DeoRoutingModule } from './deo-routing.module';
 import { DeoComponent } from './deo.component';
-import { ReportsComponent } from './reports/reports.component';
+import { ReportsComponent } from './reports.component';
+import { DashboardComponent } from './dashboard.component';
 
 @NgModule({
   imports: [
@@ -12,6 +13,6 @@ import { ReportsComponent } from './reports/reports.component';
     SharedModule,
     DeoRoutingModule
   ],
-  declarations: [DeoComponent, ReportsComponent]
+  declarations: [DeoComponent, ReportsComponent, DashboardComponent]
 })
 export class DeoModule { }
