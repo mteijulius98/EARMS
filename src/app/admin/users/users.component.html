@@ -60,10 +60,10 @@
                                         <option option *ngFor="let district of districts" value="{{district.id}}">{{district.dname}}</option>
                                     </select>
                                 </div>
-                                <div class="form-group" *ngSwitchCase="'5'">
-                                    <label for="district">District</label>
-                                    <select class="form-control" id="district" name="district" ngModel required>
-                                        <option option *ngFor="let district of districts" value="{{district.id}}">{{district.dname}}</option>
+                                <div class="form-group" *ngSwitchCase="'3'">
+                                    <label for="school">School</label>
+                                    <select class="form-control" id="school" name="school" ngModel required>
+                                        <option option *ngFor="let school of schools" value="{{school.id}}">{{school.name}}</option>
                                     </select>
                                 </div>
                                 <div class="form-group" *ngSwitchCase="'4'">
@@ -72,12 +72,14 @@
                                         <option option *ngFor="let ward of wards" value="{{ward.id}}">{{ward.wname}}</option>
                                     </select>
                                 </div>
-                                <div class="form-group" *ngSwitchCase="'3'">
-                                    <label for="school">School</label>
-                                    <select class="form-control" id="school" name="school" ngModel required>
-                                        <option option *ngFor="let school of schools" value="{{school.id}}">{{school.name}}</option>
+                                <div class="form-group" *ngSwitchCase="'5'">
+                                    <label for="district">District</label>
+                                    <select class="form-control" id="district" name="district" ngModel required>
+                                        <option option *ngFor="let district of districts" value="{{district.id}}">{{district.dname}}</option>
                                     </select>
                                 </div>
+                               
+                              
                                 <div class="form-group" *ngSwitchDefault>
                                     <label for="school">Station</label>
                                     <select class="form-control" id="school" name="school" ngModel required>
