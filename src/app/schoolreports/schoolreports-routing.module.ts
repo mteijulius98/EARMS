@@ -19,6 +19,21 @@ const routes: Routes = [
       }
     ]
 
+  },
+  {
+    path: 'deo/reports/:wardname/:schoolname',
+    component: SchoolreportsComponent,
+    children: [
+      {
+        path: '',
+        children: [
+          { path: '', component:StudentsComponent },
+          { path: 'teachers', component: TeachersComponent }
+
+        ]
+      }
+    ]
+
   }
 ];
 
