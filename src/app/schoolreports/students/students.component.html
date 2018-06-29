@@ -13,65 +13,105 @@
             <table class="table table-bordered table-responsive-sm table-hover">
                 <thead>
                     <tr>
-                        <th scope="col" rowspan="2">Age</th>
-                        <th scope="col" colspan="3">Form I</th>
-                        <th scope="col" colspan="3">Form II</th>
-                        <th scope="col" colspan="3">Form III</th>
-                        <th scope="col" colspan="3">Form IV</th>
-                        <th scope="col" colspan="3">Form V</th>
-                        <th scope="col" colspan="3">Form VI</th>
+                        <!-- <th scope="col" rowspan="2">Age</th> -->
+                        <th scope="col">Form I</th>
+                        <th scope="col">Form II</th>
+                        <th scope="col">Form III</th>
+                        <th scope="col">Form IV</th>
+                        <th scope="col">Form V</th>
+                        <th scope="col">Form VI</th>
                     </tr>
-                    <tr>
-                            <th>M</th>
-                            <th>F</th>
-                            <th>Total</th>
-                            <th>M</th>
-                            <th>F</th>
-                            <th>Total</th>
-                            <th>M</th>
-                            <th>F</th>
-                            <th>Total</th>
-                            <th>M</th>
-                            <th>F</th>
-                            <th>Total</th>
-                            <th>M</th>
-                            <th>F</th>
-                            <th>Total</th>
-                            <th>M</th>
-                            <th>F</th>
-                            <th>Total</th>
-                        </tr>
+                   
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Age</td>
-                        <td>M</td>
-                        <td>F</td>
-                        <td>Total</td>
-                        <td>M</td>
-                        <td>F</td>
-                        <td>Total</td>
-                        <td>M</td>
-                        <td>F</td>
-                        <td>Total</td>
-                        <td>M</td>
-                        <td>F</td>
-                        <td>Total</td>
-                        <td>M</td>
-                        <td>F</td>
-                        <td>Total</td>
-                        <td>M</td>
-                        <td>F</td>
-                        <td>Total</td>
+                        <!-- Form I -->
+                        <td>
+                            <table>
+                                <thead>
+                                        <th scope="col">Age</th>
+                                        <th scope="col">Male</th>
+                                        <th scope="col">Female</th>
+                                        <th scope="col">Total</th>
+                                </thead>
+                                <tr *ngFor="let form of formI">
+                                    <td>{{form.age}}</td>
+                                    <td>{{form.male}}</td>
+                                    <td>{{form.female}}</td>
+                                    <td>T</td>
+                                </tr>
+                                <tr></tr>
+                            </table>
+                        </td>
+                        <!-- Form I -->
+                        <!-- Form II -->
+                        <td>
+                                <table>
+                                    <tr>
+                                        <td>Age</td>
+                                        <td>M</td>
+                                        <td>F</td>
+                                        <td>T</td>
+                                    </tr>
+                                    <tr></tr>
+                                </table>
+                            </td>
+                            <!-- Form II -->
+                            <!-- Form III -->
+                            <td>
+                                    <table>
+                                        <tr>
+                                            <td>Age</td>
+                                            <td>M</td>
+                                            <td>F</td>
+                                            <td>T</td>
+                                        </tr>
+                                        <tr></tr>
+                                    </table>
+                                </td>
+                                <!-- Form III -->
+                                <!-- Form IV -->
+                                <td>
+                                        <table>
+                                            <tr >
+                                                <td>Age</td>
+                                                <td></td>
+                                                <td>F</td>
+                                                <td>T</td>
+                                            </tr>
+                                            <tr></tr>
+                                        </table>
+                                    </td>
+                                    <!-- Form V -->
+                                    <td>
+                                            <table>
+                                                <tr>
+                                                    <td>Age</td>
+                                                    <td>M</td>
+                                                    <td>F</td>
+                                                    <td>T</td>
+                                                </tr>
+                                                <tr></tr>
+                                            </table>
+                                        </td>
+                                        <!-- Form V -->
+                                        <!-- Form VI -->
+                                        <td>
+                                                <table>
+                                                    <tr>
+                                                        <td>Age</td>
+                                                        <td>M</td>
+                                                        <td>F</td>
+                                                        <td>T</td>
+                                                    </tr>
+                                                    <tr></tr>
+                                                </table>
+                                            </td>
+                                            <!-- Form VI -->
+
                     </tr>
                     <tr>
-                        <td>TOTAL</td>
-                        <td colspan="3">latemba</td>
-                        <td colspan="3">latemba</td>
-                        <td colspan="3">latemba</td>
-                        <td colspan="3">latemba</td>
-                        <td colspan="3">latemba</td>
-                        <td colspan="3">latemba</td>
+                        
                     </tr>
                 </tbody>
             </table>

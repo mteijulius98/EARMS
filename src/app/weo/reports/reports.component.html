@@ -8,14 +8,14 @@
             <tr>
                 <th scope="col">School</th>
                 <th scope="col">Reg number</th>
-                <th scope="col">Head of School</th>
+                <!-- <th scope="col">Head of School</th> -->
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td><a class="nav-item nav-link" routerLink="../reports/1">Schoolname</a></td>
-                <td></td>
-                <td></td>
+            <tr *ngFor="let sward of swards">
+                <td><a class="nav-item nav-link" routerLink="../reports/1">{{sward.name}}</a></td>
+                <td>{{sward.regno}}</td>
+                <!-- <td></td> -->
             </tr>
         </tbody>
     </table>

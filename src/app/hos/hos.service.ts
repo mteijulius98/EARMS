@@ -51,7 +51,6 @@ return this.http.post("http://localhost/fypyear/public/api/infrastructure?token=
   const token=this.loginService.getToken();
   let headers = new Headers();
   headers.append('Content-Type', 'application/json');
-
   headers.append('X-Requested-With','XMLHttpRequest');
   let options = {
   headers:headers
