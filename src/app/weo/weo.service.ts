@@ -26,4 +26,13 @@ export class WeoService {
   (res:Response)=>res.json(),
       );
   }
+  public viewSorphans(){ 
+    const token=this.loginService.getToken();
+    let headers=new Headers()
+    headers.append('Content-Type', 'application/json');
+    headers.append('X-Requested-With','XMLHttpRequest');
+    return this.http.get('http://localhost/fypyear/public/api/sorphans?token='+ token,{headers:headers}).map(
+  (res:Response)=>res.json(),
+      );
+  }
 }
