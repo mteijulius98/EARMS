@@ -35,4 +35,13 @@ export class WeoService {
   (res:Response)=>res.json(),
       );
   }
+  public viewSdisable(){ 
+    const token=this.loginService.getToken();
+    let headers=new Headers()
+    headers.append('Content-Type', 'application/json');
+    headers.append('X-Requested-With','XMLHttpRequest');
+    return this.http.get('http://localhost/fypyear/public/api/sdisables?token='+ token,{headers:headers}).map(
+  (res:Response)=>res.json(),
+      );
+  }
 }
