@@ -12,7 +12,22 @@ const routes: Routes = [
       {
         path: '',
         children: [
-          { path: 'students', component:StudentsComponent },
+          { path: '', component:StudentsComponent },
+          { path: 'teachers', component: TeachersComponent }
+
+        ]
+      }
+    ]
+
+  },
+  {
+    path: 'deo/reports/:wardname/:schoolname',
+    component: SchoolreportsComponent,
+    children: [
+      {
+        path: '',
+        children: [
+          { path: '', component:StudentsComponent },
           { path: 'teachers', component: TeachersComponent }
 
         ]
