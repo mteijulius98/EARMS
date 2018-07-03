@@ -111,3 +111,11 @@ Make component scrollable
     max-height: 90vh;
     overflow-y: auto;
 }
+/* modal */
+.modal-backdrop {
+    position: relative
+}
+/* report */
+.report-c{
+    background-color: #fff
+}

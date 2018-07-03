@@ -6,7 +6,7 @@ import { SchoolreportsComponent } from './schoolreports.component';
 import { StudentsComponent } from './students/students.component';
 import { TeachersComponent } from './teachers/teachers.component';
 import { AcademicsComponent } from './academics/academics.component';
-import { FinancialComponent } from './financial/financial.component';
+import { FinancialsComponent } from './financial/financials.component';
 import { InfrastructureComponent } from './infrastructure/infrastructure.component';
 
 @NgModule({
@@ -14,6 +14,6 @@ import { InfrastructureComponent } from './infrastructure/infrastructure.compone
     CommonModule,
     SchoolreportsRoutingModule
   ],
-  declarations: [SchoolreportsComponent, StudentsComponent, TeachersComponent, AcademicsComponent, FinancialComponent, InfrastructureComponent]
+  declarations: [SchoolreportsComponent, StudentsComponent, TeachersComponent, AcademicsComponent, FinancialsComponent, InfrastructureComponent]
 })
 export class SchoolreportsModule { }
