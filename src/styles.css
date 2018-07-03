@@ -115,3 +115,7 @@ Make component scrollable
 .modal-backdrop {
     position: relative
 }
+/* report */
+.report-c{
+    background-color: #fff
+}
