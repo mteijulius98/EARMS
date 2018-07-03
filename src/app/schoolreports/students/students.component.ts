@@ -12,7 +12,7 @@ export class StudentsComponent implements OnInit {
   students=[];
   ostudents=[];
   id:any;
-  dstudents=[this.id];
+  dstudents=[];
   formI=[];
   form12=[];
   form23=[];
