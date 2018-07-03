@@ -28,7 +28,6 @@ return this.http.post("http://localhost/fypyear/public/api/sdetail", body, optio
   const token=this.loginService.getToken();
   let headers = new Headers();
   headers.append('Content-Type', 'application/json');
-
   headers.append('X-Requested-With','XMLHttpRequest');
   let options = {
   headers:headers
@@ -173,20 +172,22 @@ return this.http.post("http://localhost/fypyear/public/api/student?token=" + tok
     );
 }
 public viewRevenues(){ 
+  const token=this.loginService.getToken();
   let headers=new Headers()
-   headers.append('Authorization','jwt '+ this.token);
-   headers.append('Content-Type', 'application/json');
-  return this.http.get('http://localhost/fypyear/public/api/revenues',{headers:headers}).map(
+  headers.append('Content-Type', 'application/json');
+  headers.append('X-Requested-With','XMLHttpRequest');
+  return this.http.get('http://localhost/fypyear/public/api/revenues?token='+token,{headers:headers}).map(
 (res:Response)=>res.json(),
 
 
     );
 }
 public viewExpenditures(){ 
+  const token=this.loginService.getToken();
   let headers=new Headers()
-   headers.append('Authorization','jwt '+ this.token);
-   headers.append('Content-Type', 'application/json');
-  return this.http.get('http://localhost/fypyear/public/api/expenditures',{headers:headers}).map(
+  headers.append('Content-Type', 'application/json');
+  headers.append('X-Requested-With','XMLHttpRequest');
+  return this.http.get('http://localhost/fypyear/public/api/expenditures?token='+ token,{headers:headers}).map(
 (res:Response)=>res.json(),
 
 
@@ -194,30 +195,31 @@ public viewExpenditures(){
 }
 
 public viewInfrastructure(){ 
+  const token=this.loginService.getToken();
   let headers=new Headers()
-   headers.append('Authorization','jwt '+ this.token);
-   headers.append('Content-Type', 'application/json');
-  return this.http.get('http://localhost/fypyear/public/api/infrastructures',{headers:headers}).map(
+  headers.append('Content-Type', 'application/json');
+  headers.append('X-Requested-With','XMLHttpRequest');
+  return this.http.get('http://localhost/fypyear/public/api/infrastructures?token='+ token,{headers:headers}).map(
 (res:Response)=>res.json(),
-
-
     );
 }
 public viewStudents(){ 
+  const token=this.loginService.getToken();
   let headers=new Headers()
-   headers.append('Authorization','jwt '+ this.token);
+  headers.append('X-Requested-With','XMLHttpRequest');
    headers.append('Content-Type', 'application/json');
-  return this.http.get('http://localhost/fypyear/public/api/students',{headers:headers}).map(
+  return this.http.get('http://localhost/fypyear/public/api/students?token='+token,{headers:headers}).map(
 (res:Response)=>res.json(),
 
 
     );
 }
-public viewAttendances(){ 
+public viewAttendances(){
+  const token=this.loginService.getToken(); 
   let headers=new Headers()
-   headers.append('Authorization','jwt '+ this.token);
+  headers.append('X-Requested-With','XMLHttpRequest');
    headers.append('Content-Type', 'application/json');
-  return this.http.get('http://localhost/fypyear/public/api/attendances',{headers:headers}).map(
+  return this.http.get('http://localhost/fypyear/public/api/attendances?token='+token,{headers:headers}).map(
 (res:Response)=>res.json(),
 
 
@@ -234,43 +236,46 @@ public viewDisabilities(){
     );
 }
 public viewTlmaterials(){ 
+  const token=this.loginService.getToken();
   let headers=new Headers()
-   headers.append('Authorization','jwt '+ this.token);
-   headers.append('Content-Type', 'application/json');
-  return this.http.get('http://localhost/fypyear/public/api/tlmaterials',{headers:headers}).map(
+  headers.append('Content-Type', 'application/json');
+  headers.append('X-Requested-With','XMLHttpRequest');
+  return this.http.get('http://localhost/fypyear/public/api/tlmaterials?token='+ token,{headers:headers}).map(
 (res:Response)=>res.json(),
 
 
     );
 }
 public viewEquipments(){ 
+  const token=this.loginService.getToken();
   let headers=new Headers()
-   headers.append('Authorization','jwt '+ this.token);
-   headers.append('Content-Type', 'application/json');
-  return this.http.get('http://localhost/fypyear/public/api/equipments',{headers:headers}).map(
+  headers.append('Content-Type', 'application/json');
+  headers.append('X-Requested-With','XMLHttpRequest');
+  return this.http.get('http://localhost/fypyear/public/api/equipments?token=' + token,{headers:headers}).map(
 (res:Response)=>res.json(),
 
 
     );
 }
 public viewTeachers(){ 
+  const token=this.loginService.getToken();
   let headers=new Headers()
-   headers.append('Authorization','jwt '+ this.token);
-   headers.append('Content-Type', 'application/json');
-  return this.http.get('http://localhost/fypyear/public/api/teachers',{headers:headers}).map(
+  headers.append('Content-Type', 'application/json');
+  headers.append('X-Requested-With','XMLHttpRequest');
+  return this.http.get('http://localhost/fypyear/public/api/teachers?token=' + token,{headers:headers}).map(
 (res:Response)=>res.json(),
 
 
     );
 }
 public viewNtStaff(){ 
+  const token=this.loginService.getToken();
   let headers=new Headers()
-   headers.append('Authorization','jwt '+ this.token);
-   headers.append('Content-Type', 'application/json');
-  return this.http.get('http://localhost/fypyear/public/api/ntstaffs',{headers:headers}).map(
+  headers.append('Content-Type', 'application/json');
+  headers.append('X-Requested-With','XMLHttpRequest');
+  return this.http.get('http://localhost/fypyear/public/api/ntstaffs?token='+token,{headers:headers}).map(
 (res:Response)=>res.json(),
-
-
+// 'http://localhost/fypyear/public/api/students?token='+token,{headers:headers}
     );
 }
 
