@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ToggleService } from '../toggle.service';
-
 @Component({
   selector: 'app-headerbrand',
   templateUrl: './headerbrand.component.html',
@@ -8,7 +6,7 @@ import { ToggleService } from '../toggle.service';
 })
 export class HeaderbrandComponent implements OnInit {
   
-  constructor(private toggleService: ToggleService) { }
+  constructor() { }
     
   ngOnInit() {
   }
