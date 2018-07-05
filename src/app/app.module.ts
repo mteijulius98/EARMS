@@ -8,6 +8,7 @@ import { DeoModule } from './deo/deo.module';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { DataTablesModule } from 'angular-datatables';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -25,6 +26,7 @@ import { SchoolreportsModule } from './schoolreports/schoolreports.module';
     FormsModule,
     HttpModule,
     NgxSpinnerModule,
+    DataTablesModule,
     DeoModule,
     SloModule,
     WeoModule,
