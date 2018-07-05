@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
           setTimeout(() => {
             /** spinner ends after 5 seconds */
             this.spinner.hide();
-          }, 5000);
+          }, 500);
           alert("sorry u failed to login")
         }
       );
