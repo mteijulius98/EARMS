@@ -1,17 +1,20 @@
-import { Component, OnInit,Input,Output,EventEmitter} from '@angular/core';
+import { Component, OnInit,OnDestroy,Input,Output,EventEmitter} from '@angular/core';
 import { AdminService } from '../admin.service';
 import { IUsers } from './users';
 import { LoginServiceService } from '../../login/login-service.service';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
-export class UsersComponent implements OnInit {
+export class UsersComponent implements OnInit,OnDestroy {
 @Input() duser:IUsers;
 @Input() wuser:IUsers;
 @Output() userDeleted = new EventEmitter<IUsers>();
+dtOptions: DataTables.Settings = {};
+dtTrigger: Subject<any> = new Subject();
   role: string;
   users: IUsers[];
   errorMessage: string;
@@ -25,9 +28,14 @@ export class UsersComponent implements OnInit {
   public constructor(private adminService: AdminService, private loginService: LoginServiceService) { }
 
   ngOnInit() {
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      pageLength: 10
+    };
     this.adminService.viewRoles().subscribe(
       role => {
-        this.roles = role.roles
+        this.roles = role.roles;
+        this.dtTrigger.next();
         console.log('our', role)
         //(districts:ourDistrict[]) => this.districts= districts,
       },
@@ -55,7 +63,8 @@ export class UsersComponent implements OnInit {
           error => this.errorMessage = <any>error);
           this.adminService.viewDusers().subscribe(
             duser =>{
-            this. dusers= duser.dusers
+            this. dusers= duser.dusers;
+            this.dtTrigger.next();
             console.log('our',duser)
             //(districts:ourDistrict[]) => this.districts= districts,
             },
@@ -82,6 +91,10 @@ export class UsersComponent implements OnInit {
       
   
 } 
+ngOnDestroy(): void {
+  // Do not forget to unsubscribe the event
+  this.dtTrigger.unsubscribe();
+}
 onDelete(id){
   console.log(id)
   this.adminService.deleteUser(id)
