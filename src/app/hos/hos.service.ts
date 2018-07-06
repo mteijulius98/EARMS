@@ -105,7 +105,7 @@ return this.http.post("http://localhost/fypyear/public/api/revenue?token=" + tok
 let body = JSON.stringify({designation:designation,count:count});
 return this.http.post("http://localhost/fypyear/public/api/ntstaff?token=" + token, body, options).map( (response:Response) => response.json());
  }
- public registerTeacher(fname:any,mname:any,lname:any,sex:any,birth:any,edlevel:any,epdate:any,epid:any){
+ public registerTeacher(fname:any,mname:any,lname:any,sex:any,birth:any,edlevel:any,epdate:any,epid:any,subcate:any){
   const token=this.loginService.getToken();
   let headers = new Headers();
   headers.append('Content-Type', 'application/json');
@@ -113,7 +113,7 @@ return this.http.post("http://localhost/fypyear/public/api/ntstaff?token=" + tok
   let options = {
   headers:headers
 };
-let body = JSON.stringify({fname:fname,mname:mname,lname:lname,sex:sex,birth:birth,edlevel:edlevel,epdate:epdate,epid:epid});
+let body = JSON.stringify({fname:fname,mname:mname,lname:lname,sex:sex,birth:birth,edlevel:edlevel,epdate:epdate,epid:epid,comb:subcate});
 return this.http.post("http://localhost/fypyear/public/api/teacher?token=" + token, body, options).map( (response:Response) => response.json());
  }
  public registerExpenditure(name:any,amount1:any,kuanzia:any,mpaka:any,revenue:any){
@@ -334,6 +334,26 @@ public getWards(){
    headers.append('Authorization','jwt '+ this.token);
    headers.append('Content-Type', 'application/json');
   return this.http.get('http://localhost/fypyear/public/api/wards',{headers:headers}).map(
+(res:Response)=>res.json(),
+
+
+    );
+}
+public allowBut(){ 
+  let headers=new Headers()
+   headers.append('Authorization','jwt '+ this.token);
+   headers.append('Content-Type', 'application/json');
+  return this.http.get('http://localhost/fypyear/public/api/bUpdate',{headers:headers}).map(
+(res:Response)=>res.json(),
+
+
+    );
+}
+public dallowBut(){ 
+  let headers=new Headers()
+   headers.append('Authorization','jwt '+ this.token);
+   headers.append('Content-Type', 'application/json');
+  return this.http.get('http://localhost/fypyear/public/api/sdisables/' + localStorage.getItem('sid'),{headers:headers}).map(
 (res:Response)=>res.json(),
 
 

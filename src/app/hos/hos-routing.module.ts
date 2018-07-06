@@ -9,12 +9,12 @@ import { DocumentsComponent } from './documents/documents.component';
 import { ReportsComponent } from './reports/reports.component';
 import { ResourcesComponent } from './resources/resources.component';
 import { FinancialsComponent } from './financials/financials.component';
+import { AuthGuard } from '../auth.guard';
 
 const routes: Routes = [
   {
     path: 'hos',
     component: HosComponent,
-    // canActivate: [AuthguardService],
     children: [
       {
         path: '',
@@ -28,7 +28,8 @@ const routes: Routes = [
           { path: '', component: StudentsComponent}
         ]
       }
-    ]
+    ],
+    canActivate: [AuthGuard]
   }
 ];
 

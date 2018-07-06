@@ -41,7 +41,7 @@ export class StaffsComponent implements OnInit {
   }
   form14(form:any){
     
-    this.hosService.registerTeacher(form.value.fname,form.value.mname,form.value.lname,form.value.sex,form.value.birth,form.value.edlevel,form.value.epdate,form.value.epid)
+    this.hosService.registerTeacher(form.value.fname,form.value.mname,form.value.lname,form.value.sex,form.value.birth,form.value.edlevel,form.value.epdate,form.value.epid,form.value.subcate)
     
     .subscribe(
       resp =>alert('Information Submitted'),

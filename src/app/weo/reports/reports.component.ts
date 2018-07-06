@@ -19,5 +19,11 @@ export class ReportsComponent implements OnInit {
       },
       error => this.errorMessage = <any>error);
   }
+ IdStored(id){
+     localStorage.removeItem('sid')
+     localStorage.setItem('sid', id)
+     
+
+  }
 
 }

@@ -6,6 +6,7 @@ import { RegisterstationsComponent } from './registerstations/registerstations.c
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthguardService } from '../shared/authguard.service';
 import { UsersComponent } from './users/users.component';
+import { AuthGuard } from '../auth.guard';
 
 const routes: Routes = [
   {
@@ -21,7 +22,8 @@ const routes: Routes = [
           { path: '', component: DashboardComponent}
         ]
       }
-    ]
+    ],
+    canActivate: [AuthGuard],
   }
 ];
 

@@ -13,9 +13,9 @@
         </thead>
         <tbody>
             <tr *ngFor="let sward of swards">
-                <td><a class="nav-item nav-link" routerLink="../reports/{{sward.name}}">{{sward.name}}</a></td>
+                <td><a class="nav-item nav-link" (click)='IdStored(sward.id)' routerLink="../reports/{{sward.id}}">{{sward.name}}</a></td>
                 <td>{{sward.regno}}</td>
-                <!-- <td></td> -->
+               
             </tr>
         </tbody>
     </table>
