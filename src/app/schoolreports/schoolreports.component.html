@@ -1,65 +1,55 @@
 <div class="container-fluid fill px-0">
-  <div class="row">
-      <!--START LEFT COLUMN-->
-      <div class="col-sm-2 px-0">
-          <!-- start header brand  -->
-          <nav class="navbar navbar-c-bg navbar-expand-sm navbar-dark sticky-top  flex-md-nowrap p-0">
-              <a class="navbar-brand" href="#">EARMS</a>
-              <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" [attr.aria-controls]="id">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-          </nav>
-          <!-- end header brand -->
-          <div class="leftcolumn">
-              <nav class="d-none d-md-block">
-                  <div class="leftcolumn-sticky px-3 pt-3">
-                      <nav class="nav flex-column">
-
-                          <a class="nav-item nav-link" data-toggle="collapse" href="#collapseReports" role="button" aria-expanded="false" aria-controls="collapseReports">
-                              Reports
-                              <i class="material-icons ml-3">
-                                expand_more
-                                </i>
-                          </a>
-
-                          <div class="collapse" id="collapseReports">
+    <div class="row">
+        <!--START LEFT COLUMN-->
+        <div class="col-sm-2 px-0">
+            <!-- start header brand  -->
+            <nav class="navbar navbar-c-bg navbar-expand-sm navbar-dark sticky-top  flex-md-nowrap p-0">
+                <a class="navbar-brand" href="#">EARMS</a>
+                <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" [attr.aria-controls]="id">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+            <!-- end header brand -->
+            <div class="leftcolumn">
+                <nav class="d-none d-md-block">
+                    <div class="leftcolumn-sticky px-3 pt-3">
+                        <nav class="nav flex-column">
                             <a class="nav-item nav-link" routerLink="./" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Students</a>
-                            <a class="nav-item nav-link"  routerLink="./teachers" routerLinkActive="active">Teachers</a>
-                            <a class="nav-item nav-link"  routerLink="./academics" routerLinkActive="active">Academics</a>
-                            <a class="nav-item nav-link"  routerLink="./financial" routerLinkActive="active">Financials</a>
-                            <a class="nav-item nav-link"  routerLink="./infrastructure" routerLinkActive="active">Infrastructure</a>
-                          </div>
-                      </nav>
-                  </div>
+                            <a class="nav-item nav-link" routerLink="./teachers" routerLinkActive="active">Teachers</a>
+                            <a class="nav-item nav-link" routerLink="./academics" routerLinkActive="active">Academics</a>
+                            <a class="nav-item nav-link" routerLink="./financial" routerLinkActive="active">Financials</a>
+                            <a class="nav-item nav-link" routerLink="./infrastructure" routerLinkActive="active">Infrastructure</a>
+                        </nav>
+                    </div>
 
-              </nav>
-          </div>
+                </nav>
+            </div>
 
-      </div>
+        </div>
 
-      <!--END LEFT COLUMN-->
+        <!--END LEFT COLUMN-->
 
-      <!--START PAGE CONTENT-->
-      <div class="col-sm-10 px-0">
-          <!-- start header -->
-          <nav class="navbar navbar-expand-sm navbar-dark sticky-top  flex-md-nowrap  justify-content-end">
-              <div class="dropdown-toggle d-inline-block mr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="align-c">{{stationName}}</i>
-                  <i class="material-icons" id="account">
-                      account_circle
-                  </i>
-                  <div class="dropdown-menu dropdown-menu-right">
-                      <a class="dropdown-item">Profile</a>
-                      <a class="dropdown-item" [routerLink]="['/login']">Sign out</a>
-                  </div>
-              </div>
-          </nav>
-          <!-- end header -->
-          <main role="main" class="ml-sm-auto px-4 py-4 m-3 custom-scroll">
-            <router-outlet></router-outlet>
-          </main>
-      </div>
+        <!--START PAGE CONTENT-->
+        <div class="col-sm-10 px-0">
+            <!-- start header -->
+            <nav class="navbar navbar-expand-sm navbar-dark sticky-top  flex-md-nowrap  justify-content-end">
+                <div class="dropdown-toggle d-inline-block mr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="align-c">{{stationName}}</i>
+                    <i class="material-icons" id="account">
+                        account_circle
+                    </i>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item">Profile</a>
+                        <a class="dropdown-item" [routerLink]="['/login']">Sign out</a>
+                    </div>
+                </div>
+            </nav>
+            <!-- end header -->
+            <main role="main" class="ml-sm-auto px-4 py-4 m-3 custom-scroll">
+                <router-outlet></router-outlet>
+            </main>
+        </div>
 
-      <!--END PAGE CONTENT-->
-  </div>
+        <!--END PAGE CONTENT-->
+    </div>
 </div>
