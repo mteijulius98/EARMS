@@ -11,8 +11,8 @@ import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 export class StudentsComponent implements OnInit {
   students=[];
   ostudents=[];
-  id:any;
-  dstudents=[this.id];
+  school_id:any;
+  dstudents=[];
   formI=[];
   form12=[];
   form23=[];
@@ -31,11 +31,18 @@ export class StudentsComponent implements OnInit {
   form4=[];
   form5=[];
   form6=[];
+  swards=[];
   
   errorMessage:string;
   constructor(private weoService:WeoService) { }
 
   ngOnInit() {
+    this.weoService.viewWschools().subscribe(
+      sward =>{
+      this.swards=sward.swards
+      console.log('our',sward)
+      },
+      error => this.errorMessage = <any>error);
     this.weoService.viewSdatas().subscribe(
       student =>{
       this.students=student.students
@@ -92,7 +99,7 @@ export class StudentsComponent implements OnInit {
         },
         error => this.errorMessage = <any>error);
 
-        this.weoService.viewSdisable(this.id).subscribe(
+        this.weoService.viewSdisable().subscribe(
           dstudent =>{
           this.dstudents=dstudent.students
           dstudent.dstudents.map(x=>{

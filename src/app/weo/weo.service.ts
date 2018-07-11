@@ -13,16 +13,17 @@ export class WeoService {
     let headers=new Headers()
     headers.append('Content-Type', 'application/json');
     headers.append('X-Requested-With','XMLHttpRequest');
-    return this.http.get('http://localhost/fypyear/public/api/swards?token='+ token,{headers:headers}).map(
+    return this.http.get('http://localhost/fypyear/public/api/ws/'+ localStorage.getItem('wid'),{headers:headers}).map(
   (res:Response)=>res.json(),
       );
   }
+  // 'http://localhost/fypyear/public/api/ws/'+ localStorage.getItem('eid')
   public viewSdatas(){ 
     const token=this.loginService.getToken();
     let headers=new Headers()
     headers.append('Content-Type', 'application/json');
     headers.append('X-Requested-With','XMLHttpRequest');
-    return this.http.get('http://localhost/fypyear/public/api/sdatas?token='+ token,{headers:headers}).map(
+    return this.http.get('http://localhost/fypyear/public/api/sdatas/'+ localStorage.getItem('sid') + '?token' + token,{headers:headers}).map(
   (res:Response)=>res.json(),
       );
   }
@@ -31,27 +32,19 @@ export class WeoService {
     let headers=new Headers()
     headers.append('Content-Type', 'application/json');
     headers.append('X-Requested-With','XMLHttpRequest');
-    return this.http.get('http://localhost/fypyear/public/api/sorphans?token='+ token,{headers:headers}).map(
+    return this.http.get('http://localhost/fypyear/public/api/sorphans/' + localStorage.getItem('sid') + '?token' + token,{headers:headers}).map(
   (res:Response)=>res.json(),
       );
   }
-  // public viewSdisable(){ 
-  //   const token=this.loginService.getToken();
-  //   let headers=new Headers()
-  //   headers.append('Content-Type', 'application/json');
-  //   headers.append('X-Requested-With','XMLHttpRequest');
-  //   return this.http.get('http://localhost/fypyear/public/api/sdisables?token='+ token,{headers:headers}).map(
-  // (res:Response)=>res.json(),
-  //     );
-  // }
-  public viewSdisable(id:number){ 
+
+  public viewSdisable(){ 
     const token=this.loginService.getToken();
     let headers=new Headers()
     headers.append('Content-Type', 'application/json');
     headers.append('X-Requested-With','XMLHttpRequest');
-    return this.http.get('http://localhost/fypyear/public/api/sdisables/' + id +  '?token=' + token,{headers:headers}).map(
+    return this.http.get('http://localhost/fypyear/public/api/sdisables/' + localStorage.getItem('sid') +  '?token=' + token,{headers:headers}).map(
   (res:Response)=>res.json(),
       );
-      //'http://localhost/ng2-server/public/api/quote/' + id + '?token=' + token
+      
   }
 }

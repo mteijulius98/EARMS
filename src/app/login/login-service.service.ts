@@ -32,6 +32,8 @@ return this.http.post("http://localhost/fypyear/public/api/users", body, options
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem('currentUser', JSON.stringify(user));
        localStorage.setItem('token',user.token);
+       localStorage.setItem('did',user.district_id)
+       localStorage.setItem('wid',user.ward_id)
        if (user.role !== 'admin') {
          localStorage.setItem('fname', email);
        }

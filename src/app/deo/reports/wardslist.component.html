@@ -11,9 +11,9 @@
               </tr>
           </thead>
           <tbody>
-              <tr>
-                  <td><a class="nav-item nav-link" routerLink="./wardname">Schoolname</a></td>
-                  <td></td>
+              <tr  *ngFor="let dward of dwards">
+                  <td><a class="nav-item nav-link" (click)='WidStored(dward.id)' routerLink="./wardname">{{dward.wname}}</a></td>
+                  <td>{{dward.fname}}</td>
               </tr>
           </tbody>
       </table>

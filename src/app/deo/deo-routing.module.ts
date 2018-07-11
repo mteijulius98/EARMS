@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard.component';
 import { ReportsComponent } from './reports/reports.component';
 import { WardslistComponent } from './reports/wardslist.component';
 import { WardsComponent } from './reports/wards.component';
+import { AuthGuard } from '../auth.guard';
 
 const routes: Routes = [
   {
@@ -32,7 +33,8 @@ const routes: Routes = [
       }
     ]
   }
-]
+],
+canActivate: [AuthGuard],
   }
 ];
 

@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { LoginServiceService } from './login/login-service.service';
 import { HttpModule } from '@angular/http';
 import { SchoolreportsModule } from './schoolreports/schoolreports.module';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SchoolreportsModule } from './schoolreports/schoolreports.module';
     AppRoutingModule
   ],
   providers: [
-    LoginServiceService
+    LoginServiceService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
