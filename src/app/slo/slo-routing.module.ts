@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SloComponent } from './slo.component';
-import { AuthguardService } from '../shared/authguard.service';
 import { ReportsComponent } from './reports/reports.component';
 
 const routes: Routes = [

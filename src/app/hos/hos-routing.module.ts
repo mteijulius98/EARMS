@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AuthguardService } from '../shared/authguard.service';
 import { HosComponent } from './hos.component';
 import { StaffsComponent } from './staffs/staffs.component';
 import { StudentsComponent } from './students/students.component';

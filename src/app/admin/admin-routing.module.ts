@@ -4,7 +4,6 @@ import { AdminComponent } from './admin.component';
 import { RegisterschoolComponent } from './registerschool/registerschool.component';
 import { RegisterstationsComponent } from './registerstations/registerstations.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { AuthguardService } from '../shared/authguard.service';
 import { UsersComponent } from './users/users.component';
 import { AuthGuard } from '../auth.guard';
 
