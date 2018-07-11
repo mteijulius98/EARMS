@@ -8,6 +8,7 @@ import { ReportsComponent } from './reports/reports.component';
 import { DashboardComponent } from './dashboard.component';
 import { WardslistComponent } from './reports/wardslist.component';
 import { WardsComponent } from './reports/wards.component';
+import { DeoService } from './deo.service';
 
 @NgModule({
   imports: [
@@ -15,6 +16,9 @@ import { WardsComponent } from './reports/wards.component';
     SharedModule,
     DeoRoutingModule
   ],
-  declarations: [DeoComponent, ReportsComponent, DashboardComponent,  WardslistComponent, WardsComponent]
+  declarations: [DeoComponent, ReportsComponent, DashboardComponent,  WardslistComponent, WardsComponent],
+  providers: [
+    DeoService
+  ]
 })
 export class DeoModule { }

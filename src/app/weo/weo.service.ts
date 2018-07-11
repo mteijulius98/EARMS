@@ -13,10 +13,11 @@ export class WeoService {
     let headers=new Headers()
     headers.append('Content-Type', 'application/json');
     headers.append('X-Requested-With','XMLHttpRequest');
-    return this.http.get('http://localhost/fypyear/public/api/swards?token='+ token,{headers:headers}).map(
+    return this.http.get('http://localhost/fypyear/public/api/ws/'+ localStorage.getItem('wid'),{headers:headers}).map(
   (res:Response)=>res.json(),
       );
   }
+  // 'http://localhost/fypyear/public/api/ws/'+ localStorage.getItem('eid')
   public viewSdatas(){ 
     const token=this.loginService.getToken();
     let headers=new Headers()

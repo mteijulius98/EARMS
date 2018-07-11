@@ -7,15 +7,15 @@ import { WeoService } from '../weo.service';
   styleUrls: ['./reports.component.css']
 })
 export class ReportsComponent implements OnInit {
-   swards=[];
+   wss=[];
    errorMessage:string;
   constructor(private weoService:WeoService) { }
   
   ngOnInit() {
     this.weoService.viewWschools().subscribe(
-      sward =>{
-      this.swards=sward.swards
-      console.log('our',sward)
+      ws =>{
+      this.wss=ws.wss
+      console.log('our',ws)
       },
       error => this.errorMessage = <any>error);
   }

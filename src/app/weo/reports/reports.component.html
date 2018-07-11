@@ -8,13 +8,14 @@
             <tr>
                 <th scope="col">School</th>
                 <th scope="col">Reg number</th>
-                <!-- <th scope="col">Head of School</th> -->
+                <th scope="col">Head of School</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let sward of swards">
+            <tr *ngFor="let sward of wss">
                 <td><a class="nav-item nav-link" (click)='IdStored(sward.id)' routerLink="../reports/{{sward.id}}">{{sward.name}}</a></td>
                 <td>{{sward.regno}}</td>
+                <td>{{sward.fname}}</td>
                
             </tr>
         </tbody>
