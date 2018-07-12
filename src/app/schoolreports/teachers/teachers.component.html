@@ -1,4 +1,4 @@
-<div class="card m-2">
+<div class="card m-2" id="treport">
   <div class="card-header bg-transparent" id="headn1">
     <h5 class="mb-0">
       <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#viewDusers" aria-expanded="false"
@@ -9,8 +9,8 @@
   </div>
   <div id="viewDusers" class="collapse show" aria-labelledby="headn1" data-parent="#accordion">
     <div class="card-body text-center">
-      <h5 class="card-title">TEACHERS IN NUMBERS PER EDUCATION LEVEL</h5>
-      <table class="table table-bordered table-responsive-sm table-hover">
+      <h5 class="card-title">NUMBER OF TEACHERS PER EDUCATION LEVEL</h5>
+      <table class="table table-bordered table-responsive-sm">
         <thead>
           <tr>
             <th>Category</th>
@@ -28,4 +28,5 @@
       </table>
     </div>
   </div>
+  <button class="btn btn-custom-primary mx-auto my-2" (click)="downloadPDF()">Download Report</button>
 </div>
