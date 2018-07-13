@@ -8,7 +8,6 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { RegisterschoolComponent } from './registerschool/registerschool.component';
 import { RegisterstationsComponent } from './registerstations/registerstations.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './users/users.component';
 import { AdminService } from './admin.service';
 
@@ -25,7 +24,6 @@ import { AdminService } from './admin.service';
         AdminComponent,
         RegisterschoolComponent,
         RegisterstationsComponent,
-        DashboardComponent,
         UsersComponent,
     ],
     providers: [
