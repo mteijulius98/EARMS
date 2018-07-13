@@ -42,6 +42,23 @@ const routes: Routes = [
       }
     ]
 
+  },
+  {
+    path: 'slo/reports/:wardname/:schoolname',
+    component: SchoolreportsComponent,
+    children: [
+      {
+        path: '',
+        children: [
+          { path: '', component:StudentsComponent },
+          { path: 'teachers', component: TeachersComponent },
+          { path: 'academics', component: AcademicsComponent },
+          { path: 'financial', component: FinancialsComponent },
+          { path: 'infrastructure', component: InfrastructureComponent }
+        ]
+      }
+    ]
+
   }
 ];
 

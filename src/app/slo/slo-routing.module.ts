@@ -8,7 +8,7 @@ import { AuthGuard } from '../auth.guard';
 
 const routes: Routes = [
   {
-    path:'deo',
+    path:'slo',
     component:SloComponent,
     // canActivate:[AuthguardService],
     children:[
