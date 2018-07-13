@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WeoService } from '../../weo/weo.service';
 
 @Component({
   selector: 'app-infrastructure',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./infrastructure.component.css']
 })
 export class InfrastructureComponent implements OnInit {
-
-  constructor() { }
-
+   infras=[];
+   errorMessage:string
+  constructor(private weoService:WeoService) { }
+   
   ngOnInit() {
+    this.weoService.viewSchoolinfa().subscribe(
+      infra =>{
+      this.infras=infra.infras
+    
+      },
+      error => this.errorMessage = <any>error);
   }
 
 }

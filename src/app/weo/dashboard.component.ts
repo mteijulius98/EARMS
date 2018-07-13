@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Chart } from 'chart.js';
+import { Chart } from  'chart.js';
+import { WeoService } from './weo.service';
 
 @Component({
     selector: 'app-dashboard',
@@ -7,91 +8,119 @@ import { Chart } from 'chart.js';
     styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-    barChart: any[];
+    barChart=[];
     pieChart1: any[];
     pieChart2: any[];
-    constructor() { }
+    form1=[];
+    males_data = [];
+    females_data = [];
+    constructor(private weoService:WeoService) { }
 
     ngOnInit() {
-        this.barChart = new Chart('chart1', {
-            type: 'bar',
-            data: {
-                labels: ["Form I", "Form II", "Form III", "Form IV", "Form V", "Form VI"],
-                datasets: [{
-                    label: 'Males',
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    borderColor: 'rgba(54, 162, 235, 1)',
-                    borderWidth: 1,
-                    data: [12, 19, 3, 5, 2, 3]
-                },
-                {
-                    label: 'Females',
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255,99,132,1)',
-                    borderWidth: 1,
-                    data: [12, 19, 3, 5, 2, 3]
-                }
-                ]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: 'Number of students in {name} ward [number]'
-                },
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
-
-        });
-
-        this.pieChart1 = new Chart('chart2', {
-            type: 'pie',
-            data: {
-                labels: [
-                    'Blind',
-                    'Low Vision',
-                    'Hearing Impairment'
-                ],
-                datasets: [
+        this.weoService.viewWardinfo()
+        .subscribe(res=> {
+            console.log(res);
+            let males_data = res['infos'].map(res=>res.MALES)
+            let females_data = res['infos'].map(res=>res.FEMALES)
+            this.barChart = new Chart('chart1', {
+                type: 'bar',
+                data: {
+                    labels: ["Form I", "Form II", "Form III", "Form IV", "Form V", "Form VI"],
+                    datasets: [{
+                        label: 'Males',
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1,
+                        data: males_data
+                    },
                     {
-                        data: [120, 40, 60],
-                        backgroundColor: [
-                            '#ff8000',
-                            '#40bf40',
-                            '#9900ff'
-                        ]
+                        label: 'Females',
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255,99,132,1)',
+                        borderWidth: 1,
+                        data: females_data
                     }
-                ]
-            },
-            options:{
-                title: {
-                    display: true,
-                    text: 'Students with special needs'
+                    ]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: 'Number of students in {name} ward [number]'
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
                 }
-            }
-        });
-        
+    
+            });
+            
+        })
+        this.weoService.viewWardis()
+        .subscribe(res=>{
+          
+            let albinsm=res['wdis'].map(res=>res.TOTAL)
+            this.pieChart1 = new Chart('chart2', {
+                type: 'pie',
+                data: {
+                    labels: [
+                        'Albino',
+                        'Uoni Hafifu',
+                        'Wasioona',
+                        'Viziwi',
+                        'Viziwi Wasioona',
+                        'Ulemavu wa Viungo',
+                        'Ulemavu wa Akili'
+    
+                    ],
+                    datasets: [
+                        {
+                            data: albinsm,
+                            backgroundColor: [
+                                '#ff8000',
+                                '#40bf40',
+                                '#9900ff',
+                                '#9988ff',
+                                '#5600bb',
+                                '#dfd00a',
+                                'red'
+                            ]
+                        }
+                    ]
+                },
+                options:{
+                    title: {
+                        display: true,
+                        text: 'Students with special needs'
+                    }
+                }
+            })
+        })
+      this.weoService.viewWardteachers()
+      .subscribe(res=>{
+        let wardteachers=res['wteachers'].map(res=>res.TOTAL)
         this.pieChart2 = new Chart('chart3', {
             type: 'pie',
             data: {
                 labels: [
-                    'Science',
                     'Arts',
-                    'Business',
+                    'Bussiness',
+                    'Science',
+                    'Special Group',
                     'Technical'
                 ],
                 datasets: [
                     {
-                        data: [120, 40, 60,50],
+                        data: wardteachers,
                         backgroundColor: [
                             '#ff8000',
                             '#40bf40',
-                            '#9900ff'
+                            '#9900ff',
+                            '#6800dd',
+                            'maroon'
                         ]
                     }
                 ]
@@ -102,7 +131,11 @@ export class DashboardComponent implements OnInit {
                     text: 'Teachers per category'
                 }
             }
-        });
+        })
+      })
+
+      
+ 
     }
 
 

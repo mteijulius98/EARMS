@@ -20,11 +20,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <th></th>
+          <tr *ngFor="let teacher of teachs">
+            <td>{{teacher.comb}}</td>
+            <td>{{teacher.MALES}}</td>
+            <td>{{teacher.FEMALES}}</td>
           </tr>
         </tbody>
       </table>
