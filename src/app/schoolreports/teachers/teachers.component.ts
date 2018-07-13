@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as jsPDF from 'jspdf';
 import { WeoService } from '../../weo/weo.service';
 
 @Component({
@@ -19,5 +20,21 @@ export class TeachersComponent implements OnInit {
       },
       error => this.errorMessage = <any>error);
   }
-
+  downloadPDF() {
+    var report = document.getElementById('treport'); 
+     console.log(report);
+      let doc = new jsPDF();
+  
+       let specialElementHandlers = {
+        '#editor': function (element,renderer) {
+          return true;
+        }
+      };
+      doc.fromHTML(report.innerHTML,15,15,{
+        'width':190,
+        'elementHandlers':specialElementHandlers
+      });
+      doc.save('teachersreport.pdf');
+   
+  }
 }
