@@ -47,4 +47,56 @@ export class WeoService {
       );
       
   }
+  public viewWardinfo(){ 
+    const token=this.loginService.getToken();
+    let headers=new Headers()
+    headers.append('Content-Type', 'application/json');
+    headers.append('X-Requested-With','XMLHttpRequest');
+    return this.http.get('http://localhost/fypyear/public/api/infos/' + localStorage.getItem('wid'),{headers:headers}).map(
+  (res:Response)=>res.json(),
+      );
+      
+  }
+  public viewWardis(){ 
+    const token=this.loginService.getToken();
+    let headers=new Headers()
+    headers.append('Content-Type', 'application/json');
+    headers.append('X-Requested-With','XMLHttpRequest');
+    return this.http.get('http://localhost/fypyear/public/api/wardis/' + localStorage.getItem('wid'),{headers:headers}).map(
+  (res:Response)=>res.json(),
+      );
+      
+  }
+  public viewWardteachers(){ 
+    const token=this.loginService.getToken();
+    let headers=new Headers()
+    headers.append('Content-Type', 'application/json');
+    headers.append('X-Requested-With','XMLHttpRequest');
+    return this.http.get('http://localhost/fypyear/public/api/wardteach/' + localStorage.getItem('wid'),{headers:headers}).map(
+  (res:Response)=>res.json(),
+      );
+      
+  }
+
+  public viewSchoolinfa(){ 
+    const token=this.loginService.getToken();
+    let headers=new Headers()
+    headers.append('Content-Type', 'application/json');
+    headers.append('X-Requested-With','XMLHttpRequest');
+    return this.http.get('http://localhost/fypyear/public/api/infas/' + localStorage.getItem('sid'),{headers:headers}).map(
+  (res:Response)=>res.json(),
+      );
+      
+  }
+  public viewSchooltechs(){ 
+    const token=this.loginService.getToken();
+    let headers=new Headers()
+    headers.append('Content-Type', 'application/json');
+    headers.append('X-Requested-With','XMLHttpRequest');
+    return this.http.get('http://localhost/fypyear/public/api/techs/' + localStorage.getItem('sid'),{headers:headers}).map(
+  (res:Response)=>res.json(),
+      );
+      
+  }
+  
 }

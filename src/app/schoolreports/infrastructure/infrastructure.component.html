@@ -19,10 +19,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
+            <tr *ngFor="let infrastructure of infras">
+              <td>{{infrastructure.Name}}</td>
+              <td>{{infrastructure.available}}</td>
+              <td>{{infrastructure.needed}}</td>
             </tr>
           </tbody>
         </table>
