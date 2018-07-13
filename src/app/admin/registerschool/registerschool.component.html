@@ -47,56 +47,74 @@
       <div class="card-body">
         <form class="form-group px-4 py-2" #registerSchool="ngForm" (ngSubmit)="form3(registerSchool)">
           <div class="row">
-            <div class="col-sm-4">
+            <div class="col-4 col-sm-4">
               <div class="form-group">
                 <label for="schoolName">Name</label>
                 <input type="text" class="form-control" id="schoolname" ngModel name="schoolname" required>
               </div>
+            </div>
+            <div class="col-4 col-sm-4">
+              <div class="form-group">
+                <label for="schoolRegNo">Reg Number</label>
+                <input type="text" class="form-control" id="regno" ngModel name="regno" required autofocus>
+              </div>
+            </div>
+            <div class="col-4 col-sm-4">
+              <div class="form-group">
+                <label for="schoolRegNo">Reg Date</label>
+                <input type="date" class="form-control" id="regdate" ngModel name="regdate" required autofocus>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-4 col-sm-4">
               <div class="form-group">
                 <label for="schoolCategory">Type</label>
                 <select class="form-control" id="category" ngModel name="category" required>
                   <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
                 </select>
               </div>
-              <div class="form-group">
-                <label for="ward">Postal address</label>
-                <input type="text" class="form-control" id="postal_address" ngModel name="postal_address" required autofocus>
-              </div>
             </div>
-            <div class="col-sm-4">
-              <div class="form-group">
-                <label for="schoolRegNo">Reg Number</label>
-                <input type="text" class="form-control" id="regno" ngModel name="regno" required autofocus>
-              </div>
+            <div class="col-4 col-sm-4">
               <div class="form-group">
                 <label for="ward">Ownership</label>
                 <select class="form-control" id="ownership" ngModel name="ownership" required autofocus>
                   <option *ngFor="let ownership of ownerships" value="{{ownership.id}}">{{ownership.name}}</option>
                 </select>
               </div>
-              <div class="form-group">
-                <label for="schoolEmail">Email</label>
-                <input type="text" class="form-control" id="email" ngModel name="email" required>
-              </div>
             </div>
-
-            <div class="col-sm-4">
-              <div class="form-group">
-                <label for="schoolRegNo">Reg Date</label>
-                <input type="date" class="form-control" id="regdate" ngModel name="regdate" required autofocus>
-              </div>
+            <div class="col-4 col-sm-4">
               <div class="form-group">
                 <label for="ward">Ward</label>
                 <select class="form-control" id="ward" ngModel name="ward" required autofocus>
                   <option *ngFor="let ward of wards" value="{{ward.id}}">{{ward.wname}}</option>
                 </select>
               </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-4 col-sm-4">
+              <div class="form-group">
+                <label for="ward">Postal address</label>
+                <input type="text" class="form-control" id="postal_address" ngModel name="postal_address" required autofocus>
+              </div>
+            </div>
+            <div class="col-4 col-sm-4">
+              <div class="form-group">
+                <label for="schoolEmail">Email</label>
+                <input type="text" class="form-control" id="email" ngModel name="email" required>
+              </div>
+            </div>
+            <div class="col-4 col-sm-4">
               <div class="form-group">
                 <label for="ward">Phone number</label>
                 <input type="text" class="form-control" id="phonenumber" ngModel name="phonenumber" required autofocus>
               </div>
             </div>
           </div>
+
           <div class="form-group">
             <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!registerSchool.valid">Register School</button>
           </div>
@@ -159,7 +177,7 @@
                             </button>
                           </div>
                           <div class="modal-body">
-                              
+
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
