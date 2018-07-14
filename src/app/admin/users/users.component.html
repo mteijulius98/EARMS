@@ -9,7 +9,7 @@
                 <form class="form-group px-4 py-2" #addRole="ngForm" (ngSubmit)="form4(addRole)">
                     <div class="form-group">
                         <label for="role">Role</label>
-                        <input type="text" class="form-control" id="role" name="role_name" ngModel  required autofocus>
+                        <input type="text" class="form-control" id="role" name="role_name" ngModel required autofocus>
                         <!-- <div *ngIf="role.invalid && (role.dirty || role.touched)" class="alert alert-danger">
                             <div *ngIf="role.errors.required">
                                 Role is required.
@@ -36,28 +36,39 @@
             <div class="card-body">
                 <form class="form-group px-4 py-2" #addUser="ngForm" (ngSubmit)="form5(addUser)">
                     <div class="row">
-                        <div class="col-sm-4">
+                        <div class="col-4 col-sm-4">
                             <div class="form-group">
                                 <label for="firstName">First Name</label>
                                 <input type="text" class="form-control" id="firstname" name="firstname" ngModel required autofocus>
                             </div>
-
-                            <div class="form-group">
-                                <label for="role">Role</label>
-                                <select class="form-control" id="userRole" name="role" [(ngModel)]='role' required>
-                                    <!-- <option value="hos">hos</option>
-                                    <option value="weo">weo</option>
-                                    <option value="slo">slo</option>
-                                    <option value="2">deo</option> -->
-                                    <option option *ngFor="let role of roles" value="{{role.id}}">{{role.roinitial}}</option>
-                                </select>
-                            </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-4 col-sm-4">
                             <div class="form-group">
                                 <label for="middleName">Middle Name</label>
                                 <input type="text" class="form-control" id="middlename" name="middlename" ngModel required autofocus>
                             </div>
+                        </div>
+                        <div class="col-4 col-sm-4">
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" class="form-control" id="lastname" name="lastname" ngModel required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 col-sm-4">
+                            <div class="form-group">
+                                <label for="role">Role</label>
+                                <select class="form-control" id="userRole" name="role" [(ngModel)]='role' required>
+                                    <!-- <option value="hos">hos</option>
+                                            <option value="weo">weo</option>
+                                            <option value="slo">slo</option>
+                                            <option value="2">deo</option> -->
+                                    <option option *ngFor="let role of roles" value="{{role.id}}">{{role.roinitial}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-4 col-sm-4">
                             <div [ngSwitch]="role">
                                 <div class="form-group" *ngSwitchCase="'2'">
                                     <label for="station">District</label>
@@ -83,39 +94,29 @@
                                         <option option *ngFor="let district of districts" value="{{district.id}}">{{district.dname}}</option>
                                     </select>
                                 </div>
-
-
                                 <div class="form-group" *ngSwitchDefault>
                                     <label for="station">Station</label>
                                     <select class="form-control" id="station" name="station" ngModel required>
                                         <option></option>
                                     </select>
                                 </div>
-
-                            </div>
-
-
-                            <div class="form-group">
-                                <label for="userPassword">Password</label>
-                                <input type="password" class="form-control" id="password" name="password" ngModel required>
                             </div>
                         </div>
-                        <div class="col-sm-4">
-                            <div class="form-group">
-                                <label for="lastName">Last Name</label>
-                                <input type="text" class="form-control" id="lastname" name="lastname" ngModel required>
-                            </div>
-
+                        <div class="col-4 col-sm-4">
                             <div class="form-group">
                                 <label for="userEmail">Email</label>
                                 <input type="email" id="email" name="email" class="form-control" ngModel required autofocus="">
                             </div>
-                            <div class="form-group">
-                                <button class="btn btn-custom-primary btn-block" [routerLink]="['/admin/users']" type="submit">Add User</button>
-                            </div>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="userPassword">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" ngModel required>
+                    </div>
 
+                    <div class="form-group">
+                        <button class="btn btn-custom-primary btn-block w-50 mx-auto" type="submit" [disabled]="!addUser.valid">Add User</button>
+                    </div>
                 </form>
             </div>
         </div>

@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DeoService } from '../deo.service';
-import { ReportsComponent } from '../../slo/reports/reports.component';
-
 
 @Component({
   selector: 'app-wards',

@@ -8,21 +8,28 @@
       <div class="card-body">
         <form class="form-group my-3 px-4 py-2" #revenueForm="ngForm" (ngSubmit)="form12(revenueForm)">
           <div class="row">
-            <div class="col-sm-6">
+            <div class="col-6 col-sm-6">
               <div class="form-group">
                 <label for="">Source</label>
                 <input type="text" class="form-control" id="source" ngModel name="source" required autofocus>
               </div>
+            </div>
+            <div class="col-6 col-sm-6">
+              <div class="form-group">
+                <label for="no_a">Amount</label>
+                <input type="text" class="form-control" id="amount" ngModel name="amount" required autofocus>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6 col-sm-6">
               <div class="form-group">
                 <label for="from">From</label>
                 <input type="date" class="form-control" id="from" ngModel name="from" required autofocus>
               </div>
             </div>
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label for="no_a">Amount</label>
-                <input type="text" class="form-control" id="amount" ngModel name="amount" required autofocus>
-              </div>
+            <div class="col-6 col-sm-6">
               <div class="form-group">
                 <label for="to">To</label>
                 <input type="date" class="form-control" id="to" ngModel name="to" required>
@@ -43,29 +50,36 @@
         Expenditure
       </div>
       <div class="card-body">
-        <form class="form-group my-3 px-4 py-2" #expForm="ngForm"  (ngSubmit)="form30(expForm)">
+        <form class="form-group my-3 px-4 py-2" #expForm="ngForm" (ngSubmit)="form30(expForm)">
           <div class="row">
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" ngModel name="name" required autofocus>
-              </div>
-              <div class="form-group">
-                <label for="date">From</label>
-                <input type="date" class="form-control" id="kuanzia" ngModel name="kuanzia" required autofocus>
-              </div>
+            <div class="col-6 col-sm-6">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" ngModel name="name" required autofocus>
+                  </div>
             </div>
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label for="amount1">Amount</label>
-                <input type="text" class="form-control" id="amount1" ngModel name="amount1" required autofocus>
+            <div class="col-6 col-sm-6">
+                <div class="form-group">
+                    <label for="amount1">Amount</label>
+                    <input type="text" class="form-control" id="amount1" ngModel name="amount1" required autofocus>
+                  </div>
               </div>
-              <div class="form-group">
-                <label for="date">To</label>
-                <input type="date" class="form-control" id="mpaka" ngModel name="mpaka" required>
-              </div>
-            </div>
           </div>
+
+          <div class="row">
+              <div class="col-6 col-sm-6">
+                  <div class="form-group">
+                      <label for="date">From</label>
+                      <input type="date" class="form-control" id="kuanzia" ngModel name="kuanzia" required autofocus>
+                    </div>
+              </div>
+              <div class="col-6 col-sm-6">
+                  <div class="form-group">
+                      <label for="date">To</label>
+                      <input type="date" class="form-control" id="mpaka" ngModel name="mpaka" required>
+                    </div>
+                </div>
+            </div>
           <div class="form-group">
             <label for="revenue">Revenue source used</label>
             <select class="form-control" id="revenue" name="revenue" ngModel required>
@@ -81,50 +95,50 @@
     <!-- end expenditure form -->
   </div>
   <div class="col-sm-6">
-     <!-- start view school revenue -->
-     <div class="card m-2">
-        <div class="card-header">
-          School Revenue
-        </div>
-        <div class="card-body">
-          <table class="table table-bordered table-responsive-sm table-hover">
-            <thead>
-              <tr>
-                <th scope="col">Source</th>
-                <th scope="col">Amount</th>
-                <th>
-                  <i class="material-icons">
-                    create
-                  </i>
-                </th>
-                <th>
-                  <i class="material-icons">
-                    delete
-                  </i>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let revenue of revenues">
-                <td>{{revenue.source}}</td>
-                <td>{{revenue.amount}}</td>
-                <td>
-                  <button class="btn btn-info btn-sm">
-                    Edit
-                  </button>
-                </td>
-                <td>
-                  <button class="btn btn-danger btn-sm">
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+    <!-- start view school revenue -->
+    <div class="card m-2">
+      <div class="card-header">
+        School Revenue
       </div>
-      <!-- end view school revenue -->
-      
+      <div class="card-body">
+        <table class="table table-bordered table-responsive-sm table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Source</th>
+              <th scope="col">Amount</th>
+              <th>
+                <i class="material-icons">
+                  create
+                </i>
+              </th>
+              <th>
+                <i class="material-icons">
+                  delete
+                </i>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let revenue of revenues">
+              <td>{{revenue.source}}</td>
+              <td>{{revenue.amount}}</td>
+              <td>
+                <button class="btn btn-info btn-sm">
+                  Edit
+                </button>
+              </td>
+              <td>
+                <button class="btn btn-danger btn-sm">
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- end view school revenue -->
+
     <!-- start view school expenditure -->
     <div class="card m-2">
       <div class="card-header">
@@ -149,7 +163,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr  *ngFor="let expenditure of expenditures">
+            <tr *ngFor="let expenditure of expenditures">
               <td>{{expenditure.name}}</td>
               <td>{{expenditure.amount}}</td>
               <td>

@@ -8,23 +8,30 @@
       <div class="card-body">
         <form class="form-group my-3 px-4 py-2" #InfraForm="ngForm" (ngSubmit)="form8(InfraForm)">
           <div class="row">
-            <div class="col-sm-6">
+            <div class="col-6 col-sm-6">
               <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" class="form-control" id="name" ngModel name="name" required autofocus>
               </div>
+            </div>
+            <div class="col-6 col-sm-6">
+              <div class="form-group">
+                <label for="cat">Category</label>
+                <select class="form-control" id="category" name="category" ngModel required>
+                  <option *ngFor="let icategory of icategories" value="{{icategory.id}}">{{icategory.name}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6 col-sm-6">
               <div class="form-group">
                 <label for="no_a">Number available</label>
                 <input type="text" class="form-control" id="available" ngModel name="available" required autofocus>
               </div>
             </div>
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label for="cat">Category</label>
-                <select class="form-control" id="category" name="category" ngModel required>
-                  <option  *ngFor="let icategory of icategories" value="{{icategory.id}}">{{icategory.name}}</option>
-                </select>
-              </div>
+            <div class="col-6 col-sm-6">
               <div class="form-group">
                 <label for="mname">Number needed</label>
                 <input type="text" class="form-control" id="needed" ngModel name="needed" required>
@@ -47,36 +54,44 @@
       <div class="card-body">
         <form class="form-group my-3 px-4 py-2" #tlForm="ngForm" (ngSubmit)="form9(tlForm)">
           <div class="row">
-            <div class="col-sm-6">
+            <div class="col-6 col-sm-6">
               <div class="form-group">
                 <label for="av_male">Name</label>
                 <input type="text" class="form-control" id="name" ngModel name="name" required autofocus>
               </div>
-              <div class="form-group">
-                <label for="cat">Category</label>
-                <select class="form-control" id="tlcatagory" name="tlcategory" ngModel required>
-                  <option  *ngFor="let tlcategory of tlmcategories" value="{{tlcategory.id}}">{{tlcategory.name}}</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="needed">Needed</label>
-                <input type="text" class="form-control" id="needed" ngModel name="needed" required>
-              </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-6 col-sm-6">
               <div class="form-group">
                 <label for="class">Class</label>
                 <select class="form-control" id="sclass" name="sclass" ngModel required>
-                  <option  *ngFor="let class of sclasses" value="{{class.id}}" >{{class.name}}</option>
+                  <option *ngFor="let class of sclasses" value="{{class.id}}">{{class.name}}</option>
                 </select>
               </div>
+
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cat">Category</label>
+            <select class="form-control" id="tlcatagory" name="tlcategory" ngModel required>
+              <option *ngFor="let tlcategory of tlmcategories" value="{{tlcategory.id}}">{{tlcategory.name}}</option>
+            </select>
+          </div>
+
+          <div class="row">
+            <div class="col-6 col-sm-6">
               <div class="form-group">
                 <label for="no_1">Number available</label>
                 <input type="text" class="form-control" id="available" ngModel name="available" required>
               </div>
-              
+            </div>
+            <div class="col-6 col-sm-6">
+              <div class="form-group">
+                <label for="needed">Number Needed</label>
+                <input type="text" class="form-control" id="needed" ngModel name="needed" required>
+              </div>
             </div>
           </div>
+
           <div class="form-group">
             <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!tlForm.valid">Submit Details</button>
           </div>
@@ -91,36 +106,42 @@
         Register Equipment
       </div>
       <div class="card-body">
-        <form class="form-group my-3 px-4 py-2" #eqForm="ngForm"  (ngSubmit)="form10(eqForm)">
+        <form class="form-group my-3 px-4 py-2" #eqForm="ngForm" (ngSubmit)="form10(eqForm)">
           <div class="row">
-            <div class="col-sm-6">
+            <div class="col-6 col-sm-6">
               <div class="form-group">
                 <label for="av_male">Name</label>
                 <input type="text" class="form-control" id="name" ngModel name="name" required autofocus>
               </div>
-              <div class="form-group">
-                <label for="cat">Category</label>
-                <select class="form-control" id="eqcategory" name="eqcategory" ngModel required>
-                  <option  *ngFor="let category of eqcategories" value="{{category.id}}">{{category.name}}</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="needed">Needed</label>
-                <input type="text" class="form-control" id="needed" ngModel name="needed" required>
-              </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-6 col-sm-6">
               <div class="form-group">
                 <label for="class1">Class</label>
                 <select class="form-control" id="sclass1" name="sclass1" ngModel required>
-                  <option  *ngFor="let class of sclasses" value="{{class.id}}" >{{class.name}}</option>
+                  <option *ngFor="let class of sclasses" value="{{class.id}}">{{class.name}}</option>
                 </select>
               </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cat">Category</label>
+            <select class="form-control" id="eqcategory" name="eqcategory" ngModel required>
+              <option *ngFor="let category of eqcategories" value="{{category.id}}">{{category.name}}</option>
+            </select>
+          </div>
+
+          <div class="row">
+            <div class="col-6 col-sm-6">
               <div class="form-group">
                 <label for="no_2">Number available</label>
                 <input type="text" class="form-control" id="available" ngModel name="available" required>
               </div>
-             
+            </div>
+            <div class="col-6 col-sm-6">
+              <div class="form-group">
+                <label for="needed">Number Needed</label>
+                <input type="text" class="form-control" id="needed" ngModel name="needed" required>
+              </div>
             </div>
           </div>
           <div class="form-group">
@@ -137,7 +158,7 @@
         Specify offered services
       </div>
       <div class="card-body">
-        <form class="form-group my-3 px-4 py-2" #srvForm="ngForm"  (ngSubmit)="form11(srvForm)">
+        <form class="form-group my-3 px-4 py-2" #srvForm="ngForm" (ngSubmit)="form11(srvForm)">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" class="form-control" id="name" ngModel name="name" required autofocus>
@@ -236,7 +257,7 @@
               <td>{{tlmaterial.category}}</td>
               <td>{{tlmaterial.available}}</td>
               <td>{{tlmaterial.needed}}</td>
-              
+
               <td>
                 <button class="btn btn-info btn-sm">
                   Edit
@@ -256,50 +277,50 @@
 
     <!-- view equipment  -->
     <div class="card m-2">
-        <div class="card-header">
-          view equipment
-        </div>
-        <div class="card-body">
-          <table class="table table-bordered table-responsive-sm table-hover">
-            <thead>
-              <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Category</th>
-                <th>Available</th>
-                <th>Needed</th>
-                <th>
-                  <i class="material-icons">
-                    create
-                  </i>
-                </th>
-                <th>
-                  <i class="material-icons">
-                    delete
-                  </i>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let equipment of equipments">
-                <td>{{equipment.Name}}</td>
-                <td>{{equipment.category}}</td>
-                <td>{{equipment.available}}</td>
-                <td>{{equipment.needed}}</td>
-                <td>
-                  <button class="btn btn-info btn-sm">
-                    Edit
-                  </button>
-                </td>
-                <td>
-                  <button class="btn btn-danger btn-sm">
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="card-header">
+        view equipment
       </div>
-      <!-- view equipment -->
+      <div class="card-body">
+        <table class="table table-bordered table-responsive-sm table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Category</th>
+              <th>Available</th>
+              <th>Needed</th>
+              <th>
+                <i class="material-icons">
+                  create
+                </i>
+              </th>
+              <th>
+                <i class="material-icons">
+                  delete
+                </i>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let equipment of equipments">
+              <td>{{equipment.Name}}</td>
+              <td>{{equipment.category}}</td>
+              <td>{{equipment.available}}</td>
+              <td>{{equipment.needed}}</td>
+              <td>
+                <button class="btn btn-info btn-sm">
+                  Edit
+                </button>
+              </td>
+              <td>
+                <button class="btn btn-danger btn-sm">
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- view equipment -->
   </div>
 </div>
