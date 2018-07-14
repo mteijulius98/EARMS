@@ -32,6 +32,7 @@ export class StudentsComponent implements OnInit {
   form5=[];
   form6=[];
   swards=[];
+  schools=[];
   
   errorMessage:string;
   constructor(private weoService:WeoService) { }
@@ -40,7 +41,6 @@ export class StudentsComponent implements OnInit {
     this.weoService.viewWschools().subscribe(
       sward =>{
       this.swards=sward.swards
-      console.log('our',sward)
       },
       error => this.errorMessage = <any>error);
     this.weoService.viewSdatas().subscribe(
@@ -66,8 +66,6 @@ export class StudentsComponent implements OnInit {
           this.form6.push(x)
         }
       })
-      console.log("form 1",this.form3)
-      console.log('our',student)
       },
       error => this.errorMessage = <any>error);
 
@@ -94,8 +92,6 @@ export class StudentsComponent implements OnInit {
             this.form62.push(x)
           }
         })
-        console.log("form 1",this.form3)
-        console.log('our',ostudent)
         },
         error => this.errorMessage = <any>error);
 
@@ -122,10 +118,13 @@ export class StudentsComponent implements OnInit {
               this.form63.push(x)
             }
           })
-          console.log("form 1",this.form3)
-          console.log('our',dstudent)
           },
           error => this.errorMessage = <any>error);
+          this.weoService.viewSpeschool().subscribe(
+            school =>{
+            this.schools=school.schools
+            },
+            error => this.errorMessage = <any>error);
   }
  
 downloadPDF() {

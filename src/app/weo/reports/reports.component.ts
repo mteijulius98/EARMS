@@ -23,7 +23,11 @@ export class ReportsComponent implements OnInit {
      localStorage.removeItem('sid')
      localStorage.setItem('sid', id)
      
-
   }
+  NameStored(name){
+    localStorage.removeItem('sname')
+    localStorage.setItem('sname', name)
+    
+ }
 
 }

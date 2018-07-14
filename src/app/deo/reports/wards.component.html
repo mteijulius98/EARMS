@@ -15,7 +15,7 @@
               <tr  *ngFor="let ws of wss">
                   <td><a class="nav-item nav-link" (click)='IddStored(ws.id)' routerLink="../wardname/{{ws.id}}">{{ws.name}}</a></td>
                   <td>{{ws.regno}}</td>
-                  <td>{{ws.fname}}</td>
+                  <td>{{ws.fname}} {{ws.mname}} {{ws.lname}}</td>
               </tr>
           </tbody>
       </table>

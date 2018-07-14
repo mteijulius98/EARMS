@@ -26,7 +26,36 @@ export class DeoService {
   (res:Response)=>res.json(),
       );
   }
-
+  public viewDisinfo(){ 
+    const token=this.loginService.getToken();
+    let headers=new Headers()
+    headers.append('Content-Type', 'application/json');
+    headers.append('X-Requested-With','XMLHttpRequest');
+    return this.http.get('http://localhost/fypyear/public/api/dinfos/' + localStorage.getItem('did'),{headers:headers}).map(
+  (res:Response)=>res.json(),
+      );
+      
+  }
+  public viewDisdis(){ 
+    const token=this.loginService.getToken();
+    let headers=new Headers()
+    headers.append('Content-Type', 'application/json');
+    headers.append('X-Requested-With','XMLHttpRequest');
+    return this.http.get('http://localhost/fypyear/public/api/ddis/' + localStorage.getItem('did'),{headers:headers}).map(
+  (res:Response)=>res.json(),
+      );
+      
+  }
+  public viewDistrictteachers(){ 
+    const token=this.loginService.getToken();
+    let headers=new Headers()
+    headers.append('Content-Type', 'application/json');
+    headers.append('X-Requested-With','XMLHttpRequest');
+    return this.http.get('http://localhost/fypyear/public/api/dtechs/' + localStorage.getItem('did'),{headers:headers}).map(
+  (res:Response)=>res.json(),
+      );
+      
+  }
 
 
 

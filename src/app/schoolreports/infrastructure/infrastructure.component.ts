@@ -8,6 +8,7 @@ import { WeoService } from '../../weo/weo.service';
 })
 export class InfrastructureComponent implements OnInit {
    infras=[];
+   schools=[];
    errorMessage:string
   constructor(private weoService:WeoService) { }
    
@@ -18,6 +19,11 @@ export class InfrastructureComponent implements OnInit {
     
       },
       error => this.errorMessage = <any>error);
+      this.weoService.viewSpeschool().subscribe(
+        school =>{
+        this.schools=school.schools
+        },
+        error => this.errorMessage = <any>error);
   }
 
 }

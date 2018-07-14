@@ -13,10 +13,9 @@
         </thead>
         <tbody>
             <tr *ngFor="let sward of wss">
-                <td><a class="nav-item nav-link" (click)='IdStored(sward.id)' routerLink="../reports/{{sward.id}}">{{sward.name}}</a></td>
+                <td><a class="nav-item nav-link" (click)='IdStored(sward.id)'  (click)='NameStored(sward.name)' routerLink="../reports/{{sward.id}}">{{sward.name}}</a></td>
                 <td>{{sward.regno}}</td>
-                <td>{{sward.fname}}</td>
-               
+                <td>{{sward.fname}} {{sward.mname}} {{sward.lname}}</td>
             </tr>
         </tbody>
     </table>

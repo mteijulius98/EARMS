@@ -9,10 +9,16 @@ import { WeoService } from '../../weo/weo.service';
 })
 export class TeachersComponent implements OnInit {
     teachs=[];
+    schools=[];
     errorMessage:string
   constructor(private weoService:WeoService) { }
 
   ngOnInit() {
+    this.weoService.viewSpeschool().subscribe(
+      school =>{
+      this.schools=school.schools
+      },
+      error => this.errorMessage = <any>error);
     this.weoService.viewSchooltechs().subscribe(
       teach =>{
       this.teachs=teach.teachs

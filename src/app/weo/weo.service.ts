@@ -47,6 +47,16 @@ export class WeoService {
       );
       
   }
+  public viewSpeschool(){ 
+    const token=this.loginService.getToken();
+    let headers=new Headers()
+    headers.append('Content-Type', 'application/json');
+    headers.append('X-Requested-With','XMLHttpRequest');
+    return this.http.get('http://localhost/fypyear/public/api/spesch/' + localStorage.getItem('sid'),{headers:headers}).map(
+  (res:Response)=>res.json(),
+      );
+      
+  }
   public viewWardinfo(){ 
     const token=this.loginService.getToken();
     let headers=new Headers()
