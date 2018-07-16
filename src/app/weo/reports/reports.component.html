@@ -3,7 +3,8 @@
 
 </div>
 <div class="card-body">
-    <table class="table table-bordered table-responsive-sm table-hover">
+    <h5>LIST OF SCHOOLS IN THE WARD</h5>
+    <table class="table table-bordered table-responsive-sm table-hover" id="wardschools">
         <thead>
             <tr>
                 <th scope="col">School</th>
@@ -13,7 +14,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let sward of wss">
-                <td><a class="nav-item nav-link" (click)='IdStored(sward.id)'  (click)='NameStored(sward.name)' routerLink="../reports/{{sward.id}}">{{sward.name}}</a></td>
+                <td><a class="nav-item nav-link" (click)='IdStored(sward.id)'  (click)='NameStored(sward.name)' routerLink="../reports/{{sward.name}}">{{sward.name}}</a></td>
                 <td>{{sward.regno}}</td>
                 <td>{{sward.fname}} {{sward.mname}} {{sward.lname}}</td>
             </tr>

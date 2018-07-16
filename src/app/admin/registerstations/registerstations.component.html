@@ -86,7 +86,7 @@
         View stations
       </div>
       <div class="card-body">
-        <table class="table table-bordered table-responsive-sm table-hover">
+        <table id="stations" class="table table-bordered table-responsive-sm table-hover">
           <thead>
             <tr>
               <th scope="col">Region</th>
@@ -95,20 +95,20 @@
                   create
                 </i>
               </th>
-              <th>
+              <!-- <th>
                 <i class="material-icons">
                   delete
                 </i>
-              </th>
+              </th> -->
             </tr>
           </thead>
           <tbody>
             <!-- start regions -->
-            <!-- <tr *ngFor="let region of regions" class="clickable" data-toggle="collapse" id="row" data-target=".row">
+            <tr *ngFor="let region of regions">
               <td>
-                <i class="material-icons">
+                <!-- <i class="material-icons">
                   expand_more
-                </i>
+                </i> -->
                 {{region.rname}}
               </td>
               <td>
@@ -116,11 +116,11 @@
                   Edit
                 </button>
               </td>
-              <td>
+              <!-- <td>
                 <button class="btn btn-danger btn-sm">
                   Delete
                 </button>
-              </td>
+              </td> -->
               <!--start districts -->
             <!-- <tr class="collapse row" data-toggle="collapse" id="row1" data-target=".row1">
                 <td> {{region.dname}} </td>
@@ -151,8 +151,8 @@
                 <!-- end ward -->
               <!-- </tr> -->
               <!-- end districts -->
-            <!-- </tr> -->
-            <!-- end regions --> 
+            </tr>
+            <!-- end regions  -->
           </tbody>
         </table>
       </div>

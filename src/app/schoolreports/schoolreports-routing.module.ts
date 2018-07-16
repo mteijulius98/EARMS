@@ -9,7 +9,7 @@ import { InfrastructureComponent } from './infrastructure/infrastructure.compone
 
 const routes: Routes = [
   {
-    path: 'weo/reports/:schoolname',
+    path: 'WEO/reports/:schoolname',
     component: SchoolreportsComponent,
     children: [
       {
@@ -27,7 +27,7 @@ const routes: Routes = [
 
   },
   {
-    path: 'deo/reports/:wardname/:schoolname',
+    path: 'DEO/reports/:wardname/:schoolname',
     component: SchoolreportsComponent,
     children: [
       {
@@ -44,7 +44,7 @@ const routes: Routes = [
 
   },
   {
-    path: 'slo/reports/:wardname/:schoolname',
+    path: 'SLO/reports/:wardname/:schoolname',
     component: SchoolreportsComponent,
     children: [
       {

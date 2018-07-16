@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WeoService } from '../../weo/weo.service';
+import * as jsPDF from 'jspdf';
 
 @Component({
   selector: 'app-infrastructure',
@@ -25,5 +26,23 @@ export class InfrastructureComponent implements OnInit {
         },
         error => this.errorMessage = <any>error);
   }
+  downloadPDF() {
+    var report = document.getElementById('ireport'); 
+     console.log(report);
+      let doc = new jsPDF();
+  
+       let specialElementHandlers = {
+        '#editor': function (element,renderer) {
+          return true;
+        }
+      };
+      doc.fromHTML(report.innerHTML,15,15,{
+        'width':190,
+        'elementHandlers':specialElementHandlers
+      });
+      doc.save('schoolreport.pdf');
+   
+  }
+  
 
 }

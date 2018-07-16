@@ -10,7 +10,7 @@ import { AuthGuard } from '../auth.guard';
 
 const routes: Routes = [
   {
-    path:'deo',
+    path:'DEO',
     component:DeoComponent,
     // canActivate:[AuthguardService],
     children:[
@@ -26,7 +26,7 @@ const routes: Routes = [
               // canActivateChild: [AuthguardService],
               children: [
                 {path:'', component:WardslistComponent},
-                {path:'wardname', component:WardsComponent}
+                {path:':wardname', component:WardsComponent}
               ]
         }
         ]

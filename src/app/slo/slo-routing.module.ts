@@ -8,7 +8,7 @@ import { AuthGuard } from '../auth.guard';
 
 const routes: Routes = [
   {
-    path:'slo',
+    path:'SLO',
     component:SloComponent,
     // canActivate:[AuthguardService],
     children:[
@@ -23,7 +23,8 @@ const routes: Routes = [
               // canActivateChild: [AuthguardService],
               children: [
                 {path:'', component:WardslistComponent},
-                {path:'wardname', component:WardsComponent}
+                {path:':wardname', component:WardsComponent}
+                // 'weo/reports/:schoolname'
               ]
         }
         ]

@@ -3,7 +3,7 @@
 
     </div>
     <div class="card-body">
-        <table class="table table-bordered table-responsive-sm table-hover">
+        <table class="table table-bordered table-responsive-sm table-hover" id="wardschools">
             <thead>
                 <tr>
                     <th scope="col">School</th>
@@ -12,16 +12,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <!-- <tr>
                     <td>
                         <a class="nav-item nav-link" routerLink="../reports/wardname/schoolname">buguruni</a>
                     </td>
-                </tr>
-                <!-- <tr  *ngFor="let ws of wss">
-                    <td><a class="nav-item nav-link" (click)='IddStored(ws.id)' routerLink="../wardname/{{ws.id}}">{{ws.name}}</a></td>
-                    <td>{{ws.regno}}</td>
-                    <td>{{ws.fname}}</td>
                 </tr> -->
+                <tr  *ngFor="let ws of wss">
+                    <td><a class="nav-item nav-link" (click)='IddStored(ws.id)' routerLink="../reports/wardname/{{ws.id}}">{{ws.name}}</a></td>
+                    <td>{{ws.regno}}</td>
+                    <td>{{ws.fname}} {{ws.mname}} {{ws.lname}}</td>
+                </tr>
             </tbody>
         </table>
     </div>

@@ -11,7 +11,18 @@ export class StaffsComponent implements OnInit {
     teachers=[];
     errorMessage:string;
     ntstaffs=[];
-  constructor(private hosService:HosService) { }
+  constructor(private hosService:HosService) {
+    setTimeout(function (){
+      $(function(){
+        $('#teacherList').DataTable();
+        });
+         },2000);
+         setTimeout(function (){
+          $(function(){
+            $('#staffList').DataTable();
+            });
+             },2000);
+   }
 
   ngOnInit() {
     this.hosService.viewTeachers().subscribe(
