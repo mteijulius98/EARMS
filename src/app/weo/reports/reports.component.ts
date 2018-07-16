@@ -9,7 +9,13 @@ import { WeoService } from '../weo.service';
 export class ReportsComponent implements OnInit {
    wss=[];
    errorMessage:string;
-  constructor(private weoService:WeoService) { }
+  constructor(private weoService:WeoService) {
+    setTimeout(function (){
+      $(function(){
+        $('#wardschools').DataTable();
+        });
+         },2000);
+   }
   
   ngOnInit() {
     this.weoService.viewWschools().subscribe(

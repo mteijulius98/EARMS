@@ -7,7 +7,7 @@ import { AuthGuard } from '../auth.guard';
 
 const routes: Routes = [
   {
-    path:'weo',
+    path:'WEO',
     component:WeoComponent,
     
     children:[

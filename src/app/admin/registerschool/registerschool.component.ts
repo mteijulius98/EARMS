@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input} from '@angular/core';
 import { AdminService } from '../admin.service';
+import { SCHOOL } from './school';
 
 @Component({
   selector: 'app-registerschool',
@@ -7,42 +8,69 @@ import { AdminService } from '../admin.service';
   styleUrls: ['./registerschool.component.css']
 })
 export class RegisterschoolComponent implements OnInit {
+  @Input() school:SCHOOL;
   categories=[];
   ownerships=[];
   schools=[];
   wards=[];
   errorMessage:string;
-  constructor(private adminService:AdminService) { }
+  editing = false;
+  editValue ='';
+  constructor(private adminService:AdminService) { 
+    setTimeout(function (){
+      $(function(){
+        $('#schools').DataTable();
+        });
+         },2000);
+
+  }
 
   ngOnInit() {
     this.adminService.viewCategories().subscribe(
       category =>{
       this.categories=category.categories
-      console.log('our',category)
-      //(districts:ourDistrict[]) => this.districts= districts,
       },
       error => this.errorMessage = <any>error);
       this.adminService.viewOwnerships().subscribe(
         ownership =>{
         this.ownerships=ownership.ownerships
-        console.log('our',ownership)
-        //(districts:ourDistrict[]) => this.districts= districts,
+        // console.log('our',ownership)
+        // //(districts:ourDistrict[]) => this.districts= districts,
         },
         error => this.errorMessage = <any>error);
         this.adminService.viewSchools().subscribe(
           school =>{
           this.schools=school.schools
          
-          //(districts:ourDistrict[]) => this.districts= districts,
+         
           },
           error => this.errorMessage = <any>error);
           this.adminService.viewWards().subscribe(
             ward =>{
             this.wards=ward.wards
            
-            //(districts:ourDistrict[]) => this.districts= districts,
             },
             error => this.errorMessage = <any>error);
+  }
+ 
+  onEdit(){
+    this.editing = true;
+    this.editValue =this.school.name,this.school.regno,this.school.regdate,this.school.postal_address,this.school.phone_number,this.school.email,this.school.id;
+  }
+  onUpdate(){
+    this.adminService.updateSchool(this.school.id,this.school.name,this.school.regno,this.school.regdate,this.school.postal_address,this.school.scategory_id,this.school.email,this.school.ward_id,this.school.phone_number,this.school.sownership_id)
+    .subscribe(
+       (school: SCHOOL) => {
+         this.school.name,this.school.sownership_id,this.school.regno,this.school.regdate,this.school.postal_address,this.school.phone_number,this.school.email,this.school.scategory_id = this.editValue;
+         this.editValue = '';
+       }
+    );
+    
+    this.editing = false;
+  }
+  onCancel(){
+    this.editValue='';
+    this.editing = false;
   }
   form3(form:any){
     

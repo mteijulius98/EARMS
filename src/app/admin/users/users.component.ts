@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, Input, Output, EventEmitter } from '@angular/core';
 import { AdminService } from '../admin.service';
 import { IUsers } from './users';
 import { LoginServiceService } from '../../login/login-service.service';
@@ -10,14 +10,12 @@ import { DataTableDirective } from 'angular-datatables';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
-export class UsersComponent implements AfterViewInit,OnInit, OnDestroy {
+export class UsersComponent implements OnInit {
   @Input() duser: IUsers;
   @Input() wuser: IUsers;
   @Output() userDeleted = new EventEmitter<IUsers>();
-  @ViewChild(DataTableDirective)
-  dtElement: DataTableDirective;
-  dtOptions: DataTables.Settings = {};
-  dtTrigger: Subject<any> = new Subject();
+  // dtOptions: DataTables.Settings = {};
+  // dtTrigger: Subject<any> = new Subject();
   role: string;
   users: IUsers[];
   errorMessage: string;
@@ -25,16 +23,26 @@ export class UsersComponent implements AfterViewInit,OnInit, OnDestroy {
   districts = [];
   wards = [];
   schools = [];
-  dusers = [];
+  dusers:any  = [];
   wusers = [];
   susers = [];
-  public constructor(private adminService: AdminService, private loginService: LoginServiceService) { }
+  public constructor(private adminService: AdminService, private loginService: LoginServiceService) { 
+    
+    setTimeout(function (){
+      $(function(){
+        $('#dusers').DataTable();
+        $('#wusers').DataTable();
+        $('#susers').DataTable();
+        $('#rusers').DataTable();
+        });
+         },2000);
+  }
 
   ngOnInit() {
-    this.dtOptions = {
-      pagingType: 'full_numbers',
-      pageLength: 10
-    };
+    // this.dtOptions = {
+    //   pagingType: 'full_numbers',
+    //   pageLength: 10
+    // };
     this.adminService.viewRoles().subscribe(
       role => {
         this.roles = role.roles;
@@ -64,7 +72,7 @@ export class UsersComponent implements AfterViewInit,OnInit, OnDestroy {
       },
       error => this.errorMessage = <any>error);
     this.adminService.viewDusers().subscribe(
-      duser => {
+       duser => {
         this.dusers = duser.dusers;
         console.log('our', duser)
         //(districts:ourDistrict[]) => this.districts= districts,
@@ -92,13 +100,13 @@ export class UsersComponent implements AfterViewInit,OnInit, OnDestroy {
 
 
   }
-  ngAfterViewInit(): void {
-    this.dtTrigger.next();
-  }
-  ngOnDestroy(): void {
-    // Do not forget to unsubscribe the event
-    this.dtTrigger.unsubscribe();
-  }
+  // ngAfterViewInit(): void {
+  //   this.dtTrigger.next();
+  // }
+  // ngOnDestroy(): void {
+  //   // Do not forget to unsubscribe the event
+  //   this.dtTrigger.unsubscribe();
+  // }
   // rerender(): void {
   //   this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
   //     // Destroy the table first
@@ -136,6 +144,16 @@ export class UsersComponent implements AfterViewInit,OnInit, OnDestroy {
         error => alert('error')
       );
     form.reset();
+  }
+  loadDusers() {
+    this.adminService.viewDusers().subscribe(
+      duser => {
+        this.dusers = duser.dusers;
+        console.log('our', duser)
+        //(districts:ourDistrict[]) => this.districts= districts,
+      },
+      error => this.errorMessage = <any>error
+    );
   }
 
 

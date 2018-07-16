@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { AdminService } from '../admin.service';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-registerstations',
@@ -10,9 +11,20 @@ export class RegisterstationsComponent implements OnInit {
   regions=[];
   districts=[];
   errorMessage:string;
-  constructor(private adminService:AdminService) { }
+  constructor(private adminService:AdminService) { 
+    setTimeout(function (){
+      $(function(){
+        $('#stations').DataTable({
+           pagingType: 'full_numbers',
+            pageLength: 5
+         });
+        });
+         },2000);
+
+  }
 
   ngOnInit() {
+    
     this.adminService.viewRegions().subscribe(
       region =>{
       this.regions=region.regions
@@ -28,6 +40,7 @@ export class RegisterstationsComponent implements OnInit {
         },
         error => this.errorMessage = <any>error);
   }
+
   form1(form:any){
     
     this.adminService.registerRegion(form.value.regionname)

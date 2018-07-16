@@ -14,7 +14,18 @@ export class StudentsComponent implements OnInit {
    sattendances=[];
    currentYear:any;
    errorMessage:string;
-  constructor(private hosService:HosService,private timeService:TimeService) { }
+  constructor(private hosService:HosService,private timeService:TimeService) {
+    setTimeout(function (){
+      $(function(){
+        $('#studentList').DataTable();
+        });
+         },2000);
+         setTimeout(function (){
+          $(function(){
+            $('#attendance').DataTable();
+            });
+             },2000);
+   }
 
   ngOnInit() {
     this.currentYear = this.timeService.showCurrentYear();

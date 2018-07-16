@@ -16,13 +16,11 @@ export class SchoolreportsComponent implements OnInit {
     this.adminService. vieUsers().subscribe(
       users =>{
        
-       //console.log( localStorage.getItem('station_name'))
-       //console.log(users.users)
+      
        for (let index = 0; index < users.users.length; index++) {
-        //  console.log(users.users[index].email)
+       
          if (users.users[index].email == localStorage.getItem('fname')) {
            this.stationName=users.users[index].fname
-          //  console.log(this.stationName)
          }
          
        }

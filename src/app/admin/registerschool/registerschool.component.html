@@ -139,7 +139,7 @@
         </div>
         <div id="viewSchools" class="collapse show" aria-labelledby="headn1" data-parent="#accordion">
           <div class="card-body">
-            <table class="table table-bordered table-responsive-sm table-hover">
+            <table id="schools"class="table table-bordered table-responsive-sm table-hover">
               <thead>
                 <tr>
                   <th scope="col">School Name</th>
@@ -150,11 +150,11 @@
                       create
                     </i>
                   </th>
-                  <th>
+                  <!-- <th>
                     <i class="material-icons">
                       delete
                     </i>
-                  </th>
+                  </th> -->
                 </tr>
               </thead>
               <tbody>
@@ -166,32 +166,115 @@
                     <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#editSchool">
                       Edit
                     </button>
+
                     <!-- Modal -->
                     <div class="modal fade" id="editSchool" tabindex="-1" role="dialog" aria-labelledby="schoolName" aria-hidden="true">
                       <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="schoolName">{{school.name}}</h5>
+                            <h5 class="modal-title"  id="schoolName">{{school.name}}</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                             </button>
                           </div>
                           <div class="modal-body">
-
+                                  Kimaro
+                                  <div class="card m-2">
+                                    <div class="card-header">
+                                      Update school
+                                    </div>
+                                    <div class="card-body">
+                                      <!-- <form class="form-group px-4 py-2" #updateSchool="ngForm" (ngSubmit)="form90(updateSchool)"> -->
+                                        <div class="row">
+                                          <div class="col-4 col-sm-4">
+                                            <div class="form-group">
+                                              <label for="schoolName">Name</label>
+                                              <input type="text" class="form-control" id="schoolname" ngModel name="schoolname" required>
+                                            </div>
+                                          </div>
+                                          <div class="col-4 col-sm-4">
+                                            <div class="form-group">
+                                              <label for="schoolRegNo">Reg Number</label>
+                                              <input type="text" class="form-control" id="regno" ngModel name="regno" required autofocus>
+                                            </div>
+                                          </div>
+                                          <div class="col-4 col-sm-4">
+                                            <div class="form-group">
+                                              <label for="schoolRegNo">Reg Date</label>
+                                              <input type="date" class="form-control" id="regdate" ngModel name="regdate" required autofocus>
+                                            </div>
+                                          </div>
+                                        </div>
+                              
+                                        <div class="row">
+                                          <div class="col-4 col-sm-4">
+                                            <div class="form-group">
+                                              <label for="schoolCategory">Type</label>
+                                              <select class="form-control" id="category" ngModel name="category" required>
+                                                <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+                                              </select>
+                                            </div>
+                                          </div>
+                                          <div class="col-4 col-sm-4">
+                                            <div class="form-group">
+                                              <label for="ward">Ownership</label>
+                                              <select class="form-control" id="ownership" ngModel name="ownership" required autofocus>
+                                                <option *ngFor="let ownership of ownerships" value="{{ownership.id}}">{{ownership.name}}</option>
+                                              </select>
+                                            </div>
+                                          </div>
+                                          <div class="col-4 col-sm-4">
+                                            <div class="form-group">
+                                              <label for="ward">Ward</label>
+                                              <select class="form-control" id="ward" ngModel name="ward" required autofocus>
+                                                <option *ngFor="let ward of wards" value="{{ward.id}}">{{ward.wname}}</option>
+                                              </select>
+                                            </div>
+                                          </div>
+                                        </div>
+                              
+                                        <div class="row">
+                                          <div class="col-4 col-sm-4">
+                                            <div class="form-group">
+                                              <label for="ward">Postal address</label>
+                                              <input type="text" class="form-control" id="postal_address" ngModel name="postal_address" required autofocus>
+                                            </div>
+                                          </div>
+                                          <div class="col-4 col-sm-4">
+                                            <div class="form-group">
+                                              <label for="schoolEmail">Email</label>
+                                              <input type="text" class="form-control" id="email" ngModel name="email" required>
+                                            </div>
+                                          </div>
+                                          <div class="col-4 col-sm-4">
+                                            <div class="form-group">
+                                              <label for="ward">Phone number</label>
+                                              <input type="text" class="form-control" id="phonenumber" ngModel name="phonenumber" required autofocus>
+                                            </div>
+                                          </div>
+                                        </div>
+                              
+                                        <!-- <div class="form-group">
+                                          <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!registerSchool.valid">Register School</button>
+                                        </div> -->
+                              
+                                      
+                                    </div>
+                                  </div>
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="submit" (click)="onUpdate()" class="btn btn-primary">Save changes</button>
                           </div>
                         </div>
                       </div>
                     </div>
                   </td>
-                  <td>
+                  <!-- <td>
                     <button class="btn btn-danger btn-sm">
                       Delete
                     </button>
-                  </td>
+                  </td> -->
                 </tr>
               </tbody>
             </table>
@@ -220,11 +303,11 @@
                       create
                     </i>
                   </th>
-                  <th>
+                  <!-- <th>
                     <i class="material-icons">
                       delete
                     </i>
-                  </th>
+                  </th> -->
                 </tr>
               </thead>
               <tbody>
@@ -235,11 +318,11 @@
                       Edit
                     </button>
                   </td>
-                  <td>
+                  <!-- <td>
                     <button class="btn btn-danger btn-sm">
                       Delete
                     </button>
-                  </td>
+                  </td> -->
                 </tr>
               </tbody>
             </table>
@@ -268,11 +351,11 @@
                       create
                     </i>
                   </th>
-                  <th>
+                  <!-- <th>
                     <i class="material-icons">
                       delete
                     </i>
-                  </th>
+                  </th> -->
                 </tr>
               </thead>
               <tbody>
@@ -284,11 +367,11 @@
                       Edit
                     </button>
                   </td>
-                  <td>
+                  <!-- <td>
                     <button class="btn btn-danger btn-sm">
                       Delete
                     </button>
-                  </td>
+                  </td> -->
                 </tr>
               </tbody>
             </table>

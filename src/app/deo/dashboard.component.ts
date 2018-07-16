@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
                 },
                 {
                     label: 'Females',
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    backgroundColor: 'ffe0e6',
                     borderColor: 'rgba(255,99,132,1)',
                     borderWidth: 1,
                     data: females_data
@@ -80,13 +80,13 @@ export class DashboardComponent implements OnInit {
                     {
                         data: albinsm,
                         backgroundColor: [
-                            '#ff8000',
-                            '#40bf40',
-                            '#9900ff',
-                            '#9988ff',
-                            '#5600bb',
-                            '#dfd00a',
-                            'red'
+                            '#3cba9f',
+                                '#40bf40',
+                                '#9900ff',
+                                '#9988ff',
+                                '#5600bb',
+                                '#dfd00a',
+                                'red'
                         ]
                     }
                 ]
@@ -117,11 +117,11 @@ export class DashboardComponent implements OnInit {
                 {
                     data: wardteachers,
                     backgroundColor: [
-                        '#ff8000',
-                        '#40bf40',
-                        '#9900ff',
-                        '#6800dd',
-                        'maroon'
+                        '#3e95cd',
+                            '#40bf40',
+                            '#9900ff',
+                            '#6800dd',
+                            '#3cba9f'
                     ]
                 }
             ]

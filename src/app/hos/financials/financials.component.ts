@@ -10,7 +10,18 @@ export class FinancialsComponent implements OnInit {
    revenues=[];
    errorMessage:string;
    expenditures=[];
-  constructor(private hosService:HosService) { }
+  constructor(private hosService:HosService) {
+    setTimeout(function (){
+      $(function(){
+        $('#revenuee').DataTable();
+        });
+         },2000);
+         setTimeout(function (){
+          $(function(){
+            $('#expend').DataTable();
+            });
+             },2000);
+   }
 
   ngOnInit() {
     this.hosService.viewRevenues().subscribe(

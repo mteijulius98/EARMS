@@ -9,7 +9,13 @@ import { DeoService } from '../deo.service';
 export class WardsComponent implements OnInit {
       wss=[];
       errorMessage:string;
-  constructor(private deoService:DeoService) { }
+  constructor(private deoService:DeoService) {
+    setTimeout(function (){
+      $(function(){
+        $('#wardschool').DataTable();
+        });
+         },2000);
+   }
 
   ngOnInit() {
     this.deoService.viewWs().subscribe(

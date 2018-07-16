@@ -15,7 +15,23 @@ export class ResourcesComponent implements OnInit {
   tlmaterials=[];
   equipments=[];
   errorMessage:string;
-  constructor(private hosService:HosService) { }
+  constructor(private hosService:HosService) {
+    setTimeout(function (){
+      $(function(){
+        $('#infraList').DataTable();
+        });
+         },2000);
+         setTimeout(function (){
+          $(function(){
+            $('#tlm').DataTable();
+            });
+             },2000);
+             setTimeout(function (){
+              $(function(){
+                $('#equipment').DataTable();
+                });
+                 },2000);
+   }
 
   ngOnInit() {
     this.hosService.viewIncategory().subscribe(

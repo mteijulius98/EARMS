@@ -185,11 +185,12 @@
         View students
       </div>
       <div class="card-body">
-        <table class="table table-bordered table-responsive-sm table-hover">
+        <table class="table table-bordered table-responsive-sm table-hover" id="studentList">
           <thead>
             <tr>
               <th scope="col">First name</th>
               <th scope="col">Last name</th>
+              <th scope="col">Class</th>
               <th>
                 <i class="material-icons">
                   create
@@ -206,6 +207,7 @@
             <tr *ngFor="let student of students">
               <td>{{student.fname}}</td>
               <td>{{student.lname}}</td>
+              <td>{{student.name}}</td>
               <td>
                 <button class="btn btn-info btn-sm">
                   Edit
@@ -226,7 +228,7 @@
         View Attendance
       </div>
       <div class="card-body">
-        <table class="table table-bordered table-responsive-sm table-hover">
+        <table class="table table-bordered table-responsive-sm table-hover" id="attendance">
           <thead>
             <tr>
               <th scope="col">StartDate</th>

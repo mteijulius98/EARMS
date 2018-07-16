@@ -4,163 +4,166 @@
     <div class="report-c p-4" id="sreport">
         <div class="text-center" *ngFor="let sward of schools">
                 <h5>{{sward.name}} SECONDARY SCHOOL REPORT</h5></div>
-            <h5 class="text-center">NUMBERS OF STUDENTS</h5>
-            <table class="table table-bordered table-responsive-sm">
-                <thead>
-                    <tr>
-                        <th scope="col">Form I</th>
-                        <th scope="col">Form II</th>
-                        <th scope="col">Form III</th>
-                        <th scope="col">Form IV</th>
-                        <th scope="col">Form V</th>
-                        <th scope="col">Form VI</th>
-                    </tr>
-
-                </thead>
-                <tbody>
-                    <tr>
-                        <!-- Form I -->
-                        <td>
-                            <table class="table table-bordered table-responsive-sm">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">A</th>
-                                        <th scope="col">M</th>
-                                        <th scope="col">F</th>
-                                        <th scope="col">T</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let form of formI">
-                                        <td>{{form.age}}</td>
-                                        <td>{{form.MALES}}</td>
-                                        <td>{{form.FEMALES}}</td>
-                                        <td>{{form.TOTAL}}</td>
-
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                        <!-- Form I -->
-                        <!-- Form II -->
-                        <td>
-                            <table class="table table-bordered table-responsive-sm">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">A</th>
-                                        <th scope="col">M</th>
-                                        <th scope="col">F</th>
-                                        <th scope="col">T</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let formII of form2">
-                                        <td>{{formII.age}}</td>
-                                        <td>{{formII.MALES}}</td>
-                                        <td>{{formII.FEMALES}}</td>
-                                        <td>{{formII.TOTAL}}</td>
-
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                        <!-- Form II -->
-                        <!-- Form III -->
-                        <td>
-                            <table class="table table-bordered table-responsive-sm">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">A</th>
-                                        <th scope="col">M</th>
-                                        <th scope="col">F</th>
-                                        <th scope="col">T</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let formIII of form3">
-                                        <td>{{formIII.age}}</td>
-                                        <td>{{formIII.MALES}}</td>
-                                        <td>{{formIII.FEMALES}}</td>
-                                        <td>{{formIII.TOTAL}}</td>
-
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                        <!-- Form III -->
-                        <!-- Form IV -->
-                        <td>
-                            <table class="table table-bordered table-responsive-sm">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">A</th>
-                                        <th scope="col">M</th>
-                                        <th scope="col">F</th>
-                                        <th scope="col">T</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let formIV of form4">
-                                        <td>{{formIV.age}}</td>
-                                        <td>{{formIV.MALES}}</td>
-                                        <td>{{formIV.FEMALES}}</td>
-                                        <td>{{formIV.TOTAL}}</td>
-
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                        <!-- Form V -->
-                        <td>
-                            <table class="table table-bordered table-responsive-sm">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">A</th>
-                                        <th scope="col">M</th>
-                                        <th scope="col">F</th>
-                                        <th scope="col">T</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let formV of form5">
-                                        <td>{{formV.age}}</td>
-                                        <td>{{formV.MALES}}</td>
-                                        <td>{{formV.FEMALES}}</td>
-                                        <td>{{formV.TOTAL}}</td>
-
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                        <!-- Form V -->
-                        <!-- Form VI -->
-                        <td>
-                            <table class="table table-bordered table-responsive-sm">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">A</th>
-                                        <th scope="col">M</th>
-                                        <th scope="col">F</th>
-                                        <th scope="col">T</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let formVI of form6">
-                                        <td>{{formVI.age}}</td>
-                                        <td>{{formVI.MALES}}</td>
-                                        <td>{{formVI.FEMALES}}</td>
-                                        <td>{{formVI.TOTAL}}</td>
-
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                        <!-- Form VI -->
-
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                <div>
+                    <h5 class="text-center">NUMBERS OF STUDENTS</h5>
+                    <table class="table table-bordered table-responsive-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">Form I</th>
+                                <th scope="col">Form II</th>
+                                <th scope="col">Form III</th>
+                                <th scope="col">Form IV</th>
+                                <th scope="col">Form V</th>
+                                <th scope="col">Form VI</th>
+                            </tr>
+        
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <!-- Form I -->
+                                <td>
+                                    <table class="table table-bordered table-responsive-sm">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">A</th>
+                                                <th scope="col">M</th>
+                                                <th scope="col">F</th>
+                                                <th scope="col">T</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let form of formI">
+                                                <td>{{form.age}}</td>
+                                                <td>{{form.MALES}}</td>
+                                                <td>{{form.FEMALES}}</td>
+                                                <td>{{form.TOTAL}}</td>
+        
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <!-- Form I -->
+                                <!-- Form II -->
+                                <td>
+                                    <table class="table table-bordered table-responsive-sm">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">A</th>
+                                                <th scope="col">M</th>
+                                                <th scope="col">F</th>
+                                                <th scope="col">T</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let formII of form2">
+                                                <td>{{formII.age}}</td>
+                                                <td>{{formII.MALES}}</td>
+                                                <td>{{formII.FEMALES}}</td>
+                                                <td>{{formII.TOTAL}}</td>
+        
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <!-- Form II -->
+                                <!-- Form III -->
+                                <td>
+                                    <table class="table table-bordered table-responsive-sm">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">A</th>
+                                                <th scope="col">M</th>
+                                                <th scope="col">F</th>
+                                                <th scope="col">T</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let formIII of form3">
+                                                <td>{{formIII.age}}</td>
+                                                <td>{{formIII.MALES}}</td>
+                                                <td>{{formIII.FEMALES}}</td>
+                                                <td>{{formIII.TOTAL}}</td>
+        
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <!-- Form III -->
+                                <!-- Form IV -->
+                                <td>
+                                    <table class="table table-bordered table-responsive-sm">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">A</th>
+                                                <th scope="col">M</th>
+                                                <th scope="col">F</th>
+                                                <th scope="col">T</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let formIV of form4">
+                                                <td>{{formIV.age}}</td>
+                                                <td>{{formIV.MALES}}</td>
+                                                <td>{{formIV.FEMALES}}</td>
+                                                <td>{{formIV.TOTAL}}</td>
+        
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <!-- Form V -->
+                                <td>
+                                    <table class="table table-bordered table-responsive-sm">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">A</th>
+                                                <th scope="col">M</th>
+                                                <th scope="col">F</th>
+                                                <th scope="col">T</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let formV of form5">
+                                                <td>{{formV.age}}</td>
+                                                <td>{{formV.MALES}}</td>
+                                                <td>{{formV.FEMALES}}</td>
+                                                <td>{{formV.TOTAL}}</td>
+        
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <!-- Form V -->
+                                <!-- Form VI -->
+                                <td>
+                                    <table class="table table-bordered table-responsive-sm">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">A</th>
+                                                <th scope="col">M</th>
+                                                <th scope="col">F</th>
+                                                <th scope="col">T</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let formVI of form6">
+                                                <td>{{formVI.age}}</td>
+                                                <td>{{formVI.MALES}}</td>
+                                                <td>{{formVI.FEMALES}}</td>
+                                                <td>{{formVI.TOTAL}}</td>
+        
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <!-- Form VI -->
+        
+                            </tr>
+                        </tbody>
+                    </table>
+        
+                </div>
+                   
         <div>
             <h5 class="text-center">ORPHAN STUDENTS</h5>
             <table class="table table-bordered table-responsive-sm">
@@ -463,8 +466,8 @@
             </table>
         </div>
         <div>
-            <h5 class="text-center">DROPOUT STUDENTS</h5>
-            <table class="table table-bordered table-responsive-sm">
+            <!-- <h5 class="text-center">DROPOUT STUDENTS</h5> -->
+            <!-- <table class="table table-bordered table-responsive-sm">
                 <thead>
                     <tr>
                         <th scope="col">Form I</th>
@@ -479,7 +482,7 @@
                     <tr>
                         <tr>
                             <!-- Form I -->
-                            <td>
+                            <!-- <td>
                                 <table class="table table-bordered table-responsive-sm">
                                     <thead>
                                         <tr>
@@ -498,10 +501,10 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                            </td>
+                            </td> -->
                             <!-- Form I -->
                             <!-- Form II -->
-                            <td>
+                            <!-- <td>
                                 <table class="table table-bordered table-responsive-sm">
                                     <thead>
                                         <tr>
@@ -520,10 +523,10 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                            </td>
+                            </td> -->
                             <!-- Form II -->
                             <!-- Form III -->
-                            <td>
+                            <!-- <td>
                                 <table class="table table-bordered table-responsive-sm">
                                     <thead>
                                         <tr>
@@ -542,10 +545,10 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                            </td>
+                            </td> -->
                             <!-- Form III -->
                             <!-- Form IV -->
-                            <td>
+                            <!-- <td>
                                 <table class="table table-bordered table-responsive-sm">
                                     <thead>
                                         <tr>
@@ -564,9 +567,9 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                            </td>
+                            </td> -->
                             <!-- Form V -->
-                            <td>
+                            <!-- <td>
                                 <table class="table table-bordered table-responsive-sm">
                                     <thead>
                                         <tr>
@@ -585,10 +588,10 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                            </td>
+                            </td> -->
                             <!-- Form V -->
                             <!-- Form VI -->
-                            <td>
+                            <!-- <td>
                                 <table class="table table-bordered table-responsive-sm">
                                     <thead>
                                         <tr>
@@ -607,12 +610,13 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                            </td>
+                            </td> -->
                             <!-- Form VI -->
-
+<!-- 
                         </tr>
                 </tbody>
-            </table>
+            </table>  -->
+            
         </div>
         <div>
             <!-- <h5 class="text-center">AVERAGE STUDENTS' ATTENDANCE</h5>
@@ -677,3 +681,4 @@
             <button class="btn btn-custom-primary mx-auto my-2" (click)="downloadPDF()">Download Report</button>
         </div>
     </div>
+</div>

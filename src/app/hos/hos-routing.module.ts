@@ -11,7 +11,7 @@ import { AuthGuard } from '../auth.guard';
 
 const routes: Routes = [
   {
-    path: 'hos',
+    path: 'HOS',
     component: HosComponent,
     children: [
       {
