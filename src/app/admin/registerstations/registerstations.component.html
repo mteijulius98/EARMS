@@ -9,7 +9,18 @@
 
           <div class="form-group">
             <label for="districtName">Region</label>
-            <input type="text" class="form-control" id="regionname" ngModel name="regionname" placeholder="Region Name" required autofocus>
+            <input type="text" class="form-control" id="regionname" [(ngModel)]="region.name" #rname="ngModel" name="regionname" placeholder="Region Name"
+              pattern="[a-zA-Z]+" required autofocus>
+              <span>
+                  <div *ngIf="rname.invalid && (rname.dirty || rname.touched)" class="alert alert-danger">
+                      <div *ngIf="rname.errors.required">
+                          Region Name is required.
+                      </div>
+                      <div *ngIf="rname.errors.pattern">
+                          Region Name is Incorrect.
+                      </div>
+                  </div>
+              </span> 
           </div>
 
           <div class="form-group">
@@ -27,20 +38,40 @@
           <div class="form-group">
             <label for="region">Region</label>
             <div>
-              <select type="text" class="form-control" id="region" name="region" ngModel required>
+              <select type="text" class="form-control" id="region" name="region" [(ngModel)]="district.region" required>
                 <option *ngFor="let region of regions" value="{{region.id}}">{{region.rname}}</option>
               </select>
             </div>
           </div>
           <div class="form-group">
             <label for="districtName">District</label>
-            <input type="text" class="form-control" id="districtname" ngModel name="districtname" placeholder="District Name" required
-              autofocus>
+            <input type="text" class="form-control" id="districtname" [(ngModel)]="district.name" #dname="ngModel" name="districtname"
+              placeholder="District Name" pattern="[a-zA-Z]+" required autofocus>
+              <span>
+                  <div *ngIf="dname.invalid && (dname.dirty || dname.touched)" class="alert alert-danger">
+                      <div *ngIf="dname.errors.required">
+                          District Name is required.
+                      </div>
+                      <div *ngIf="dname.errors.pattern">
+                          District Name is Incorrect.
+                      </div>
+                  </div>
+              </span>
           </div>
           <div class="form-group">
             <label for="districtName">Postal Address</label>
-            <input type="text" class="form-control" id="postal_address" ngModel name="postal_address" placeholder="Postal Address" required
-              autofocus>
+            <input type="text" class="form-control" id="postal_address" [(ngModel)]="district.daddress" #daddress="ngModel" name="postal_address"
+              placeholder="Postal Address" pattern="[0-9]+" required autofocus>
+              <span>
+                  <div *ngIf="daddress.invalid && (daddress.dirty || daddress.touched)" class="alert alert-danger">
+                      <div *ngIf="daddress.errors.required">
+                          Postal Address is required.
+                      </div>
+                      <div *ngIf="daddress.errors.pattern">
+                          Postal Address is Incorrect.
+                      </div>
+                  </div>
+              </span>
           </div>
 
           <div class="form-group">
@@ -59,18 +90,40 @@
           <div class="form-group">
             <label for="district">District</label>
             <div>
-              <select class="form-control" id="district" name="districtname" ngModel required>
+              <select class="form-control" id="district" name="districtname" [(ngModel)]="ward.district" required>
                 <option *ngFor="let district of districts" value="{{district.id}}">{{district.dname}}</option>
               </select>
             </div>
           </div>
           <div class="form-group">
             <label for="wardName">Ward</label>
-            <input type="text" class="form-control" id="wardname" ngModel name="wardname" placeholder="Ward Name" required autofocus>
+            <input type="text" class="form-control" id="wardname" [(ngModel)]="ward.name" #wname="ngModel" name="wardname" placeholder="Ward Name"
+              pattern="[a-zA-Z]+" required autofocus>
+              <span>
+                  <div *ngIf="wname.invalid && (wname.dirty || wname.touched)" class="alert alert-danger">
+                      <div *ngIf="wname.errors.required">
+                          Ward Name is required.
+                      </div>
+                      <div *ngIf="wname.errors.pattern">
+                          Ward Name is Incorrect.
+                      </div>
+                  </div>
+              </span>
           </div>
           <div class="form-group">
             <label for="wardName">Postal Address</label>
-            <input type="text" class="form-control" id="wardname" ngModel name="postal_address" placeholder="Ward Name" required autofocus>
+            <input type="text" class="form-control" id="wardname" [(ngModel)]="ward.waddress" #waddress="ngModel" name="postal_address"
+              placeholder="Ward Name" pattern="[0-9]+" required autofocus>
+              <span>
+                  <div *ngIf="waddress.invalid && (waddress.dirty || waddress.touched)" class="alert alert-danger">
+                      <div *ngIf="waddress.errors.required">
+                          Postal Address is required.
+                      </div>
+                      <div *ngIf="waddress.errors.pattern">
+                          Postal Address is Incorrect.
+                      </div>
+                  </div>
+              </span>
           </div>
 
           <div class="form-group">
@@ -122,7 +175,7 @@
                 </button>
               </td> -->
               <!--start districts -->
-            <!-- <tr class="collapse row" data-toggle="collapse" id="row1" data-target=".row1">
+              <!-- <tr class="collapse row" data-toggle="collapse" id="row1" data-target=".row1">
                 <td> {{region.dname}} </td>
                 <td>
                   <button class="btn btn-info btn-sm">
@@ -134,8 +187,8 @@
                     Delete
                   </button>
                 </td> -->
-                <!-- start ward -->
-                <!-- <tr class="collapse row1">
+              <!-- start ward -->
+              <!-- <tr class="collapse row1">
                     <td> {{region.wname}} </td>
                     <td>
                       <button class="btn btn-info btn-sm">
@@ -148,7 +201,7 @@
                       </button>
                     </td>
                     </tr> -->
-                <!-- end ward -->
+              <!-- end ward -->
               <!-- </tr> -->
               <!-- end districts -->
             </tr>
