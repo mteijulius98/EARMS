@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {IMyDpOptions} from 'mydatepicker';
 import { HosService } from '../hos.service';
 
 @Component({
@@ -36,6 +37,10 @@ export class FinancialsComponent implements OnInit {
         error => this.errorMessage = <any>error);
   
   }
+  public myDatePickerOptions: IMyDpOptions = {
+    // other options...
+    dateFormat: 'yyyy-mm-dd',
+};
   form12(form:any){
     
     this.hosService.registerRevenue(form.value.source,form.value.amount,form.value.from,form.value.to)

@@ -41,7 +41,9 @@
             <div class="col-4 col-sm-4">
               <div class="form-group">
                 <label for="birthdate">Date of Birth</label>
-                <input type="date" class="form-control" id="birthdate" ngModel name="birthdate" required>
+                <!-- <input type="date" class="form-control" id="birthdate" ngModel name="birthdate" required> -->
+                <my-date-picker name="birthdate" [options]="myDatePickerOptions"
+                ngModel required></my-date-picker>
               </div>
             </div>
             <div class="col-4 col-sm-4">
@@ -155,13 +157,17 @@
             <div class="col-6 col-sm-6">
               <div class="form-group">
                 <label for="from">From</label>
-                <input type="date" class="form-control" id="from" ngModel name="from" required autofocus>
+                <!-- <input type="date" class="form-control" id="from" ngModel name="from" required autofocus> -->
+                <my-date-picker name="from" [options]="myDatePickerOptions"
+                ngModel required></my-date-picker>
               </div>
             </div>
             <div class="col-6 col-sm-6">
               <div class="form-group">
                 <label for="to">To</label>
-                <input type="date" class="form-control" id="to" ngModel name="to" required>
+                <!-- <input type="date" class="form-control" id="to" ngModel name="to" required> -->
+                <my-date-picker name="to" [options]="myDatePickerOptions"
+                ngModel required></my-date-picker>
               </div>
             </div>
           </div>

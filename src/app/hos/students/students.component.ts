@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {IMyDpOptions} from 'mydatepicker';
 import { HosService } from '../hos.service';
 import { TimeService } from '../../shared/time.service';
 
@@ -50,6 +51,10 @@ export class StudentsComponent implements OnInit {
             },
             error => this.errorMessage = <any>error);
   }
+  public myDatePickerOptions: IMyDpOptions = {
+    // other options...
+    dateFormat: 'yyyy-mm-dd',
+};
   form31(form:any){
     
     this.hosService.registerStudent(form.value.firstname,form.value.sex,form.value.sclass,form.value.orphan,form.value.middlename,form.value.birthdate,form.value.status,form.value.sdisability1,form.value.lastname,form.value.admsn,form.value.lifestatus,form.value.nationality)

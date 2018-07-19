@@ -26,13 +26,17 @@
             <div class="col-6 col-sm-6">
               <div class="form-group">
                 <label for="from">From</label>
-                <input type="date" class="form-control" id="from" ngModel name="from" required autofocus>
+                <!-- <input type="date" class="form-control" id="from" ngModel name="from" required autofocus> -->
+                <my-date-picker name="from" [options]="myDatePickerOptions"
+                ngModel required></my-date-picker>
               </div>
             </div>
             <div class="col-6 col-sm-6">
               <div class="form-group">
                 <label for="to">To</label>
-                <input type="date" class="form-control" id="to" ngModel name="to" required>
+                <!-- <input type="date" class="form-control" id="to" ngModel name="to" required> -->
+                <my-date-picker name="to" [options]="myDatePickerOptions"
+                ngModel required></my-date-picker>
               </div>
             </div>
           </div>
@@ -70,13 +74,17 @@
               <div class="col-6 col-sm-6">
                   <div class="form-group">
                       <label for="date">From</label>
-                      <input type="date" class="form-control" id="kuanzia" ngModel name="kuanzia" required autofocus>
+                      <!-- <input type="date" class="form-control" id="kuanzia" ngModel name="kuanzia" required autofocus> -->
+                      <my-date-picker name="kuanzia" [options]="myDatePickerOptions"
+                      ngModel required></my-date-picker>
                     </div>
               </div>
               <div class="col-6 col-sm-6">
                   <div class="form-group">
                       <label for="date">To</label>
-                      <input type="date" class="form-control" id="mpaka" ngModel name="mpaka" required>
+                      <!-- <input type="date" class="form-control" id="mpaka" ngModel name="mpaka" required> -->
+                      <my-date-picker name="mpaka" [options]="myDatePickerOptions"
+                      ngModel required></my-date-picker>
                     </div>
                 </div>
             </div>

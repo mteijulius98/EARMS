@@ -40,7 +40,9 @@
               <div class="col-4 col-sm-4">
                   <div class="form-group">
                       <label for="dob">Date of Birth</label>
-                      <input type="date" class="form-control" id="birth" ngModel name="birth" required>
+                      <!-- <input type="date" class="form-control" id="birth" ngModel name="birth" required> -->
+                      <my-date-picker name="birth" [options]="myDatePickerOptions"
+                      ngModel required></my-date-picker>
                     </div>
               </div>
               <div class="col-4 col-sm-4">
@@ -61,7 +63,9 @@
                 <div class="col-4 col-sm-4">
                     <div class="form-group">
                         <label for="doe">Employment Date</label>
-                        <input type="date" class="form-control" id="epdate" ngModel name="epdate" required>
+                        <!-- <input type="date" class="form-control" id="epdate" ngModel name="epdate" required> -->
+                        <my-date-picker name="epdate" [options]="myDatePickerOptions"
+                        ngModel required></my-date-picker>
                       </div>
                 </div>
                 <div class="col-4 col-sm-4">

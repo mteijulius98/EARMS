@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MyDatePickerModule } from 'mydatepicker';
 import { SharedModule } from '../shared/shared.module';
 
 import { HosRoutingModule } from './hos-routing.module';
@@ -17,6 +18,7 @@ import { FinancialsComponent } from './financials/financials.component';
   imports: [
     CommonModule,
     FormsModule,
+    MyDatePickerModule,
     SharedModule,
     HosRoutingModule
   ],

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {IMyDpOptions} from 'mydatepicker';
 import { HosService } from '../hos.service';
 
 @Component({
@@ -40,6 +41,10 @@ export class StaffsComponent implements OnInit {
         },
         error => this.errorMessage = <any>error);
   }
+  public myDatePickerOptions: IMyDpOptions = {
+    // other options...
+    dateFormat: 'yyyy-mm-dd',
+};
   form13(form:any){
     
     this.hosService.registerNtstaff(form.value.designation,form.value.count)
