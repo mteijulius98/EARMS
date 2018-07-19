@@ -11,27 +11,31 @@
                         <label for="role">Role</label>
                         <input type="text" class="form-control" id="role" name="role_name" [(ngModel)]="role.role_name" #role="ngModel" pattern="[a-zA-Z]+"
                             required autofocus>
-                        <div *ngIf="role.invalid && (role.dirty || role.touched)" class="alert alert-danger">
-                            <div *ngIf="role.errors.required">
-                                Role is required.
+                        <span>
+                            <div *ngIf="role.invalid && (role.dirty || role.touched)" class="alert alert-danger">
+                                <div *ngIf="role.errors.required">
+                                    Role is required.
+                                </div>
+                                <div *ngIf="role.errors.pattern">
+                                    Role is Incorrect.
+                                </div>
                             </div>
-                            <div *ngIf="role.errors.pattern">
-                                Role is Incorrect.
-                            </div>
-                        </div>
+                        </span>
                     </div>
                     <div class="form-group">
                         <label for="roleinitials">Initials</label>
                         <input type="text" class="form-control" id="roleinitials" name="role_initial" [(ngModel)]="role.role_initial" #roleinitial="ngModel"
                             pattern="[a-zA-Z]+" required autofocus>
-                        <div *ngIf="roleinitial.invalid && (roleinitial.dirty || roleinitial.touched)" class="alert alert-danger">
-                            <div *ngIf="roleinitial.errors.required">
-                                Role Initial is required.
+                        <span>
+                            <div *ngIf="roleinitial.invalid && (roleinitial.dirty || roleinitial.touched)" class="alert alert-danger">
+                                <div *ngIf="roleinitial.errors.required">
+                                    Role Initials are required.
+                                </div>
+                                <div *ngIf="roleinitial.errors.pattern">
+                                    Role Initials are Incorrect.
+                                </div>
                             </div>
-                            <div *ngIf="roleinitial.errors.pattern">
-                                Role Initial is Incorrect.
-                            </div>
-                        </div>
+                        </span>
                     </div>
                     <div class="form-group">
                         <button class="btn btn-custom-primary btn-block w-50 mx-auto" type="submit" [disabled]="!addRole.valid">Add Role</button>
