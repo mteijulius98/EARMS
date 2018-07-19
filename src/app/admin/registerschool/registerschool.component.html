@@ -10,7 +10,18 @@
         <form class="form-group px-4 py-2" #accomodation="ngForm" (ngSubmit)="form7(accomodation)">
           <div class="form-group">
             <label for="type"> Type </label>
-            <input type="text" class="form-control" id="type" name="categoryname" ngModel required autofocus>
+            <input type="text" class="form-control" id="type" name="categoryname" [(ngModel)]="stype.type" #cname="ngModel" pattern="[a-zA-Z]+"
+              required>
+            <span>
+              <div *ngIf="cname.invalid && (cname.dirty || cname.touched)" class="alert alert-danger">
+                <div *ngIf="cname.errors.required">
+                  Type is required.
+                </div>
+                <div *ngIf="cname.errors.pattern">
+                  Type is Incorrect.
+                </div>
+              </div>
+            </span>
           </div>
           <div class="form-group">
             <button class="btn btn-custom-primary btn-block w-50 mx-auto" type="submit" [disabled]="!accomodation.valid">Add Type</button>
@@ -29,7 +40,18 @@
         <form class="form-group px-4 py-2" #ownership="ngForm" (ngSubmit)="form6(ownership)">
           <div class="form-group">
             <label for="ownership">Ownership category</label>
-            <input type="text" class="form-control" id="ownership" name="ownershipname" ngModel required autofocus>
+            <input type="text" class="form-control" id="ownership" name="ownershipname" [(ngModel)]="sownership.category" #category="ngModel"
+              pattern="[a-zA-Z]+" required>
+            <span>
+              <div *ngIf="category.invalid && (category.dirty || category.touched)" class="alert alert-danger">
+                <div *ngIf="category.errors.required">
+                  Category is required.
+                </div>
+                <div *ngIf="category.errors.pattern">
+                  Category is Incorrect.
+                </div>
+              </div>
+            </span>
           </div>
           <div class="form-group">
             <button class="btn btn-custom-primary btn-block w-50 mx-auto" type="submit" [disabled]="!ownership.valid">Add category</button>
@@ -50,19 +72,43 @@
             <div class="col-4 col-sm-4">
               <div class="form-group">
                 <label for="schoolName">Name</label>
-                <input type="text" class="form-control" id="schoolname" ngModel name="schoolname" required>
+                <input type="text" class="form-control" id="schoolname" [(ngModel)]="rschool.name" #sname="ngModel" name="schoolname" pattern="[a-zA-Z]+"
+                  required>
+                <span>
+                  <div *ngIf="sname.invalid && (sname.dirty || sname.touched)" class="alert alert-danger">
+                    <div *ngIf="sname.errors.required">
+                      School name is required.
+                    </div>
+                    <div *ngIf="sname.errors.pattern">
+                      School name is Incorrect.
+                    </div>
+                  </div>
+                </span>
               </div>
             </div>
             <div class="col-4 col-sm-4">
               <div class="form-group">
                 <label for="schoolRegNo">Reg Number</label>
-                <input type="text" class="form-control" id="regno" ngModel name="regno" required autofocus>
+                <input type="text" class="form-control" id="regno" [(ngModel)]="rschool.regno" #regno="ngModel" name="regno" pattern="[a-zA-Z0-9\W]+"
+                  required>
+                <span>
+                  <div *ngIf="regno.invalid && (regno.dirty || regno.touched)" class="alert alert-danger">
+                    <div *ngIf="regno.errors.required">
+                      Reg Number is required.
+                    </div>
+                    <div *ngIf="regno.errors.pattern">
+                      Reg Number is Incorrect.
+                    </div>
+                  </div>
+                </span>
               </div>
             </div>
             <div class="col-4 col-sm-4">
               <div class="form-group">
                 <label for="schoolRegNo">Reg Date</label>
-                <input type="date" class="form-control" id="regdate" ngModel name="regdate" required autofocus>
+                <!-- <input type="date" class="form-control" id="regdate" [(ngModel)]="rschool.regdate" name="regdate" required> -->
+                <my-date-picker name="mydate" [options]="myDatePickerOptions"
+                [(ngModel)]="rschool.regdate" required></my-date-picker>
               </div>
             </div>
           </div>
@@ -71,7 +117,7 @@
             <div class="col-4 col-sm-4">
               <div class="form-group">
                 <label for="schoolCategory">Type</label>
-                <select class="form-control" id="category" ngModel name="category" required>
+                <select class="form-control" id="category" [(ngModel)]="rschool.type" name="category" required>
                   <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
                 </select>
               </div>
@@ -79,7 +125,7 @@
             <div class="col-4 col-sm-4">
               <div class="form-group">
                 <label for="ward">Ownership</label>
-                <select class="form-control" id="ownership" ngModel name="ownership" required autofocus>
+                <select class="form-control" id="ownership" [(ngModel)]="rschool.ownership" name="ownership" required>
                   <option *ngFor="let ownership of ownerships" value="{{ownership.id}}">{{ownership.name}}</option>
                 </select>
               </div>
@@ -87,7 +133,7 @@
             <div class="col-4 col-sm-4">
               <div class="form-group">
                 <label for="ward">Ward</label>
-                <select class="form-control" id="ward" ngModel name="ward" required autofocus>
+                <select class="form-control" id="ward" [(ngModel)]="rschool.ward" #ward="ngModel" name="ward" required>
                   <option *ngFor="let ward of wards" value="{{ward.id}}">{{ward.wname}}</option>
                 </select>
               </div>
@@ -98,19 +144,49 @@
             <div class="col-4 col-sm-4">
               <div class="form-group">
                 <label for="ward">Postal address</label>
-                <input type="text" class="form-control" id="postal_address" ngModel name="postal_address" required autofocus>
+                <input type="text" class="form-control" id="postal_address" [(ngModel)]="rschool.saddress" #saddress="ngModel" name="postal_address"
+                  pattern="[0-9]+" required>
+                <span>
+                  <div *ngIf="saddress.invalid && (saddress.dirty || saddress.touched)" class="alert alert-danger">
+                    <div *ngIf="saddress.errors.required">
+                      Address is required.
+                    </div>
+                    <div *ngIf="saddress.errors.pattern">
+                      Address is Incorrect.
+                    </div>
+                  </div>
+                </span>
               </div>
             </div>
             <div class="col-4 col-sm-4">
               <div class="form-group">
                 <label for="schoolEmail">Email</label>
-                <input type="text" class="form-control" id="email" ngModel name="email" required>
+                <input type="text" class="form-control" id="email" [(ngModel)]="rschool.email" #email="ngModel" name="email" pattern=".+\@.+\..+"
+                  required>
+                <span>
+                  <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                    <div *ngIf="email.errors.pattern">
+                      Email is Incorrect.
+                    </div>
+                  </div>
+                </span>
               </div>
             </div>
             <div class="col-4 col-sm-4">
               <div class="form-group">
                 <label for="ward">Phone number</label>
-                <input type="text" class="form-control" id="phonenumber" ngModel name="phonenumber" required autofocus>
+                <input type="text" class="form-control" id="phonenumber" [(ngModel)]="rschool.phone_number" #phonenumber="ngModel" name="phonenumber"
+                  placeholder="XXXX-XXX-XXX" pattern="/^\(?([0-9]{4})\)?[- ]?([0-9]{3})[- ]?([0-9]{3})$/" required>
+                <span>
+                  <div *ngIf="phonenumber.invalid && (phonenumber.dirty || phonenumber.touched)" class="alert alert-danger">
+                    <div *ngIf="phonenumber.errors.required">
+                      Phone Number is required.
+                    </div>
+                    <div *ngIf="phonenumber.errors.pattern">
+                      Phone Number is Incorrect.
+                    </div>
+                  </div>
+                </span>
               </div>
             </div>
           </div>
@@ -139,7 +215,7 @@
         </div>
         <div id="viewSchools" class="collapse show" aria-labelledby="headn1" data-parent="#accordion">
           <div class="card-body">
-            <table id="schools"class="table table-bordered table-responsive-sm table-hover">
+            <table id="schools" class="table table-bordered table-responsive-sm table-hover">
               <thead>
                 <tr>
                   <th scope="col">School Name</th>
@@ -172,95 +248,95 @@
                       <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title"  id="schoolName">{{school.name}}</h5>
+                            <h5 class="modal-title" id="schoolName">{{school.name}}</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                             </button>
                           </div>
                           <div class="modal-body">
-                                  Kimaro
-                                  <div class="card m-2">
-                                    <div class="card-header">
-                                      Update school
-                                    </div>
-                                    <div class="card-body">
-                                      <!-- <form class="form-group px-4 py-2" #updateSchool="ngForm" (ngSubmit)="form90(updateSchool)"> -->
-                                        <div class="row">
-                                          <div class="col-4 col-sm-4">
-                                            <div class="form-group">
-                                              <label for="schoolName">Name</label>
-                                              <input type="text" class="form-control" id="schoolname" ngModel name="schoolname" required>
-                                            </div>
-                                          </div>
-                                          <div class="col-4 col-sm-4">
-                                            <div class="form-group">
-                                              <label for="schoolRegNo">Reg Number</label>
-                                              <input type="text" class="form-control" id="regno" ngModel name="regno" required autofocus>
-                                            </div>
-                                          </div>
-                                          <div class="col-4 col-sm-4">
-                                            <div class="form-group">
-                                              <label for="schoolRegNo">Reg Date</label>
-                                              <input type="date" class="form-control" id="regdate" ngModel name="regdate" required autofocus>
-                                            </div>
-                                          </div>
-                                        </div>
-                              
-                                        <div class="row">
-                                          <div class="col-4 col-sm-4">
-                                            <div class="form-group">
-                                              <label for="schoolCategory">Type</label>
-                                              <select class="form-control" id="category" ngModel name="category" required>
-                                                <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
-                                              </select>
-                                            </div>
-                                          </div>
-                                          <div class="col-4 col-sm-4">
-                                            <div class="form-group">
-                                              <label for="ward">Ownership</label>
-                                              <select class="form-control" id="ownership" ngModel name="ownership" required autofocus>
-                                                <option *ngFor="let ownership of ownerships" value="{{ownership.id}}">{{ownership.name}}</option>
-                                              </select>
-                                            </div>
-                                          </div>
-                                          <div class="col-4 col-sm-4">
-                                            <div class="form-group">
-                                              <label for="ward">Ward</label>
-                                              <select class="form-control" id="ward" ngModel name="ward" required autofocus>
-                                                <option *ngFor="let ward of wards" value="{{ward.id}}">{{ward.wname}}</option>
-                                              </select>
-                                            </div>
-                                          </div>
-                                        </div>
-                              
-                                        <div class="row">
-                                          <div class="col-4 col-sm-4">
-                                            <div class="form-group">
-                                              <label for="ward">Postal address</label>
-                                              <input type="text" class="form-control" id="postal_address" ngModel name="postal_address" required autofocus>
-                                            </div>
-                                          </div>
-                                          <div class="col-4 col-sm-4">
-                                            <div class="form-group">
-                                              <label for="schoolEmail">Email</label>
-                                              <input type="text" class="form-control" id="email" ngModel name="email" required>
-                                            </div>
-                                          </div>
-                                          <div class="col-4 col-sm-4">
-                                            <div class="form-group">
-                                              <label for="ward">Phone number</label>
-                                              <input type="text" class="form-control" id="phonenumber" ngModel name="phonenumber" required autofocus>
-                                            </div>
-                                          </div>
-                                        </div>
-                              
-                                        <!-- <div class="form-group">
-                                          <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!registerSchool.valid">Register School</button>
-                                        </div> -->
-                              
-                                      
+                            Kimaro
+                            <div class="card m-2">
+                              <div class="card-header">
+                                Update school
+                              </div>
+                              <div class="card-body">
+                                <!-- <form class="form-group px-4 py-2" #updateSchool="ngForm" (ngSubmit)="form90(updateSchool)"> -->
+                                <div class="row">
+                                  <div class="col-4 col-sm-4">
+                                    <div class="form-group">
+                                      <label for="schoolName">Name</label>
+                                      <input type="text" class="form-control" id="schoolname" ngModel name="schoolname" required>
                                     </div>
                                   </div>
+                                  <div class="col-4 col-sm-4">
+                                    <div class="form-group">
+                                      <label for="schoolRegNo">Reg Number</label>
+                                      <input type="text" class="form-control" id="regno" ngModel name="regno" required autofocus>
+                                    </div>
+                                  </div>
+                                  <div class="col-4 col-sm-4">
+                                    <div class="form-group">
+                                      <label for="schoolRegNo">Reg Date</label>
+                                      <input type="date" class="form-control" id="regdate" ngModel name="regdate" required autofocus>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-4 col-sm-4">
+                                    <div class="form-group">
+                                      <label for="schoolCategory">Type</label>
+                                      <select class="form-control" id="category" ngModel name="category" required>
+                                        <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="col-4 col-sm-4">
+                                    <div class="form-group">
+                                      <label for="ward">Ownership</label>
+                                      <select class="form-control" id="ownership" ngModel name="ownership" required autofocus>
+                                        <option *ngFor="let ownership of ownerships" value="{{ownership.id}}">{{ownership.name}}</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="col-4 col-sm-4">
+                                    <div class="form-group">
+                                      <label for="ward">Ward</label>
+                                      <select class="form-control" id="ward" ngModel name="ward" required autofocus>
+                                        <option *ngFor="let ward of wards" value="{{ward.id}}">{{ward.wname}}</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-4 col-sm-4">
+                                    <div class="form-group">
+                                      <label for="ward">Postal address</label>
+                                      <input type="text" class="form-control" id="postal_address" ngModel name="postal_address" required autofocus>
+                                    </div>
+                                  </div>
+                                  <div class="col-4 col-sm-4">
+                                    <div class="form-group">
+                                      <label for="schoolEmail">Email</label>
+                                      <input type="text" class="form-control" id="email" ngModel name="email" required>
+                                    </div>
+                                  </div>
+                                  <div class="col-4 col-sm-4">
+                                    <div class="form-group">
+                                      <label for="ward">Phone number</label>
+                                      <input type="text" class="form-control" id="phonenumber" ngModel name="phonenumber" required autofocus>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <!-- <div class="form-group">
+                                          <button class="btn w-50 mx-auto btn-custom-primary btn-block" type="submit" [disabled]="!registerSchool.valid">Register School</button>
+                                        </div> -->
+
+
+                              </div>
+                            </div>
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

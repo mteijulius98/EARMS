@@ -10,7 +10,7 @@
                     <div class="form-group">
                         <label for="role">Role</label>
                         <input type="text" class="form-control" id="role" name="role_name" [(ngModel)]="role.role_name" #role="ngModel" pattern="[a-zA-Z]+"
-                            required autofocus>
+                            required>
                         <span>
                             <div *ngIf="role.invalid && (role.dirty || role.touched)" class="alert alert-danger">
                                 <div *ngIf="role.errors.required">
@@ -25,7 +25,7 @@
                     <div class="form-group">
                         <label for="roleinitials">Initials</label>
                         <input type="text" class="form-control" id="roleinitials" name="role_initial" [(ngModel)]="role.role_initial" #roleinitial="ngModel"
-                            pattern="[a-zA-Z]+" required autofocus>
+                            pattern="[a-zA-Z]+" required>
                         <span>
                             <div *ngIf="roleinitial.invalid && (roleinitial.dirty || roleinitial.touched)" class="alert alert-danger">
                                 <div *ngIf="roleinitial.errors.required">
@@ -57,7 +57,7 @@
                             <div class="form-group">
                                 <label for="firstName">First Name</label>
                                 <input type="text" class="form-control" id="firstname" name="firstname" [(ngModel)]="user.firstname" #fname="ngModel" pattern="[a-zA-Z]+"
-                                    required autofocus>
+                                    required>
                                 <span>
                                     <div *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="alert alert-danger">
                                         <div *ngIf="fname.errors.required">
@@ -74,7 +74,7 @@
                             <div class="form-group">
                                 <label for="middleName">Middle Name</label>
                                 <input type="text" class="form-control" id="middlename" name="middlename" [(ngModel)]="user.middlename" #mname="ngModel"
-                                    pattern="[a-zA-Z]+" required autofocus>
+                                    pattern="[a-zA-Z]+" required>
                                 <span>
                                     <div *ngIf="mname.invalid && (mname.dirty || mname.touched)" class="alert alert-danger">
                                         <div *ngIf="mname.errors.required">
@@ -156,7 +156,7 @@
                             <div class="form-group">
                                 <label for="userEmail">Email</label>
                                 <input type="email" id="email" name="email" class="form-control" [(ngModel)]="user.email" #email="ngModel" pattern=".+\@.+\..+"
-                                    required autofocus="">
+                                    required>
                                 <span>
                                     <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
                                         <div *ngIf="email.errors.required">

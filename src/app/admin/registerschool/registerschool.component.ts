@@ -1,4 +1,5 @@
 import { Component, OnInit ,Input} from '@angular/core';
+import {IMyDpOptions} from 'mydatepicker';
 import { AdminService } from '../admin.service';
 import { SCHOOL } from './school';
 
@@ -9,6 +10,23 @@ import { SCHOOL } from './school';
 })
 export class RegisterschoolComponent implements OnInit {
   @Input() school:SCHOOL;
+  sownership = {
+    category: ''
+  };
+  stype = {
+    type: ''
+  };
+  rschool = {
+    name: '',
+    regno: '',
+    regdate: '',
+    type: '',
+    ownership: '',
+    ward:'',
+    saddress:'',
+    email:'',
+    phone_number:''
+  };
   categories=[];
   ownerships=[];
   schools=[];
@@ -52,7 +70,10 @@ export class RegisterschoolComponent implements OnInit {
             },
             error => this.errorMessage = <any>error);
   }
- 
+  public myDatePickerOptions: IMyDpOptions = {
+    // other options...
+    dateFormat: 'yyyy-mm-dd',
+};
   onEdit(){
     this.editing = true;
     this.editValue =this.school.name,this.school.regno,this.school.regdate,this.school.postal_address,this.school.phone_number,this.school.email,this.school.id;

@@ -10,7 +10,7 @@
           <div class="form-group">
             <label for="districtName">Region</label>
             <input type="text" class="form-control" id="regionname" [(ngModel)]="region.name" #rname="ngModel" name="regionname" placeholder="Region Name"
-              pattern="[a-zA-Z]+" required autofocus>
+              pattern="[a-zA-Z]+" required>
               <span>
                   <div *ngIf="rname.invalid && (rname.dirty || rname.touched)" class="alert alert-danger">
                       <div *ngIf="rname.errors.required">
@@ -46,7 +46,7 @@
           <div class="form-group">
             <label for="districtName">District</label>
             <input type="text" class="form-control" id="districtname" [(ngModel)]="district.name" #dname="ngModel" name="districtname"
-              placeholder="District Name" pattern="[a-zA-Z]+" required autofocus>
+              placeholder="District Name" pattern="[a-zA-Z]+" required>
               <span>
                   <div *ngIf="dname.invalid && (dname.dirty || dname.touched)" class="alert alert-danger">
                       <div *ngIf="dname.errors.required">
@@ -61,7 +61,7 @@
           <div class="form-group">
             <label for="districtName">Postal Address</label>
             <input type="text" class="form-control" id="postal_address" [(ngModel)]="district.daddress" #daddress="ngModel" name="postal_address"
-              placeholder="Postal Address" pattern="[0-9]+" required autofocus>
+              placeholder="Postal Address" pattern="[0-9]+" required>
               <span>
                   <div *ngIf="daddress.invalid && (daddress.dirty || daddress.touched)" class="alert alert-danger">
                       <div *ngIf="daddress.errors.required">
@@ -98,7 +98,7 @@
           <div class="form-group">
             <label for="wardName">Ward</label>
             <input type="text" class="form-control" id="wardname" [(ngModel)]="ward.name" #wname="ngModel" name="wardname" placeholder="Ward Name"
-              pattern="[a-zA-Z]+" required autofocus>
+              pattern="[a-zA-Z]+" required>
               <span>
                   <div *ngIf="wname.invalid && (wname.dirty || wname.touched)" class="alert alert-danger">
                       <div *ngIf="wname.errors.required">
@@ -113,7 +113,7 @@
           <div class="form-group">
             <label for="wardName">Postal Address</label>
             <input type="text" class="form-control" id="wardname" [(ngModel)]="ward.waddress" #waddress="ngModel" name="postal_address"
-              placeholder="Ward Name" pattern="[0-9]+" required autofocus>
+              placeholder="Ward Name" pattern="[0-9]+" required>
               <span>
                   <div *ngIf="waddress.invalid && (waddress.dirty || waddress.touched)" class="alert alert-danger">
                       <div *ngIf="waddress.errors.required">
