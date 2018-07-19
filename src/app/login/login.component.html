@@ -43,7 +43,7 @@
           <!-- password -->
           <label for="inputPassword" class="sr-only">Password</label>
           <input type="password" id="loginPassword" name="password" class="form-control" placeholder="Password" required [(ngModel)]="user.password"
-            #password="ngModel" minlength="4" maxlength="14">
+            #password="ngModel" minlength="4" maxlength="16">
           <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
             <div *ngIf="password.errors.required">
               Password is required.
