@@ -1,6 +1,8 @@
 import { Component, OnInit ,Input} from '@angular/core';
 import { AdminService } from '../admin.service';
 import { SCHOOL } from './school';
+import { WeoService } from '../../weo/weo.service';
+import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-registerschool',
@@ -13,10 +15,11 @@ export class RegisterschoolComponent implements OnInit {
   ownerships=[];
   schools=[];
   wards=[];
+  spec=[];
   errorMessage:string;
   editing = false;
   editValue ='';
-  constructor(private adminService:AdminService) { 
+  constructor(private adminService:AdminService,private weoService:WeoService) { 
     setTimeout(function (){
       $(function(){
         $('#schools').DataTable();
@@ -31,6 +34,7 @@ export class RegisterschoolComponent implements OnInit {
       this.categories=category.categories
       },
       error => this.errorMessage = <any>error);
+      
       this.adminService.viewOwnerships().subscribe(
         ownership =>{
         this.ownerships=ownership.ownerships
@@ -52,23 +56,35 @@ export class RegisterschoolComponent implements OnInit {
             },
             error => this.errorMessage = <any>error);
   }
+
+IdStored(id){
+    localStorage.removeItem('sid')
+    localStorage.setItem('sid', id)
+    this.weoService.viewSpeschool().subscribe(
+      spe =>{
+      this.spec=spe.spec
+      console.log('our',spe)
+      },
+      error => this.errorMessage = <any>error);  
+ }
+
  
-  onEdit(){
+onEdit(){
     this.editing = true;
-    this.editValue =this.school.name,this.school.regno,this.school.regdate,this.school.postal_address,this.school.phone_number,this.school.email,this.school.id;
+    this.editValue =this.school.name,this.school.regno,this.school.postal_address,this.school.phone_number,this.school.email;
   }
-  onUpdate(){
-    this.adminService.updateSchool(this.school.id,this.school.name,this.school.regno,this.school.regdate,this.school.postal_address,this.school.scategory_id,this.school.email,this.school.ward_id,this.school.phone_number,this.school.sownership_id)
+onUpdate(){
+    this.adminService.updateSchool(this.school.name,this.school.regno,this.school.postal_address,this.school.email,this.school.phone_number)
     .subscribe(
        (school: SCHOOL) => {
-         this.school.name,this.school.sownership_id,this.school.regno,this.school.regdate,this.school.postal_address,this.school.phone_number,this.school.email,this.school.scategory_id = this.editValue;
+         this.school.name,this.school.regno,this.school.postal_address,this.school.phone_number,this.school.email= this.editValue;
          this.editValue = '';
        }
     );
     
     this.editing = false;
   }
-  onCancel(){
+onCancel(){
     this.editValue='';
     this.editing = false;
   }

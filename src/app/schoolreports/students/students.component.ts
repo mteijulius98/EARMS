@@ -25,14 +25,16 @@ export class StudentsComponent implements OnInit {
   form32=[];
   form42=[];
   form52=[];
-  form62=[];
+  form62=[]; form8=[]; form9=[]; form10=[]; form11=[]; form20=[]; form30=[];
   form2=[];
   form3=[];
   form4=[];
   form5=[];
   form6=[];
   swards=[];
-  schools=[];
+  spec=[];
+  dents=[];
+  tclasses=[];
   
   errorMessage:string;
   constructor(private weoService:WeoService) { }
@@ -122,9 +124,42 @@ export class StudentsComponent implements OnInit {
           error => this.errorMessage = <any>error);
           this.weoService.viewSpeschool().subscribe(
             school =>{
-            this.schools=school.schools
+            this.spec=school.spec
             },
             error => this.errorMessage = <any>error);
+            this.weoService.viewSTotal().subscribe(
+              dent =>{
+              this.dents=dent.dents
+              console.log('our', dent)
+              },
+              error => this.errorMessage = <any>error);
+              this.weoService.viewCtotal().subscribe(
+                tclass =>{
+                this.tclasses=tclass.tclasses
+                console.log('our', tclass)
+                tclass.tclasses.map(x=>{
+                  if (x.name == "Form 1") {
+                    this.form8.push(x)
+                  }
+                  else if(x.name == "Form 2"){
+                    this.form9.push(x)
+                    
+                  }
+                  else if(x.name == "Form 3"){
+                    this.form10.push(x)
+                  }
+                  else if(x.name == "Form 4"){
+                    this.form11.push(x)
+                  }
+                  else if(x.name == "Form 5"){
+                    this.form20.push(x)
+                  }
+                  else if(x.name == "Form 6"){
+                    this.form30.push(x)
+                  }
+                })
+                },
+                error => this.errorMessage = <any>error);
   }
  
 downloadPDF() {

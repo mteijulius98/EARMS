@@ -2,14 +2,33 @@
         <!-- <div class="text-center" *ngFor="let sward of swards">
                 <h5>{{sward.name}} REPORT</h5></div> -->
     <div class="report-c p-4" id="sreport">
-        <div class="text-center" *ngFor="let sward of schools">
+        <div class="text-center" *ngFor="let sward of spec">
                 <h5>{{sward.name}} SECONDARY SCHOOL REPORT</h5></div>
+                <div>
+                        <h5 class="text-center">TOTAL NUMBER OF STUDENTS</h5>
+                    <table  class="table table-bordered table-responsive-sm">
+                       <thead>
+                           <tr>
+                               <th>MALE</th>
+                               <th>FEMALE</th>
+                               <th>TOTAL</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                           <tr *ngFor="let you of dents">
+                               <td>{{you.MALES}}</td>
+                               <td>{{you.FEMALES}}</td>
+                               <td>{{you.TOTAL}}</td>
+                           </tr>
+                       </tbody>
+                    </table>
+                </div>
                 <div>
                     <h5 class="text-center">NUMBERS OF STUDENTS</h5>
                     <table class="table table-bordered table-responsive-sm">
                         <thead>
-                            <tr>
-                                <th scope="col">Form I</th>
+                            <tr class="text-center">
+                                <th scope="col" >Form I</th>
                                 <th scope="col">Form II</th>
                                 <th scope="col">Form III</th>
                                 <th scope="col">Form IV</th>
@@ -25,10 +44,10 @@
                                     <table class="table table-bordered table-responsive-sm">
                                         <thead>
                                             <tr>
-                                                <th scope="col">A</th>
-                                                <th scope="col">M</th>
-                                                <th scope="col">F</th>
-                                                <th scope="col">T</th>
+                                                <th scope="col">Age</th>
+                                                <th scope="col">Male</th>
+                                                <th scope="col">Female</th>
+                                                <th scope="col">Total</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -39,6 +58,22 @@
                                                 <td>{{form.TOTAL}}</td>
         
                                             </tr>
+                                             <tr *ngFor="let form of form8">
+                                                 <td>TOTAL</td>
+                                                 <td colspan="3" class="text-center">{{form.TOTAL}}</td>
+                                             </tr>
+                                            <!-- <table></table>
+                                                <thead>
+                                                    <tr>
+                                                        <th>Total in the Class</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr *ngFor="let form of form8">
+                                                        <td>{{form.TOTAL}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table> -->
                                         </tbody>
                                     </table>
                                 </td>
@@ -48,10 +83,10 @@
                                     <table class="table table-bordered table-responsive-sm">
                                         <thead>
                                             <tr>
-                                                <th scope="col">A</th>
-                                                <th scope="col">M</th>
-                                                <th scope="col">F</th>
-                                                <th scope="col">T</th>
+                                                <th scope="col">Age</th>
+                                                <th scope="col">Male</th>
+                                                <th scope="col">Female</th>
+                                                <th scope="col">Total</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -62,6 +97,10 @@
                                                 <td>{{formII.TOTAL}}</td>
         
                                             </tr>
+                                            <tr *ngFor="let form of form9">
+                                                    <td>TOTAL</td>
+                                                    <td colspan="3" class="text-center">{{form.TOTAL}}</td>
+                                                </tr>
                                         </tbody>
                                     </table>
                                 </td>
@@ -71,10 +110,10 @@
                                     <table class="table table-bordered table-responsive-sm">
                                         <thead>
                                             <tr>
-                                                <th scope="col">A</th>
-                                                <th scope="col">M</th>
-                                                <th scope="col">F</th>
-                                                <th scope="col">T</th>
+                                                <th scope="col">Age</th>
+                                                <th scope="col">Male</th>
+                                                <th scope="col">Female</th>
+                                                <th scope="col">Total</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -85,6 +124,10 @@
                                                 <td>{{formIII.TOTAL}}</td>
         
                                             </tr>
+                                            <tr *ngFor="let form of form10">
+                                                    <td>TOTAL</td>
+                                                    <td colspan="3" class="text-center">{{form.TOTAL}}</td>
+                                                </tr>
                                         </tbody>
                                     </table>
                                 </td>
@@ -94,10 +137,10 @@
                                     <table class="table table-bordered table-responsive-sm">
                                         <thead>
                                             <tr>
-                                                <th scope="col">A</th>
-                                                <th scope="col">M</th>
-                                                <th scope="col">F</th>
-                                                <th scope="col">T</th>
+                                                <th scope="col">Age</th>
+                                                <th scope="col">Male</th>
+                                                <th scope="col">Female</th>
+                                                <th scope="col">Total</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -108,6 +151,10 @@
                                                 <td>{{formIV.TOTAL}}</td>
         
                                             </tr>
+                                            <tr *ngFor="let form of form10">
+                                                    <td>TOTAL</td>
+                                                    <td colspan="3" class="text-center">{{form.TOTAL}}</td>
+                                                </tr>
                                         </tbody>
                                     </table>
                                 </td>
@@ -116,10 +163,10 @@
                                     <table class="table table-bordered table-responsive-sm">
                                         <thead>
                                             <tr>
-                                                <th scope="col">A</th>
-                                                <th scope="col">M</th>
-                                                <th scope="col">F</th>
-                                                <th scope="col">T</th>
+                                                <th scope="col">Age</th>
+                                                <th scope="col">Male</th>
+                                                <th scope="col">Female</th>
+                                                <th scope="col">Total</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -130,6 +177,10 @@
                                                 <td>{{formV.TOTAL}}</td>
         
                                             </tr>
+                                            <tr *ngFor="let form of form20">
+                                                    <td>TOTAL</td>
+                                                    <td colspan="3" class="text-center">{{form.TOTAL}}</td>
+                                                </tr>
                                         </tbody>
                                     </table>
                                 </td>
@@ -139,10 +190,10 @@
                                     <table class="table table-bordered table-responsive-sm">
                                         <thead>
                                             <tr>
-                                                <th scope="col">A</th>
-                                                <th scope="col">M</th>
-                                                <th scope="col">F</th>
-                                                <th scope="col">T</th>
+                                                <th scope="col">Age</th>
+                                                <th scope="col">Male</th>
+                                                <th scope="col">Female</th>
+                                                <th scope="col">Total</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -153,6 +204,10 @@
                                                 <td>{{formVI.TOTAL}}</td>
         
                                             </tr>
+                                            <tr *ngFor="let form of form30">
+                                                    <td>TOTAL</td>
+                                                    <td colspan="3" class="text-center">{{form.TOTAL}}</td>
+                                                </tr>
                                         </tbody>
                                     </table>
                                 </td>
@@ -168,7 +223,7 @@
             <h5 class="text-center">ORPHAN STUDENTS</h5>
             <table class="table table-bordered table-responsive-sm">
                 <thead>
-                    <tr>
+                        <tr class="text-center">
                         <th scope="col">Form I</th>
                         <th scope="col">Form II</th>
                         <th scope="col">Form III</th>
@@ -184,10 +239,10 @@
                             <table class="table table-bordered table-responsive-sm">
                                 <thead>
                                     <tr>
-                                        <th scope="col">C</th>
-                                        <th scope="col">M</th>
-                                        <th scope="col">F</th>
-                                        <th scope="col">T</th>
+                                        <th scope="col">Category</th>
+                                        <th scope="col">Male</th>
+                                        <th scope="col">Female</th>
+                                        <th scope="col">Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -206,10 +261,10 @@
                             <table class="table table-bordered table-responsive-sm">
                                 <thead>
                                     <tr>
-                                        <th scope="col">C</th>
-                                        <th scope="col">M</th>
-                                        <th scope="col">F</th>
-                                        <th scope="col">T</th>
+                                        <th scope="col">Category</th>
+                                        <th scope="col">Male</th>
+                                        <th scope="col">Female</th>
+                                        <th scope="col">Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -228,10 +283,10 @@
                             <table class="table table-bordered table-responsive-sm">
                                 <thead>
                                     <tr>
-                                        <th scope="col">C</th>
-                                        <th scope="col">M</th>
-                                        <th scope="col">F</th>
-                                        <th scope="col">T</th>
+                                        <th scope="col">Category</th>
+                                        <th scope="col">Male</th>
+                                        <th scope="col">Female</th>
+                                        <th scope="col">Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -250,10 +305,10 @@
                             <table class="table table-bordered table-responsive-sm">
                                 <thead>
                                     <tr>
-                                        <th scope="col">C</th>
-                                        <th scope="col">M</th>
-                                        <th scope="col">F</th>
-                                        <th scope="col">T</th>
+                                        <th scope="col">Category</th>
+                                        <th scope="col">Male</th>
+                                        <th scope="col">Female</th>
+                                        <th scope="col">Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -271,10 +326,10 @@
                             <table class="table table-bordered table-responsive-sm">
                                 <thead>
                                     <tr>
-                                        <th scope="col">C</th>
-                                        <th scope="col">M</th>
-                                        <th scope="col">F</th>
-                                        <th scope="col">T</th>
+                                        <th scope="col">Category</th>
+                                        <th scope="col">Male</th>
+                                        <th scope="col">Female</th>
+                                        <th scope="col">Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -293,10 +348,10 @@
                             <table class="table table-bordered table-responsive-sm">
                                 <thead>
                                     <tr>
-                                        <th scope="col">C</th>
-                                        <th scope="col">M</th>
-                                        <th scope="col">F</th>
-                                        <th scope="col">T</th>
+                                        <th scope="col">Category</th>
+                                        <th scope="col">Male</th>
+                                        <th scope="col">Female</th>
+                                        <th scope="col">Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -318,7 +373,7 @@
             <h5 class="text-center">DISABLED STUDENTS</h5>
             <table class="table table-bordered table-responsive-sm">
                 <thead>
-                    <tr>
+                        <tr class="text-center">
                         <!-- <th scope="col" rowspan="2">Disability</th> -->
                         <th scope="col">Form I</th>
                         <th scope="col">Form II</th>
@@ -335,10 +390,10 @@
                             <table class="table table-bordered table-responsive-sm">
                                 <thead>
                                     <tr>
-                                        <th scope="col">C</th>
-                                        <th scope="col">M</th>
-                                        <th scope="col">F</th>
-                                        <th scope="col">T</th>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Male</th>
+                                        <th scope="col">Female</th>
+                                        <th scope="col">Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -357,10 +412,10 @@
                             <table class="table table-bordered table-responsive-sm">
                                 <thead>
                                     <tr>
-                                        <th scope="col">C</th>
-                                        <th scope="col">M</th>
-                                        <th scope="col">F</th>
-                                        <th scope="col">T</th>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Male</th>
+                                        <th scope="col">Female</th>
+                                        <th scope="col">Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -379,10 +434,10 @@
                             <table class="table table-bordered table-responsive-sm">
                                 <thead>
                                     <tr>
-                                        <th scope="col">C</th>
-                                        <th scope="col">M</th>
-                                        <th scope="col">F</th>
-                                        <th scope="col">T</th>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Male</th>
+                                        <th scope="col">Female</th>
+                                        <th scope="col">Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -401,10 +456,10 @@
                             <table class="table table-bordered table-responsive-sm">
                                 <thead>
                                     <tr>
-                                        <th scope="col">C</th>
-                                        <th scope="col">M</th>
-                                        <th scope="col">F</th>
-                                        <th scope="col">T</th>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Male</th>
+                                        <th scope="col">Female</th>
+                                        <th scope="col">Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -422,10 +477,10 @@
                             <table class="table table-bordered table-responsive-sm">
                                 <thead>
                                     <tr>
-                                        <th scope="col">C</th>
-                                        <th scope="col">M</th>
-                                        <th scope="col">F</th>
-                                        <th scope="col">T</th>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Male</th>
+                                        <th scope="col">Female</th>
+                                        <th scope="col">Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -444,10 +499,10 @@
                             <table class="table table-bordered table-responsive-sm">
                                 <thead>
                                     <tr>
-                                        <th scope="col">C</th>
-                                        <th scope="col">M</th>
-                                        <th scope="col">F</th>
-                                        <th scope="col">T</th>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Male</th>
+                                        <th scope="col">Female</th>
+                                        <th scope="col">Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>

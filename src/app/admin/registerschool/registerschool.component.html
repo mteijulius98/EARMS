@@ -163,7 +163,7 @@
                   <td>{{school.regno}}</td>
                   <td>{{school.wname}}</td>
                   <td>
-                    <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#editSchool">
+                    <button class="btn btn-info btn-sm" type="" data-toggle="modal" (click)='IdStored(school.id)'data-target="#editSchool">
                       Edit
                     </button>
 
@@ -185,28 +185,28 @@
                                     </div>
                                     <div class="card-body">
                                       <!-- <form class="form-group px-4 py-2" #updateSchool="ngForm" (ngSubmit)="form90(updateSchool)"> -->
-                                        <div class="row">
+                                        <div class="row" >
                                           <div class="col-4 col-sm-4">
-                                            <div class="form-group">
+                                            <div class="form-group" *ngFor="let data of spec">
                                               <label for="schoolName">Name</label>
-                                              <input type="text" class="form-control" id="schoolname" ngModel name="schoolname" required>
+                                              <input type="text" class="form-control" id="schoolname" value="{{data.name}}" required>
                                             </div>
                                           </div>
                                           <div class="col-4 col-sm-4">
-                                            <div class="form-group">
+                                            <div class="form-group"  *ngFor="let data of spec">
                                               <label for="schoolRegNo">Reg Number</label>
-                                              <input type="text" class="form-control" id="regno" ngModel name="regno" required autofocus>
+                                              <input type="text" class="form-control" id="regno" value="{{data.regno}}" name="regno" required autofocus>
                                             </div>
                                           </div>
-                                          <div class="col-4 col-sm-4">
-                                            <div class="form-group">
+                                          <!-- <div class="col-4 col-sm-4">
+                                            <div class="form-group"  *ngFor="let data of spec">
                                               <label for="schoolRegNo">Reg Date</label>
-                                              <input type="date" class="form-control" id="regdate" ngModel name="regdate" required autofocus>
+                                              <input type="date" class="form-control" id="regdate" ngModel value="{{data.regdate}}" required autofocus>
                                             </div>
-                                          </div>
+                                          </div> -->
                                         </div>
                               
-                                        <div class="row">
+                                        <!-- <div class="row">
                                           <div class="col-4 col-sm-4">
                                             <div class="form-group">
                                               <label for="schoolCategory">Type</label>
@@ -218,7 +218,7 @@
                                           <div class="col-4 col-sm-4">
                                             <div class="form-group">
                                               <label for="ward">Ownership</label>
-                                              <select class="form-control" id="ownership" ngModel name="ownership" required autofocus>
+                                              <select class="form-control" id="ownership"  required autofocus>
                                                 <option *ngFor="let ownership of ownerships" value="{{ownership.id}}">{{ownership.name}}</option>
                                               </select>
                                             </div>
@@ -231,25 +231,25 @@
                                               </select>
                                             </div>
                                           </div>
-                                        </div>
+                                        </div> -->
                               
                                         <div class="row">
                                           <div class="col-4 col-sm-4">
-                                            <div class="form-group">
+                                            <div class="form-group"  *ngFor="let data of spec">
                                               <label for="ward">Postal address</label>
-                                              <input type="text" class="form-control" id="postal_address" ngModel name="postal_address" required autofocus>
+                                              <input type="text" class="form-control" id="postal_address" value="{{data.postal_address}}" name="postal_address" required autofocus>
                                             </div>
                                           </div>
                                           <div class="col-4 col-sm-4">
-                                            <div class="form-group">
+                                            <div class="form-group"  *ngFor="let data of spec">
                                               <label for="schoolEmail">Email</label>
-                                              <input type="text" class="form-control" id="email" ngModel name="email" required>
+                                              <input type="text" class="form-control" id="email" value="{{data.email}}" name="email" required>
                                             </div>
                                           </div>
                                           <div class="col-4 col-sm-4">
-                                            <div class="form-group">
+                                            <div class="form-group"  *ngFor="let data of spec">
                                               <label for="ward">Phone number</label>
-                                              <input type="text" class="form-control" id="phonenumber" ngModel name="phonenumber" required autofocus>
+                                              <input type="text" class="form-control" id="phonenumber" value="{{data.phone_number}}" required autofocus>
                                             </div>
                                           </div>
                                         </div>
@@ -263,7 +263,7 @@
                                   </div>
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-secondary"(click)= "onCancel()" data-dismiss="modal">Close</button>
                             <button type="submit" (click)="onUpdate()" class="btn btn-primary">Save changes</button>
                           </div>
                         </div>

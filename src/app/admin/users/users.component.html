@@ -79,7 +79,7 @@
                                 <div class="form-group" *ngSwitchCase="'3'">
                                     <label for="station">School</label>
                                     <select class="form-control" id="station" name="station" ngModel required>
-                                        <option option *ngFor="let school of schools" [ngValue]="school.id">{{school.name}}</option>
+                                        <option option *ngFor="let school of schools" ng-value="school.id">{{school.name}}</option>
                                     </select>
                                 </div>
                                 <div class="form-group" *ngSwitchCase="'4'">

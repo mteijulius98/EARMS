@@ -9,7 +9,7 @@ import * as jsPDF from 'jspdf';
 })
 export class InfrastructureComponent implements OnInit {
    infras=[];
-   schools=[];
+   spec=[];
    errorMessage:string
   constructor(private weoService:WeoService) { }
    
@@ -21,8 +21,8 @@ export class InfrastructureComponent implements OnInit {
       },
       error => this.errorMessage = <any>error);
       this.weoService.viewSpeschool().subscribe(
-        school =>{
-        this.schools=school.schools
+        spe =>{
+        this.spec=spe.spec
         },
         error => this.errorMessage = <any>error);
   }

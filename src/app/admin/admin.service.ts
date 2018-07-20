@@ -208,17 +208,31 @@ let body = JSON.stringify({name:schoolname,regno:regno,regdate:regdate,postal_ad
 return this.http.post("http://localhost/fypyear/public/api/school", body, options).map( (response:Response) => response.json());
   
 }
-updateSchool(schoolname:any,regno:any,regdate:any,postal_address:any,ownership:any,category:any,email:any,ward:any,phonenumber:any,id:number){
-  let headers = new Headers();
-  headers.append('Content-Type', 'application/json');
-  headers.append('Authorization','jwt '+ this.token);
-  headers.append('X-Requested-With','XMLHttpRequest');
-  let options = {
-  headers: headers
-};
-  let body = JSON.stringify({name:schoolname,regno:regno,regdate:regdate,postal_address:postal_address,sownership_id:ownership,scategory_id:category,email:email,ward_id:ward,phone_number:phonenumber});
-  return this.http.put('http://localhost/nfypyear/public/api/school/' + id,body,options).map( (response:Response) => response.json());
-}
+// updateSchool(schoolname:any,regno:any,regdate:any,postal_address:any,ownership:any,category:any,email:any,ward:any,phonenumber:any,id:number){
+//   let headers = new Headers();
+//   headers.append('Content-Type', 'application/json');
+//   headers.append('Authorization','jwt '+ this.token);
+//   headers.append('X-Requested-With','XMLHttpRequest');
+//   let options = {
+//   headers: headers
+// };
+//   let body = JSON.stringify({name:schoolname,regno:regno,regdate:regdate,postal_address:postal_address,sownership_id:ownership,scategory_id:category,email:email,ward_id:ward,phone_number:phonenumber});
+//   return this.http.put('http://localhost/nfypyear/public/api/school/' + id,body,options).map( (response:Response) => response.json());
+// }
+public updateSchool(data2,data3,data5,data8,data10){
+  let urlSearchParams = new FormData()
+urlSearchParams.append('name', data2);
+urlSearchParams.append('regno', data3);
+// urlSearchParams.append('regdate', data4);
+urlSearchParams.append('postal_address', data5);
+urlSearchParams.append('email', data8);
+urlSearchParams.append('phone_number', data10);
+
+let body = urlSearchParams;
+       return this.http.put( 'http://localhost/fypyear/public/api/school/'+localStorage.getItem('sid'),body).map(
+           (res: Response) => res.json()              
+       )
+      }
 
 public viewRegions(){ 
   let headers=new Headers()
