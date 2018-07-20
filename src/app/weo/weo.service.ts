@@ -47,6 +47,26 @@ export class WeoService {
       );
       
   }
+  public viewSTotal(){ 
+    const token=this.loginService.getToken();
+    let headers=new Headers()
+    headers.append('Content-Type', 'application/json');
+    headers.append('X-Requested-With','XMLHttpRequest');
+    return this.http.get('http://localhost/fypyear/public/api/totality/' + localStorage.getItem('sid'),{headers:headers}).map(
+  (res:Response)=>res.json(),
+      );
+      
+  }
+  public viewCtotal(){ 
+    const token=this.loginService.getToken();
+    let headers=new Headers()
+    headers.append('Content-Type', 'application/json');
+    headers.append('X-Requested-With','XMLHttpRequest');
+    return this.http.get('http://localhost/fypyear/public/api/tclasses/' + localStorage.getItem('sid'),{headers:headers}).map(
+  (res:Response)=>res.json(),
+      );
+      
+  }
   public viewSpeschool(){ 
     const token=this.loginService.getToken();
     let headers=new Headers()
