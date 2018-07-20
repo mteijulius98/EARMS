@@ -9,16 +9,29 @@
                 <form class="form-group px-4 py-2" #addRole="ngForm" (ngSubmit)="form4(addRole)">
                     <div class="form-group">
                         <label for="role">Role</label>
-                        <input type="text" class="form-control" id="role" name="role_name" ngModel required autofocus>
-                        <!-- <div *ngIf="role.invalid && (role.dirty || role.touched)" class="alert alert-danger">
+                        <input type="text" class="form-control" id="role" name="role_name" [(ngModel)]="role.role_name" #role="ngModel" pattern="[a-zA-Z]+"
+                            required autofocus>
+                        <div *ngIf="role.invalid && (role.dirty || role.touched)" class="alert alert-danger">
                             <div *ngIf="role.errors.required">
                                 Role is required.
                             </div>
-                        </div> -->
+                            <div *ngIf="role.errors.pattern">
+                                Role is Incorrect.
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="roleinitials">Initials</label>
-                        <input type="text" class="form-control" id="roleinitials" name="role_initial" ngModel required autofocus>
+                        <input type="text" class="form-control" id="roleinitials" name="role_initial" [(ngModel)]="role.role_initial" #roleinitial="ngModel"
+                            pattern="[a-zA-Z]+" required autofocus>
+                        <div *ngIf="roleinitial.invalid && (roleinitial.dirty || roleinitial.touched)" class="alert alert-danger">
+                            <div *ngIf="roleinitial.errors.required">
+                                Role Initial is required.
+                            </div>
+                            <div *ngIf="roleinitial.errors.pattern">
+                                Role Initial is Incorrect.
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <button class="btn btn-custom-primary btn-block w-50 mx-auto" type="submit" [disabled]="!addRole.valid">Add Role</button>
@@ -39,19 +52,52 @@
                         <div class="col-4 col-sm-4">
                             <div class="form-group">
                                 <label for="firstName">First Name</label>
-                                <input type="text" class="form-control" id="firstname" name="firstname" ngModel required autofocus>
+                                <input type="text" class="form-control" id="firstname" name="firstname" [(ngModel)]="user.firstname" #fname="ngModel" pattern="[a-zA-Z]+"
+                                    required autofocus>
+                                <span>
+                                    <div *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="alert alert-danger">
+                                        <div *ngIf="fname.errors.required">
+                                            First Name is required.
+                                        </div>
+                                        <div *ngIf="fname.errors.pattern">
+                                            First Name is Incorrect.
+                                        </div>
+                                    </div>
+                                </span>
                             </div>
                         </div>
                         <div class="col-4 col-sm-4">
                             <div class="form-group">
                                 <label for="middleName">Middle Name</label>
-                                <input type="text" class="form-control" id="middlename" name="middlename" ngModel required autofocus>
+                                <input type="text" class="form-control" id="middlename" name="middlename" [(ngModel)]="user.middlename" #mname="ngModel"
+                                    pattern="[a-zA-Z]+" required autofocus>
+                                <span>
+                                    <div *ngIf="mname.invalid && (mname.dirty || mname.touched)" class="alert alert-danger">
+                                        <div *ngIf="mname.errors.required">
+                                            Middle Name is required.
+                                        </div>
+                                        <div *ngIf="mname.errors.pattern">
+                                            Middle Name is Incorrect.
+                                        </div>
+                                    </div>
+                                </span>
                             </div>
                         </div>
                         <div class="col-4 col-sm-4">
                             <div class="form-group">
                                 <label for="lastName">Last Name</label>
-                                <input type="text" class="form-control" id="lastname" name="lastname" ngModel required>
+                                <input type="text" class="form-control" id="lastname" name="lastname" [(ngModel)]="user.lastname" #lname="ngModel" pattern="[a-zA-Z]+"
+                                    required>
+                                <span>
+                                    <div *ngIf="lname.invalid && (lname.dirty || lname.touched)" class="alert alert-danger">
+                                        <div *ngIf="lname.errors.required">
+                                            Middle Name is required.
+                                        </div>
+                                        <div *ngIf="lname.errors.pattern">
+                                            Middle Name is Incorrect.
+                                        </div>
+                                    </div>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -59,7 +105,7 @@
                         <div class="col-4 col-sm-4">
                             <div class="form-group">
                                 <label for="role">Role</label>
-                                <select class="form-control" id="userRole" name="role" [(ngModel)]='role' required>
+                                <select class="form-control" id="userRole" name="role" [(ngModel)]="user.role" required>
                                     <!-- <option value="hos">hos</option>
                                             <option value="weo">weo</option>
                                             <option value="slo">slo</option>
@@ -69,34 +115,34 @@
                             </div>
                         </div>
                         <div class="col-4 col-sm-4">
-                            <div [ngSwitch]="role">
+                            <div [ngSwitch]="user.role">
                                 <div class="form-group" *ngSwitchCase="'2'">
                                     <label for="station">District</label>
-                                    <select class="form-control" id="station" name="station" ngModel required>
+                                    <select class="form-control" id="station" name="station" [(ngModel)]="user.station" required>
                                         <option option *ngFor="let district of districts" value="{{district.id}}">{{district.dname}}</option>
                                     </select>
                                 </div>
                                 <div class="form-group" *ngSwitchCase="'3'">
                                     <label for="station">School</label>
-                                    <select class="form-control" id="station" name="station" ngModel required>
-                                        <option option *ngFor="let school of schools" ng-value="school.id">{{school.name}}</option>
+                                    <select class="form-control" id="station" name="station" [(ngModel)]="user.station" required>
+                                        <option option *ngFor="let school of schools" [ngValue]="school.id">{{school.name}}</option>
                                     </select>
                                 </div>
                                 <div class="form-group" *ngSwitchCase="'4'">
                                     <label for="station">Ward</label>
-                                    <select class="form-control" id="station" name="station" ngModel required>
+                                    <select class="form-control" id="station" name="station" [(ngModel)]="user.station" required>
                                         <option option *ngFor="let ward of wards" [ngValue]="ward.id">{{ward.wname}}</option>
                                     </select>
                                 </div>
                                 <div class="form-group" *ngSwitchCase="'5'">
                                     <label for="station">District</label>
-                                    <select class="form-control" id="station" name="station" ngModel required>
+                                    <select class="form-control" id="station" name="station" [(ngModel)]="user.station" required>
                                         <option option *ngFor="let district of districts" value="{{district.id}}">{{district.dname}}</option>
                                     </select>
                                 </div>
                                 <div class="form-group" *ngSwitchDefault>
                                     <label for="station">Station</label>
-                                    <select class="form-control" id="station" name="station" ngModel required>
+                                    <select class="form-control" id="station" name="station" [(ngModel)]="user.station" required>
                                         <option></option>
                                     </select>
                                 </div>
@@ -105,13 +151,35 @@
                         <div class="col-4 col-sm-4">
                             <div class="form-group">
                                 <label for="userEmail">Email</label>
-                                <input type="email" id="email" name="email" class="form-control" ngModel required autofocus="">
+                                <input type="email" id="email" name="email" class="form-control" [(ngModel)]="user.email" #email="ngModel" pattern=".+\@.+\..+"
+                                    required autofocus="">
+                                <span>
+                                    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                                        <div *ngIf="email.errors.required">
+                                            Email is required.
+                                        </div>
+                                        <div *ngIf="email.errors.pattern">
+                                            Email is Incorrect.
+                                        </div>
+                                    </div>
+                                </span>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="userPassword">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" ngModel required>
+                        <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password" #password="ngModel"
+                            pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
+                        <span>
+                            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+                                <div *ngIf="password.errors.required">
+                                    Password is required.
+                                </div>
+                                <div *ngIf="password.errors.pattern">
+                                    Password is Incorrect.
+                                </div>
+                            </div>
+                        </span>
                     </div>
 
                     <div class="form-group">

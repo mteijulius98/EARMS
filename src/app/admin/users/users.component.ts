@@ -16,7 +16,19 @@ export class UsersComponent implements OnInit {
   @Output() userDeleted = new EventEmitter<IUsers>();
   // dtOptions: DataTables.Settings = {};
   // dtTrigger: Subject<any> = new Subject();
-  role: string;
+  user = {
+    firstname: '',
+    middlename: '',
+    lastname: '',
+    email: '',
+    password: '',
+    role:'',
+    station:'',
+  };
+  role = {
+ role_name: '',
+ role_initial: ''
+  };
   users: IUsers[];
   errorMessage: string;
   roles = [];
@@ -127,7 +139,7 @@ export class UsersComponent implements OnInit {
   }
   form5(form: any) {
 
-    this.loginService.addUsers(form.value.firstname, form.value.middlename, form.value.lastname, form.value.email, form.value.password, form.value.role, form.value.station)
+    this.loginService.addUsers(this.user.firstname, this.user.middlename, this.user.lastname, this.user.email, this.user.password, this.user.role, this.user.station)
 
       .subscribe(
         resp => alert('Account created!!'),
