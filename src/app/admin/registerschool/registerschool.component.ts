@@ -78,8 +78,6 @@ export class RegisterschoolComponent implements OnInit {
     // other options...
     dateFormat: 'yyyy-mm-dd',
 };
-  onEdit(){
-
 IdStored(id){
     localStorage.removeItem('sid')
     localStorage.setItem('sid', id)
